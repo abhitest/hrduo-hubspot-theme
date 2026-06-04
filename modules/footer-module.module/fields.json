@@ -1,0 +1,66 @@
+[ {
+  "id" : "footer_menu_group",
+  "name" : "footer_menu_group",
+  "label" : "Footer Menu Group",
+  "help_text" : "",
+  "inline_help_text" : "",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : 5,
+    "sorting_label_field" : null,
+    "default" : 5
+  },
+  "children" : [ {
+    "id" : "footer_menu_group.menu_title",
+    "name" : "menu_title",
+    "label" : "Menu Title",
+    "help_text" : "",
+    "inline_help_text" : "",
+    "required" : false,
+    "locked" : false,
+    "validation_error_message" : "",
+    "placeholder" : "",
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Platform"
+  }, {
+    "id" : "footer_menu_group.menu",
+    "name" : "menu",
+    "label" : "Menu",
+    "help_text" : "",
+    "inline_help_text" : "",
+    "required" : false,
+    "locked" : false,
+    "type" : "simplemenu",
+    "display_width" : null,
+    "default" : [ ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ ]
+}, {
+  "id" : "logo_image",
+  "name" : "logo_image",
+  "label" : "Logo Image",
+  "help_text" : "",
+  "inline_help_text" : "",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://6160003.fs1.hubspotusercontent-eu1.net/hubfs/6160003/hrduo-theme-2026/Layer_1%20(10).svg",
+    "alt" : "Layer_1 (10)",
+    "loading" : "disabled"
+  }
+} ]

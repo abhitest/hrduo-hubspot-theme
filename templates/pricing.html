@@ -1,0 +1,48 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Pricing
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+{% dnd_area "dnd_area"
+  label="Main section",
+  class="body-container body-container--pricing"
+%}
+
+
+
+{% dnd_section padding={"top": "0", "bottom": "0", "left": "0", "right": "0"}, full_width=true %}
+{% dnd_module  path="../modules/book-a-demo-form-banner.module" %}
+{% end_dnd_module %}
+{% end_dnd_section %}
+
+{% dnd_section padding={"top": "0", "bottom": "0", "left": "0", "right": "0"}, full_width=true %}
+{% dnd_module  path="../modules/plans-three-column-section.module" %}
+{% end_dnd_module %}
+{% end_dnd_section %}
+
+{% dnd_section padding={"top": "0", "bottom": "0", "left": "0", "right": "0"}, full_width=true %}
+{% dnd_module  path="../modules/all-our-plan-section.module" %}
+{% end_dnd_module %}
+{% end_dnd_section %}
+
+{% dnd_section padding={"top": "0", "bottom": "0", "left": "0", "right": "0"}, full_width=true %}
+{% dnd_module  path="../modules/testimonial-section.module" %}
+{% end_dnd_module %}
+{% end_dnd_section %}
+
+{% dnd_section padding={"top": "0", "bottom": "0", "left": "0", "right": "0"}, full_width=true %}
+{% dnd_module  path="../modules/our-customers-logo-section.module" %}
+{% end_dnd_module %}
+{% end_dnd_section %}
+
+{% dnd_section padding={"top": "0", "bottom": "0", "left": "0", "right": "0"}, full_width=true %}
+{% dnd_module  path="../modules/FAQ-section.module" %}
+{% end_dnd_module %}
+{% end_dnd_section %}
+
+
+{% end_dnd_area %}
+{% endblock body %}

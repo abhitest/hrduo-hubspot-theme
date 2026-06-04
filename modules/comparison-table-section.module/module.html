@@ -1,0 +1,209 @@
+<div class="{{ name }} baseModuleStyle ComparisonTableSection {{ module.custom_style.custom_class }} " id="{{ module.custom_style.section_id }}">
+  <span class="baseModuleOverlay"></span>
+  <div class="baseModuleParent"> 
+    <div class="content-wrapper">
+      {# Custum Width Option #}
+      <div class="customWidthOption ComparisonTableInSec">
+        <div class="ComparisonTableTitleSec text-center">
+            {% if  module.content_group.title  %}
+        <div class="moduleTitle ComparisonTableTitle">
+          {{ module.content_group.title }}
+        </div>
+          {% endif %}
+          {% if module.content_group.content %}
+          <div class="moduleContent pt20 ComparisonTableContent secondary_60_color">
+            {{ module.content_group.content }}
+          </div>
+          {% endif %}
+        </div>
+      
+
+        <div class="ComparisonTableBoxSec pt40">
+          {% for item in module.content_group.comparison_table %}
+          <div class="ComparisonTableBox">
+            <table>
+              <thead>
+                <tr>
+                  {% for item2 in item.table_title_group %}
+                  <th>
+                    {% if item2.table_title_choice == "text" %}
+                      {{ item2.table_title }}
+                    {% elif item2.table_title_choice == "logo" %}
+                      <img src="{{ item2.logo.src }}" alt="{{ item2.logo.alt }}" />
+                    {% endif %}
+                  </th>
+                  {% endfor %}
+                </tr>
+              </thead>
+              <tbody>
+                {% for item3 in item.table_content_group %}
+                <tr>
+                  <td class="ComparisonTableBoxlttitle">{{ item3.table_content_title }}</td>
+                  <td>
+                    {% if item3.with_hr_choice == "check_icon" %}
+                      <span class="check-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="9" viewBox="0 0 10 9" fill="none">
+<path d="M0.875 5.54167L3.27072 7.5744C3.43684 7.71535 3.51991 7.78583 3.6138 7.77528C3.7077 7.76474 3.77306 7.67759 3.90377 7.5033L8.875 0.875" stroke="white" stroke-width="1.75" stroke-linecap="round"/>
+</svg>  
+                      </span>
+                    {% elif item3.with_hr_choice == "uncheck_icon" %}
+                      <span class="uncheck-icon"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" x="0" y="0" viewBox="0 0 329.269 329" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M194.8 164.77 323.013 36.555c8.343-8.34 8.343-21.825 0-30.164-8.34-8.34-21.825-8.34-30.164 0L164.633 134.605 36.422 6.391c-8.344-8.34-21.824-8.34-30.164 0-8.344 8.34-8.344 21.824 0 30.164l128.21 128.215L6.259 292.984c-8.344 8.34-8.344 21.825 0 30.164a21.266 21.266 0 0 0 15.082 6.25c5.46 0 10.922-2.09 15.082-6.25l128.21-128.214 128.216 128.214a21.273 21.273 0 0 0 15.082 6.25c5.46 0 10.922-2.09 15.082-6.25 8.343-8.34 8.343-21.824 0-30.164zm0 0" fill="#ffffff" opacity="1" data-original="#000000" class=""></path></g></svg></span>
+                    {% endif %}
+                  </td>
+                  <td>
+                    {% if item3.with_breathe_choice == "check_icon" %}
+                      <span class="check-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="9" viewBox="0 0 10 9" fill="none">
+<path d="M0.875 5.54167L3.27072 7.5744C3.43684 7.71535 3.51991 7.78583 3.6138 7.77528C3.7077 7.76474 3.77306 7.67759 3.90377 7.5033L8.875 0.875" stroke="white" stroke-width="1.75" stroke-linecap="round"/>
+</svg>  
+                      </span>
+                    {% elif item3.with_breathe_choice == "uncheck_icon" %}
+                      <span class="uncheck-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" x="0" y="0" viewBox="0 0 329.269 329" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M194.8 164.77 323.013 36.555c8.343-8.34 8.343-21.825 0-30.164-8.34-8.34-21.825-8.34-30.164 0L164.633 134.605 36.422 6.391c-8.344-8.34-21.824-8.34-30.164 0-8.344 8.34-8.344 21.824 0 30.164l128.21 128.215L6.259 292.984c-8.344 8.34-8.344 21.825 0 30.164a21.266 21.266 0 0 0 15.082 6.25c5.46 0 10.922-2.09 15.082-6.25l128.21-128.214 128.216 128.214a21.273 21.273 0 0 0 15.082 6.25c5.46 0 10.922-2.09 15.082-6.25 8.343-8.34 8.343-21.824 0-30.164zm0 0" fill="#ffffff" opacity="1" data-original="#000000" class=""></path></g></svg>
+                      </span>
+                    {% endif %}
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+          {% endfor %}
+        </div>
+
+
+
+          {# Button and Cta Option #}
+
+          {% if module.content_group.want_cta %}
+          <div class="moduleCTA d_flex align_center flex_center gap20 pt60 md_pt40 sm_pt20">
+            {% for item in module.content_group.cta_group %}
+            {% set CTA = item %}
+            <div class="cta-section">
+              {% if CTA.cta_choice == "normalcta" %}
+              {% if CTA.button_text %}
+              <div class="{{ CTA.choice_cta_style }}  {% if CTA.button_alignment %} {{ CTA.button_alignment }} {% else %} text-left {% endif %} basebutton-{{ loop.index }}">
+                {% set href = CTA.button_link.url.href %}
+                {% if CTA.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+                {% set href = "mailto:" + href %}
+                {% endif %}
+                {% if CTA.button_link.url.type is equalto "PHONE_NUMBER" %}
+                {% set href = "tel:" + href %}
+                {% endif %}
+
+                <a href="{{ href }}"
+                   {% if CTA.button_link.open_in_new_tab %}target="_blank"{% endif %}
+                   {% if CTA.button_link.rel %}rel="{{ CTA.button_link.rel }}"{% endif %}
+                   >
+                  {{ CTA.button_text }}
+                  {% if CTA.want_arrow %}
+                    <span class="arrow">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <rect x="13.2887" y="14.5453" width="7" height="1" rx="0.25" transform="rotate(-45 13.2887 14.5453)" fill="white" stroke="white" stroke-width="0.5"/>
+                    <rect x="13.9958" y="5.35291" width="7" height="1" rx="0.25" transform="rotate(45 13.9958 5.35291)" fill="white" stroke="white" stroke-width="0.5"/>
+                    <rect x="0.5" y="9.80273" width="16.9958" height="1" rx="0.25" fill="white" stroke="white" stroke-width="0.5"/>
+                  </svg>
+                    </span>
+                  {% endif %}
+
+                </a>
+              </div>
+              {% endif %}
+              {% elif  CTA.cta_choice == 'hubspotCTA' %}
+
+              {% if CTA.hubspot_cta && CTA.hubspot_cta != null %}
+              <div class="{{ CTA.choice_cta_style }} {% if CTA.button_alignment %} {{ CTA.button_alignment }} {% else %} text-left {% endif %}">
+                {% cta guid="{{ CTA.hubspot_cta }}" %}
+              </div>
+              {% endif %}
+
+              {% endif %}
+            </div>
+            {% endfor %}
+          </div>
+          {% endif %}
+
+          {# End Button and Cta Option #}
+      </div>
+          {# End Custum Width Option #}
+
+
+
+    </div>
+  </div>
+
+</div>
+
+    {% require_css %}
+    <style>
+     {% scope_css %}
+      /****  Button Style  *****/
+      {% for item in module.content_group.cta_group %}
+            {% set CTA = item %}
+      {% if CTA.override_button_style %}
+
+      .baseModuleStyle .basebutton-{{ loop.index }} a{
+        background:{{ CTA.button_style_group.btn_bg_color.css}};
+        color:{{ CTA.button_style_group.btn_text_color.css }};
+        border-color:{{ CTA.button_style_group.btn_border_color.css }};
+      }
+
+      .baseModuleStyle .basebutton-{{ loop.index }} a:hover {
+        background-color:{{ CTA.button_style_group.btn_bg_color_hover.css}};
+        color:{{ CTA.button_style_group.btn_text_color_hover.css }};
+        border-color : {{ CTA.button_style_group.btn_border_color_hover.css }};
+      }
+
+      {% endif %}
+      {% endfor %}
+      /****  End Button Style  ****/
+     {% end_scope_css %}
+    </style>
+    
+   
+    <style>
+
+{#       {% scope_css %} #}
+        
+      {# Desktop Styling #}
+      .{{name}}.baseModuleStyle{
+        position:relative;
+      
+        {{ module.style.spacing.desktop_spacing.css }}
+       
+        {% if module.style.background_property.background_choice == 'bgImage'  %}
+         background-image:url('{{ module.style.background_property.background_image.src|escape_url }}');  background-position: center center;  background-repeat: no-repeat; background-size : cover;
+        {% elif module.style.background_property.background_choice == 'bgColor'  %}
+        background-color:rgba({{ module.style.background_property.background_color.color|convert_rgb }},{{ module.style.background_property.background_color.opacity }}%);
+        {% elif module.style.background_property.background_choice == 'gredient'  %}
+        background:{{ module.style.background_property.background_gredient.css }};
+        {% endif %}
+      } 
+      /****  Overlay Start  *****/
+      {% if module.style.background_property.background_choice == 'bgImage'  %}
+      .{{name}} .baseModuleOverlay{ position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-color:rgba({{ module.style.background_property.overlay_color.color|convert_rgb }},{{ module.style.background_property.overlay_color.opacity }}%); }
+      {% endif %}
+      /****  Overlay Start  *****/
+      .{{name}} .baseModuleParent{position:relative; z-index:5}
+
+
+
+      {# End Desktop Styling #}
+
+      {# Tablet Styling #}
+      @media(max-width:1300px){
+        .{{name}}.baseModuleStyle{
+           {{  module.style.spacing.tab_spacing.css }}
+        } 
+      }
+      {# End Tablet Styling #}
+      {# Mobile Styling #}
+      @media(max-width:767px){
+        .{{name}}.baseModuleStyle{
+          {{ module.style.spacing.mobile_spacing.css  }}
+        } 
+      }
+      
+{#       {% end_scope_css %} #}
+    </style>
+  {% end_require_css %}

@@ -1,0 +1,17 @@
+<!--
+  templateType: blog_post
+  isAvailableForNewContent: true
+  label: Boilerplate - blog post
+  screenshotPath: ../images/template-previews/blog-post.png
+-->
+{% set template_css = "../../css/templates/blog.css" %}
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+
+{% module "module_390285491101" path="../modules/blog-post-banner-section.module" %}
+{% module "blog_post_audio" path="@hubspot/blog_audio", overrideable=True %} 
+{% module "blog_post_body_section" path="../modules/blog-post-body-section.module" %}
+{% module "book_demo_cta_section" path="../modules/book-demo-cta-section.module" %}
+{% module "blog-post-body-version-2-section" path="../modules/blog-post-body-version-2-section.module" %}
+{% endblock body %}

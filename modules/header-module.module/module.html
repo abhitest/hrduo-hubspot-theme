@@ -1,0 +1,448 @@
+<header class="header check">
+    <div class="content-wrapper">
+        <div class="headerInnersec d_flex align_center">
+            <div class="headerlogo">
+                {% set href = module.logo_group.logo_link.url.href %}
+                    {% if module.logo_group.logo_link.url.type is equalto "EMAIL_ADDRESS" %}
+                    {% set href = "mailto:" + href %}
+                    {% elif module.logo_group.logo_link.url.type is equalto "PHONE_NUMBER" %}
+                    {% set href = "tel:" + href %}
+                    {% endif %}
+                    <a
+                    {% if module.logo_group.logo_link.url.type is equalto "CALL_TO_ACTION"  %}
+                        href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+                    {% else %}
+                        href="{{ href|escape_url }}"
+                    {% endif %}
+                    {% if module.logo_group.logo_link.open_in_new_tab %}
+                        target="_blank"
+                    {% endif %}
+                    {% if module.logo_group.logo_link.rel %}
+                        rel="{{ module.logo_group.logo_link.rel|escape_attr }}"
+                    {% endif %}
+                    >
+                    <img src="{{ module.logo_group.logo.src }}" alt="{{ module.logo_group.logo.alt }}">
+                    </a>
+            </div>
+            <div class="headerRTCol  d_flex align_center">
+                <div class="headerburgermenu">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </div>
+                <div class="headermenuCol">
+                    <div class="headerNav white_color p2">
+                      {% menu id="{{ module.menu }}" %}
+                    </div>
+                       <div class="headerbtnsec headerbtnsecmobile d_flex align_center gap30" style="display: none;">
+                    <div class="headerloginbtn p2 white_color">
+               {% set href = module.button_group.login_button_settings.button_link.url.href %}
+{% if module.button_group.login_button_settings.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+  {% set href = "mailto:" + href %}
+{% elif module.button_group.login_button_settings.button_link.url.type is equalto "PHONE_NUMBER" %}
+  {% set href = "tel:" + href %}
+{% endif %}
+<a
+  {% if module.button_group.login_button_settings.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+    href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+  {% else %}
+    href="{{ href|escape_url }}"
+  {% endif %}
+  {% if module.button_group.login_button_settings.button_link.open_in_new_tab %}
+    target="_blank"
+  {% endif %}
+  {% if module.button_group.login_button_settings.button_link.rel %}
+    rel="{{ module.button_group.login_button_settings.button_link.rel|escape_attr }}"
+  {% endif %}
+  >
+  {{ module.button_group.login_button_settings.button_text }}
+</a>
+                    </div>
+                    <div class="headerdemobtn secondary_button">
+{% set href = module.button_group.demo_button_settings.button_link.url.href %}
+{% if module.button_group.demo_button_settings.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+  {% set href = "mailto:" + href %}
+{% elif module.button_group.demo_button_settings.button_link.url.type is equalto "PHONE_NUMBER" %}
+  {% set href = "tel:" + href %}
+{% endif %}
+<a
+  {% if module.button_group.demo_button_settings.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+    href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+  {% else %}
+    href="{{ href|escape_url }}"
+  {% endif %}
+  {% if module.button_group.demo_button_settings.button_link.open_in_new_tab %}
+    target="_blank"
+  {% endif %}
+  {% if module.button_group.demo_button_settings.button_link.rel %}
+    rel="{{ module.button_group.demo_button_settings.button_link.rel|escape_attr }}"
+  {% endif %}
+  >
+  <span class="text_gradient">{{ module.button_group.demo_button_settings.button_text }}</span>
+</a>
+                    </div>
+                </div>
+                </div>
+                 <div class="headerbtnsec headerbtnsectab d_flex align_center gap30" style="display: none;">
+                    <div class="headerloginbtn p2 white_color">
+               {% set href = module.button_group.login_button_settings.button_link.url.href %}
+{% if module.button_group.login_button_settings.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+  {% set href = "mailto:" + href %}
+{% elif module.button_group.login_button_settings.button_link.url.type is equalto "PHONE_NUMBER" %}
+  {% set href = "tel:" + href %}
+{% endif %}
+<a
+  {% if module.button_group.login_button_settings.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+    href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+  {% else %}
+    href="{{ href|escape_url }}"
+  {% endif %}
+  {% if module.button_group.login_button_settings.button_link.open_in_new_tab %}
+    target="_blank"
+  {% endif %}
+  {% if module.button_group.login_button_settings.button_link.rel %}
+    rel="{{ module.button_group.login_button_settings.button_link.rel|escape_attr }}"
+  {% endif %}
+  >
+  {{ module.button_group.login_button_settings.button_text }}
+</a>
+                    </div>
+                    <div class="headerdemobtn secondary_button">
+{% set href = module.button_group.demo_button_settings.button_link.url.href %}
+{% if module.button_group.demo_button_settings.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+  {% set href = "mailto:" + href %}
+{% elif module.button_group.demo_button_settings.button_link.url.type is equalto "PHONE_NUMBER" %}
+  {% set href = "tel:" + href %}
+{% endif %}
+<a
+  {% if module.button_group.demo_button_settings.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+    href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+  {% else %}
+    href="{{ href|escape_url }}"
+  {% endif %}
+  {% if module.button_group.demo_button_settings.button_link.open_in_new_tab %}
+    target="_blank"
+  {% endif %}
+  {% if module.button_group.demo_button_settings.button_link.rel %}
+    rel="{{ module.button_group.demo_button_settings.button_link.rel|escape_attr }}"
+  {% endif %}
+  >
+  <span class="text_gradient">{{ module.button_group.demo_button_settings.button_text }}</span>
+</a>
+                    </div>
+                </div>
+            
+            </div>
+            <div class="headerbtnsec headerbtnsecdesktop d_flex align_center gap30">
+                    <div class="headerloginbtn p2 white_color">
+               {% set href = module.button_group.login_button_settings.button_link.url.href %}
+{% if module.button_group.login_button_settings.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+  {% set href = "mailto:" + href %}
+{% elif module.button_group.login_button_settings.button_link.url.type is equalto "PHONE_NUMBER" %}
+  {% set href = "tel:" + href %}
+{% endif %}
+<a
+  {% if module.button_group.login_button_settings.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+    href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+  {% else %}
+    href="{{ href|escape_url }}"
+  {% endif %}
+  {% if module.button_group.login_button_settings.button_link.open_in_new_tab %}
+    target="_blank"
+  {% endif %}
+  {% if module.button_group.login_button_settings.button_link.rel %}
+    rel="{{ module.button_group.login_button_settings.button_link.rel|escape_attr }}"
+  {% endif %}
+  >
+  {{ module.button_group.login_button_settings.button_text }}
+</a>
+                    </div>
+                    <div class="headerdemobtn secondary_button">
+{% set href = module.button_group.demo_button_settings.button_link.url.href %}
+{% if module.button_group.demo_button_settings.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+  {% set href = "mailto:" + href %}
+{% elif module.button_group.demo_button_settings.button_link.url.type is equalto "PHONE_NUMBER" %}
+  {% set href = "tel:" + href %}
+{% endif %}
+<a
+  {% if module.button_group.demo_button_settings.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+    href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+  {% else %}
+    href="{{ href|escape_url }}"
+  {% endif %}
+  {% if module.button_group.demo_button_settings.button_link.open_in_new_tab %}
+    target="_blank"
+  {% endif %}
+  {% if module.button_group.demo_button_settings.button_link.rel %}
+    rel="{{ module.button_group.demo_button_settings.button_link.rel|escape_attr }}"
+  {% endif %}
+  >
+  <span class="text_gradient">{{ module.button_group.demo_button_settings.button_text }}</span>
+</a>
+                    </div>
+                </div>
+        </div>
+
+
+
+ <div style="display:none;">
+                {% for item in module.mega_menu_group %}
+                
+           {% set image_items = item.menu_group|selectattr('item_choice', 'equalto', 'image')|list %}
+            {% set hwomany_items = item.menu_group|length %}
+          
+                <ul  class="hs-menu-children-wrapper bm-add-m{{ item.add_number_of_menu }} {% if item.menu_style == 'style_1' %} {% if image_items|length > 0 %}has-image {% else %} no-img{% endif %}{% endif %} {% if hwomany_items == 1 %} menuhasesignlechild {% endif %}">
+                  {% if item.menu_style == "style_1" %}
+                    <div class='headermegamenusection {% if image_items|length > 0 %}has-image {% else %} no-img{% endif %}'>
+
+                      <div class="headermegamenuBoxSec d_flex align_start {% if image_items|length > 0 %} gap32 {% else %} gap48 {% endif %}">
+                        {% for item2 in item.menu_group %}
+                        <div class="headermegamenuBox {{ item2.item_choice }}">
+                          {% if item2.item_choice == "image" %}
+                          
+                            {% set image = item2.image_menu_group %}
+                          <div class="headermegamenuimgBox">
+                            <img src="{{ image.menu_image.src }}" alt="{{ image.menu_image.alt }}">
+                            <div class="headermegamenuimgText white_color">
+                              <h3>{{ image.text }}</h3>
+                            </div>
+                            {% set href = image.button_link.url.href %}
+                {% if image.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+                {% set href = "mailto:" + href %}
+                {% endif %}
+                {% if image.button_link.url.type is equalto "PHONE_NUMBER" %}
+                {% set href = "tel:" + href %}
+                {% endif %}
+
+                <a href="{{ href }}" class="headermegamenuimglink"
+                   {% if image.button_link.open_in_new_tab %}target="_blank"{% endif %}
+                   {% if image.button_link.rel %}rel="{{ image.button_link.rel }}"{% endif %}
+                   >
+                 
+                </a>
+                          </div>
+                          {% elif  item2.item_choice == "menu" %}
+                          {% set menu = item2.menu_items %}
+                          <div class="headermegamenuBoxMenusec {% if item.menu_group|length == 1 %}headermegamenuBoxMenusec-single-item{% endif %}">
+                             {% if menu.title_logo.src || menu.title %}
+                            <div class="headermegamenuBoxTitlecol">
+                              {% if menu.title_logo.src %}
+                              <div class="headermegamenuBoximg">
+                                <img src="{{ menu.title_logo.src }}" alt="{{ menu.title_logo.alt }}">
+                              </div>
+                              {% endif %}
+                              {% if menu.title %}
+                              <div class="headermegamenuBoxText white_color">
+                                <h5>{{ menu.title }}</h5>
+                              </div>
+                              {% endif %}
+                              {% if menu.title_link.url.href %}
+                               {% set href = menu.title_link.url.href %}
+                                  {% if menu.title_link.url.type is equalto "EMAIL_ADDRESS" %}
+                                  {% set href = "mailto:" + href %}
+                                  {% endif %}
+                                  {% if menu.title_link.url.type is equalto "PHONE_NUMBER" %}
+                                  {% set href = "tel:" + href %}
+                                  {% endif %}
+
+                                  <a href="{{ href }}" class="headermegamenuBoxlink"
+                                    {% if menu.title_link.open_in_new_tab %}target="_blank"{% endif %}
+                                    {% if menu.title_link.rel %}rel="{{ menu.title_link.rel }}"{% endif %}
+                                    >
+                                    </a>
+                                    {% endif %}
+                            </div>
+                            {% endif %}
+                            <div class="headermegamenuBoxList ">
+                              <ul>
+                                {% for item3 in menu.menu_list %}
+                                <li>
+                                  {% set href = item3.button_link.url.href %}
+                                  {% if item3.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+                                  {% set href = "mailto:" + href %}
+                                  {% endif %}
+                                  {% if item3.button_link.url.type is equalto "PHONE_NUMBER" %}
+                                  {% set href = "tel:" + href %}
+                                  {% endif %}
+
+                                  <a href="{{ href }}" class="p2 white_color"
+                                    {% if item3.button_link.open_in_new_tab %}target="_blank"{% endif %}
+                                    {% if item3.button_link.rel %}rel="{{ item3.button_link.rel }}"{% endif %}
+                                    >
+                                    {{ item3.menu_text }}
+                                  </a>
+                                </li>
+                                {% endfor %}
+                              </ul>
+                            </div>
+                          </div>
+                          {% endif %}
+
+                        </div>
+                        {% endfor %}
+                      </div>
+
+                    </div>
+                     {% elif item.menu_style == "style_2" %}
+
+                    <div class="headermegamenus2Section">
+                      <div class="headermegamenus2InSec">
+                        <div class="headermegamenus2InSectp">
+                          {% set mainloop = loop.index %}
+                        {% for item2 in item.menu_group_style_2 %}
+                         {% set innerloop = loop.index %}
+                          <div class="headermegamenus2BoxMain {{ item2.inner_group_style_group }}">
+                              {% if item2.inner_group_style_group == "content_menu" %} 
+                             
+                                <div class="headermegamenus2Box {{ item2.inner_group_style_group }}">
+                                  <div class="headermegamenus2BoxIn">
+                                    {% for item3 in item2.content_menu_group %}
+                                    {% set inner2ndloop = loop.index %}
+                                    <div class="headermegamenucntBoxgrp {% if inner2ndloop == 1 %} active {% endif %}">
+                                      {% if item3.box_image %}
+                                      <div class="headermegamenucntBoxLTCol">
+                                        {{ item3.box_image }}
+                                      </div>
+                                      {% endif %}
+                                      <div class="headermegamenucntBoxRTCol">
+                                        {% if item3.box_title %}
+                                        <div class="headermegamenucntBoxTitle">
+                                          <h5>{{ item3.box_title }}</h5>
+                                        </div>
+                                        {% endif %}
+                                        {% if item3.box_content  %}
+                                        <div class="headermegamenucntBoxContent">
+                                          <p>{{ item3.box_content }}</p>
+                                        </div>
+                                        {%  endif %}
+                                      </div>
+                                      <div class="headermegamenucntBoxbtnarrow">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="8" viewBox="0 0 13 8" fill="none">
+<rect width="8.4916" height="1.06145" rx="0.46875" transform="matrix(-0.707103 -0.70711 0.707103 -0.70711 6.27734 7.02966)" fill="#6347FF" stroke="#6347FF" stroke-width="0.9375"/>
+<rect width="8.4916" height="1.06145" rx="0.46875" transform="matrix(0.707103 -0.70711 -0.707103 -0.70711 6.26953 7.02966)" fill="#6347FF" stroke="#6347FF" stroke-width="0.9375"/>
+</svg>
+                                        
+                                      </div>
+                                      {% if item3.box_link.url.href %}
+                                        {% set href = item3.box_link.url.href %}
+                                        {% if item3.box_link.url.type is equalto "EMAIL_ADDRESS" %}
+                                        {% set href = "mailto:" + href %}
+                                        {% endif %}
+                                        {% if item3.box_link.url.type is equalto "PHONE_NUMBER" %}
+                                        {% set href = "tel:" + href %}
+                                        {% endif %}
+
+                                        <a href="{{ href }}"
+                                           {% if item3.box_link.open_in_new_tab %}target="_blank"{% endif %}
+                                           {% if item3.box_link.rel %}rel="{{ item3.box_link.rel }}"{% endif %}
+                                           class="headermegamenucntBoxbtn"
+                                           >
+                                        </a>
+                                        {% endif %}
+                                    </div>
+                                    {% endfor %}
+                                  </div>
+                                </div>
+
+                              <div class="headermegamenus2Boxsmenugrp">
+                                 {% for item3 in item2.content_menu_group %}
+                                 {% set inner2ndloop = loop.index %}
+                                <div class="headermegamenus2Boxsmenu" data-id="menu-{{ inner2ndloop }}" {% if inner2ndloop == 1 %} {% else %} style="display: none;" {% endif %}>
+                                  {% simple_menu menu_tree="{{ item3.menu_group.menu }}" %}
+                                </div>
+                                {% endfor %}
+                              </div>
+                            
+                              {% elif item2.inner_group_style_group == "card_menu" %}
+
+                                <div class="headermegamenus2BoxCardBox">
+                                  {% set card = item2.card_menu_group %}
+                                  <div class="headermegamenus2BoxCard">
+                                    <div class="headermegamenus2BoxCardimg">
+                                      <img src="{{ card.card_image.src }}" alt="{{ card.card_image.alt }}">
+                                    </div>
+                                    <div class="headermegamenus2BoxCardText white_color">
+                                      <h5>{{ card.card_title }}</h5>
+                                    </div>
+                                    <div class="headermegamenus2BoxCardbtn">
+
+                                   
+                                    {% set href = card.card_link.url.href %}
+                                    {% if card.card_link.url.type is equalto "EMAIL_ADDRESS" %}
+                                    {% set href = "mailto:" + href %}
+                                    {% endif %}
+                                    {% if card.card_link.url.type is equalto "PHONE_NUMBER" %}
+                                    {% set href = "tel:" + href %}
+                                    {% endif %}
+                                    <a href="{{ href }}"
+                                       {% if card.card_link.open_in_new_tab %}target="_blank"{% endif %}
+                                       {% if card.card_link.rel %}rel="{{ card.card_link.rel }}"{% endif %}
+                                       class="headermegamenus2BoxCardlink"
+                                       >
+                                       {{ card.card_link_text }}
+
+                                    </a>
+                                     </div>
+                                  </div>
+                              
+                                </div>
+
+                              {% endif %}
+                          </div>
+                          {% endfor %}
+                          </div>
+                          <div class="headermegamenus2InSecbt">
+                              <div class="headermegamenus2InSecbtcnt p2 white_color">
+                                <p>{{ item.menu_bottom_group.bt_text }}</p>
+                                   
+                              </div>
+                              <div class="headermegamenus2InSecbtctas">
+                                <div class="headermm2ISbutton">
+                                  {% set href = item.menu_bottom_group.pricing_btn_group.button_link.url.href %}
+                                  {% if item.menu_bottom_group.pricing_btn_group.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+                                  {% set href = "mailto:" + href %}
+                                  {% endif %}
+                                  {% if item.menu_bottom_group.pricing_btn_group.button_link.url.type is equalto "PHONE_NUMBER" %}
+                                  {% set href = "tel:" + href %}
+                                  {% endif %}
+                                  <a href="{{ href }}"
+                                     {% if item.menu_bottom_group.pricing_btn_group.button_link.open_in_new_tab %}target="_blank"{% endif %}
+                                     {% if item.menu_bottom_group.pricing_btn_group.button_link.rel %}rel="{{ item.menu_bottom_group.pricing_btn_group.button_link.rel }}"{% endif %}
+                                     class="p2"
+                                     >
+                                    {{ item.menu_bottom_group.pricing_btn_group.button_text }}
+                                  </a>
+                                </div>
+                                <div class="headermm2ISsecondarybutton {{ item.menu_bottom_group.secondary_button_group.choice_cta_style }}">
+                                {% set href = item.menu_bottom_group.secondary_button_group.button_link.url.href %}
+                                  {% if item.menu_bottom_group.secondary_button_group.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+                                  {% set href = "mailto:" + href %}
+                                  {% endif %}
+                                  {% if item.menu_bottom_group.button_link.url.type is equalto "PHONE_NUMBER" %}
+                                  {% set href = "tel:" + href %}
+                                  {% endif %}
+                                  <a href="{{ href }}"
+                                     {% if item.menu_bottom_group.secondary_button_group.button_link.open_in_new_tab %}target="_blank"{% endif %}
+                                     {% if item.menu_bottom_group.secondary_button_group.button_link.rel %}rel="{{ item.menu_bottom_group.secondary_button_group.button_link.rel }}"{% endif %}
+                                     
+                                     >
+                                    <span class="btn_text_gradient">{{ item.menu_bottom_group.secondary_button_group.button_text }}</span>
+                                  </a>
+                                </div>
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+
+                     {% endif %}
+                </ul>
+                {% endfor %}
+            </div>
+
+
+
+
+
+
+    </div>
+</header>

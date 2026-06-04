@@ -1,0 +1,156 @@
+<div class="{{ name }} baseModuleStyle ContactBannerSection {{ module.custom_style.custom_class }} " id="{{ module.custom_style.section_id }}">
+  <span class="baseModuleOverlay"></span>
+  <div class="baseModuleParent"> 
+    <div class="content-wrapper">
+      {# Custum Width Option #}
+      <div class="customWidthOption ContactBannerInSec">
+          <div class="ContactBannerLTCol"> 
+            {% if module.content_group.tag %}
+              <div class="ContactBannertag p3">
+                <p>
+                    {{ module.content_group.tag }}
+                </p>
+              </div>
+              {% endif %}
+        {% if  module.content_group.title  %}
+        <div class="moduleTitle ContactBannerTitle pt24 white_color">
+          {{ module.content_group.title }}
+        </div>
+          {% endif %}
+          {% if module.content_group.content %}
+          <div class="moduleContent pt20 ContactBannerContent white_75_color">
+            {{ module.content_group.content }}
+          </div>
+          {% endif %}
+
+          <div class="ContactBcontactBoxSec pt55">
+            {% for item in module.content_group.contact_group %}
+            <div class="ContactBcontactBox">
+             
+              <div class="ContactBcontactBoxLTCol">
+                {{ item.box_logo }}
+                
+              </div>
+             
+              <div class="ContactBcontactBoxRTCol">
+                <p class="p3 white_75_color">{{ item.box_tp_text }}</p>
+                <p class="white_color">{{ item.box_md_text }}</p>
+                <p class="p3 white_75_color">{{ item.box_bt_text }}</p>
+              </div>
+{% set href = item.box_link.url.href %}
+{% if href %}
+                {% if item.box_link.url.type is equalto "EMAIL_ADDRESS" %}
+                {% set href = "mailto:" + href %}
+                {% endif %}
+                {% if item.box_link.url.type is equalto "PHONE_NUMBER" %}
+                {% set href = "tel:" + href %}
+                {% endif %}
+
+                <a href="{{ href }}" class="ContactBcontactBoxlink"
+                   {% if item.box_link.open_in_new_tab %}target="_blank"{% endif %}
+                   {% if item.box_link.rel %}rel="{{ item.box_link.rel }}"{% endif %}
+                   >
+                </a>
+{% endif %}
+
+            </div>
+            {% endfor %}
+          </div>
+
+
+          </div>
+          <div class="ContactBannerRTCol">
+            {% if module.content_group.form_subtitle %}
+            <div class="ContactBannerFormSubtitle white_75_color ">
+              <p>
+                {{ module.content_group.form_subtitle }}
+              </p>
+            </div>
+            {% endif %}
+            {% if module.content_group.form_title %}
+            <div class="ContactBannerFormTitle pt8 white_color">
+              <h4>{{ module.content_group.form_title }}</h4>
+            </div>
+            {% endif %}
+            {% if module.content_group.form_content %}
+            <div class="ContactBannerFormcnt pt8 white_color">
+              {{ module.content_group.form_content }}
+            </div>
+            {% endif %}
+            <div class="ContactBannerForm pt30">
+                       {% form
+	form_to_use="{{ module.content_group.form.form_id }}"
+	response_response_type="{{ module.content_group.form.response_type }}"
+	response_message="{{ module.content_group.form.message }}"
+	response_redirect_id="{{ module.content_group.form.redirect_id }}"
+	response_redirect_url="{{module.content_group.form.redirect_url}}"
+	gotowebinar_webinar_key="{{ module.content_group.form.gotowebinar_webinar_key }}"
+%}
+            </div>
+            {% if module.content_group.form_bottom_text %}
+            <div class="ContactBannerFormBTCnt">
+              <p>{{ module.content_group.form_bottom_text }}</p>
+            </div>
+            {% endif %} 
+          </div>
+        
+      </div>
+          {# End Custum Width Option #}
+
+
+
+    </div>
+  </div>
+
+</div>
+
+    {% require_css %}
+    
+    <style>
+
+{#       {% scope_css %} #}
+        
+      {# Desktop Styling #}
+      .{{name}}.baseModuleStyle{
+        position:relative;
+      
+        {{ module.style.spacing.desktop_spacing.css }}
+       
+        {% if module.style.background_property.background_choice == 'bgImage'  %}
+         background-image:url('{{ module.style.background_property.background_image.src|escape_url }}');  background-position: center center;  background-repeat: no-repeat; background-size : cover;
+        {% elif module.style.background_property.background_choice == 'bgColor'  %}
+        background-color:rgba({{ module.style.background_property.background_color.color|convert_rgb }},{{ module.style.background_property.background_color.opacity }}%);
+        {% elif module.style.background_property.background_choice == 'gredient'  %}
+        background:{{ module.style.background_property.background_gredient.css }};
+        {% endif %}
+        margin-left : 20px; margin-right:20px; border-radius : 30px;
+      } 
+      /****  Overlay Start  *****/
+      {% if module.style.background_property.background_choice == 'bgImage'  %}
+      .{{name}} .baseModuleOverlay{ position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-color:rgba({{ module.style.background_property.overlay_color.color|convert_rgb }},{{ module.style.background_property.overlay_color.opacity }}%); }
+      {% endif %}
+      /****  Overlay Start  *****/
+      .{{name}} .baseModuleParent{position:relative; z-index:5}
+
+
+
+      {# End Desktop Styling #}
+
+      {# Tablet Styling #}
+      @media(max-width:1300px){
+        .{{name}}.baseModuleStyle{
+           {{  module.style.spacing.tab_spacing.css }}
+        } 
+      }
+      {# End Tablet Styling #}
+      {# Mobile Styling #}
+      @media(max-width:767px){
+        .{{name}}.baseModuleStyle{
+          {{ module.style.spacing.mobile_spacing.css  }}
+          margin-left : 10px; margin-right:10px; 
+        } 
+      }
+      
+{#       {% end_scope_css %} #}
+    </style>
+  {% end_require_css %}

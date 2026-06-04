@@ -1,0 +1,400 @@
+
+{% set table = hubdb_table_rows(module.content_group.select_hubdb_table) %}
+
+<div class="{{ name }} baseModuleStyle ResourcesLisFilSection {{ module.custom_style.custom_class }} " id="{{ module.custom_style.section_id }}">
+  <span class="baseModuleOverlay"></span>
+  <div class="baseModuleParent"> 
+     <div class="ResourcesLisFilterSection">
+    <div class="content-wrapper">
+      {# Custum Width Option #}
+      <div class="customWidthOption ResourcesLisFilInSec">
+       
+          <div class="ResourcesLisFilterBoxSec d_flex align_center">
+              <div class="ResourcesLisFilterBox searchFilterBox">
+                <div class="ResourcesLisFilterBoxTitle white_color medium pb8"> 
+                  <h5>{{ module.content_group.search_heading }}</h5>
+                </div>
+                <div class="ResourcesLisFilterBoxFil">
+                    <input type="text" id="search-input_{{ name }}" placeholder="Search" />
+                </div>
+              </div>  
+
+              <div class="ResourcesLisFilterBox countryFilterBox">
+                <div class="ResourcesLisFilterBoxTitle white_color medium pb8"> 
+                  <h5>{{ module.content_group.country_heading }}</h5>
+                </div>
+                <div class="ResourcesLisFilterBoxFil">
+                <select id="country-{{ name }}" class="country-dropdown">
+              <option value="">{{ module.content_group.country_heading }}</option>
+                {% set unique_countries = [] %}
+           
+              {% for item in table %}
+              {% if item.jurisdiction.name and item.jurisdiction.name not in unique_countries %}
+              <option value="{{ item.jurisdiction.name|escape_attr }}">{{ item.jurisdiction.label|escape }}</option>
+              {% do unique_countries.append(item.jurisdiction.name) %}
+              {% endif %}
+              {% endfor %}
+             
+            </select>
+                </div>
+              </div>  
+
+              <div class="ResourcesLisFilterBox industryFilterBox">
+                <div class="ResourcesLisFilterBoxTitle white_color medium pb8"> 
+                  <h5>{{ module.content_group.industry_heading }}</h5>
+                </div>
+                <div class="ResourcesLisFilterBoxFil">
+                    <select id="industry-{{ name }}" class="industry-dropdown">
+              <option value="">{{ module.content_group.industry_heading }}</option>
+               {% set unique_industries = [] %}
+              {% for item in table %}
+              {% if item.industries.name and item.industries.name not in unique_industries %}
+              <option value="{{ item.industries.name|escape_attr }}">{{ item.industries.label|escape }}</option>
+              {% do unique_industries.append(item.industries.name) %}
+              {% endif %}
+              {% endfor %}   
+            </select>
+                </div>
+              </div>  
+          </div>
+
+          <div class="ResourcesLisFilterCatebox ">
+             <div class="ResourcesLisFilterCateboxTitle white_color medium"> 
+                  <h5>{{ module.content_group.categories_heading }}</h5>
+                </div>
+
+                <div class="ResourcesLisFilterCateboxFil pt26 d_flex align_center gap40">
+                        {% set unique_categories = [] %}
+            {% for item in table %}
+            {% set categories = item.topic.name|split(',') %}
+            {% for category in categories %}
+            {% if category not in unique_categories %}
+            <label class="p2 medium white_color">
+              <input type="checkbox" class="resources-library category-checkbox_{{name}}" value="{{ category|escape_attr }}">
+              <span>{{ category|escape }}</span>
+            </label>
+            {% do unique_categories.append(category) %}
+            {% endif %}
+            {% endfor %}
+            {% endfor %}
+                </div>
+          </div>
+
+        
+      </div>
+          {# End Custum Width Option #}
+
+
+
+    </div>
+    </div>
+
+    <div class="ResourcesCntListingSection pt100 pb150">
+      <div class="content-wrapper">
+        <div class="ResourcesCntListingInSec" id="resources_cntpost_{{name}}">
+          <div class="ResourcesCntListingBoxsec d_flex align_start gap20">
+            {% for item in table %}
+            <div class="ResourcesCntListingBox ResourcesCntListingBox-{{ name }}"  data-category="{{ item.topic.name|escape_attr }}" data-country="{{ item.jurisdiction.name }}" data-industry="{{ item.industries.name|escape_attr }}">
+              {% if  item.featured_image.url  %}
+              <div class="ResourcesCntListingBoxImg" style="background-image: url({{ item.featured_image.url }});">
+                
+              </div>
+              {% endif %}
+              <div class="ResourcesCntListingCntBox">
+                <div class="ResourcesCntListingBoxCategory p3 medium uppercase black_50_color">
+                  <p>{{ item.topic.name }}</p>
+                </div>
+                {% if item.name %}
+                <div class="ResourcesCntListingBoxTitle pt12 black_color">
+                    <div class="ResourcesCntListingBoxTitleIn">
+                      <h4>{{ item.name }}</h4>
+                    </div>
+                </div>
+                {% endif %}
+                {% if item.content %}
+                <div class="ResourcesCntListingBoxCnt pt12 secondary_60_color">
+                  <div class="ResourcesCntListingBoxCntin">
+                    {{ item.content }}
+                  </div>
+                </div>
+                {% endif %}
+              
+                <div class="ResourcesCntListingBoxCTA pt24">
+                
+                <a href="{{ item.cta_link }}"
+                   >
+                  {{ item.cta_text }}
+                    <span class="arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <rect x="5.79395" y="14.2411" width="6.99775" height="1" rx="0.25" transform="rotate(-45 5.79395 14.2411)" fill="#6347FF" stroke="#6347FF"/>
+                      <rect x="6.50098" y="5.05139" width="6.99874" height="1" rx="0.25" transform="rotate(45 6.50098 5.05139)" fill="#6347FF" stroke="#6347FF"/>
+                    </svg>
+                    </span>
+
+                </a>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+          <div class="ResourcesCntListingpagi pt75" id="pagination-resources_{{name}}"></div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+
+</div>
+
+
+{% require_js %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
+<script>
+
+$(window).on('load pageshow', function() {
+    var selectval = $('.category-checkbox_{{name}}:checked').val();
+    console.log(selectval, "selectval");
+    filterResources();
+});
+
+$(document).ready(function () {
+  const itemsPerPage = {{ module.content_group.pagination_per_page }};
+  var allResources = $('.ResourcesCntListingBox-{{ name }}').toArray();
+  var paginatedResources = [];
+
+  // Equal Height Function
+  equalheight = function(container){
+    var currentTallest = 0, currentRowStart = 0, rowDivs = new Array(), jQueryel, topPosition = 0;
+    jQuery(container).each(function() {
+        $el = jQuery(this);
+        jQuery($el).height('auto')
+        topPostion = $el.position().top;
+        if (currentRowStart != topPostion) {
+            for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
+                rowDivs[currentDiv].height(currentTallest);
+            }
+            rowDivs.length = 0;
+            currentRowStart = topPostion;
+            currentTallest = $el.outerHeight();
+            rowDivs.push($el);
+        } else {
+            rowDivs.push($el);
+            currentTallest = (currentTallest < $el.outerHeight()) ? ($el.outerHeight()) : (currentTallest);
+        }
+        for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
+            rowDivs[currentDiv].height(currentTallest);
+        }
+    });
+  }
+
+  // Helper to run equal heights on visible items only
+  function applyEqualHeights() {
+    equalheight('.ResourcesCntListingBox-{{ name }}:visible .ResourcesCntListingBoxTitleIn');
+    equalheight('.ResourcesCntListingBox-{{ name }}:visible .ResourcesCntListingBoxCntin');
+  }
+
+  // Re-apply equal heights on window resize (debounced)
+  var resizeTimer;
+  $(window).on('resize', function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () {
+      applyEqualHeights();
+    }, 150);
+  });
+
+  // Initial display
+  paginateResources(allResources);
+
+  // Filter triggers
+  $('.category-checkbox_{{name}}').change(filterResources);
+  $('#search-input_{{ name }}').on('input', filterResources);
+  $('#country-{{ name }}').change(filterResources);
+  $('#industry-{{ name }}').change(filterResources);
+
+  filterResources();
+
+  function filterResources() {
+    var selectedCategories = [];
+    $('.category-checkbox_{{name}}:checked').each(function () {
+      selectedCategories.push($(this).val());
+      console.log($(this).val(), "selected category");
+    });
+
+    var searchQuery = $('#search-input_{{name}}').val()?.toLowerCase() || "";
+    var selectedCountry = $('#country-{{name}}').val()?.toLowerCase() || "";
+    var selectedIndustry = $('#industry-{{name}}').val()?.toLowerCase() || "";
+
+    // If country or industry is selected, allow only one category selection
+    if (selectedCountry || selectedIndustry) {
+      if (selectedCategories.length > 1) {
+        var keepCategory = selectedCategories[0];
+        selectedCategories = [keepCategory];
+        $('.category-checkbox_{{name}}').each(function () {
+          if ($(this).val() !== keepCategory) {
+            $(this).prop('checked', false);
+          }
+        });
+      }
+    }
+
+    var filteredResources = allResources.filter(function (item) {
+      var $item = $(item);
+      var categoryAttr = $item.data('category') || "";
+      var postCategories = categoryAttr.split(',').map(cat => cat.trim());
+
+      var postTitle = $item.find('.ResourcesCntListingBoxTitle').text()?.toLowerCase() || "";
+      var postDescription = $item.find('.ResourcesCntListingBoxCnt').text()?.toLowerCase() || "";
+      var postDate = $item.find('.date-resources').text()?.toLowerCase() || "";
+      var postCountry = $item.data('country')?.toLowerCase() || "";
+      var postIndustry = $item.data('industry')?.toLowerCase() || "";
+
+      var matchCategory = selectedCategories.length === 0 || selectedCategories.some(cat => postCategories.includes(cat));
+      var matchSearchQuery = !searchQuery || postTitle.includes(searchQuery) || postDescription.includes(searchQuery) || postDate.includes(searchQuery);
+      var matchCountry = !selectedCountry || postCountry === selectedCountry;
+      var matchIndustry = !selectedIndustry || postIndustry === selectedIndustry;
+
+      return matchCategory && matchSearchQuery && matchCountry && matchIndustry;
+    });
+
+    if (filteredResources.length === 0) {
+      $('.ResourcesCntListingBox-{{name}}').hide();
+      $('#pagination-resources_{{name}}').hide();
+    } else {
+      paginateResources(filteredResources);
+      $('#pagination-resources_{{name}}').show();
+    }
+  }
+
+  function paginateResources(resources) {
+    var pageCount = Math.ceil(resources.length / itemsPerPage);
+    paginatedResources = [];
+
+    for (let i = 0; i < pageCount; i++) {
+      var pageItems = resources.slice(i * itemsPerPage, (i + 1) * itemsPerPage);
+      paginatedResources.push(pageItems);
+    }
+
+    displayPage(0);
+    generatePaginationControls(pageCount);
+  }
+
+  function displayPage(pageIndex) {
+    $('.ResourcesCntListingBox-{{name}}').hide();
+
+    var pageItems = paginatedResources[pageIndex];
+    pageItems.forEach(function (item) {
+      $(item).show();
+    });
+
+    if (pageIndex > 0) {
+      $('html, body').animate({
+        scrollTop: $('.ResourcesCntListingSection').offset().top
+      }, 'fast');
+    }
+
+    // Apply equal heights after items are shown
+    applyEqualHeights();
+  }
+
+  function generatePaginationControls(pageCount) {
+    var paginationContainer = $('#pagination-resources_{{name}}');
+    paginationContainer.empty();
+
+    if (pageCount <= 1) return;
+
+    var currentPage = 0;
+
+    function getPageList() {
+      // Show all if 7 or fewer pages — no dots needed
+      if (pageCount <= 5) {
+        var all = [];
+        for (var i = 0; i < pageCount; i++) all.push(i);
+        return all;
+      }
+
+      // Near the start: 1 2 3 4 5 ... last
+      if (currentPage <= 3) {
+        return [0, 1, 2, 3, 4, '...right'];
+      }
+
+      // Near the end: 1 ... last-4 last-3 last-2 last-1 last
+      if (currentPage >= pageCount - 4) {
+        return [0, '...left', pageCount - 5, pageCount - 4, pageCount - 3, pageCount - 2, pageCount - 1];
+      }
+
+      // Middle: 1 ... prev current next ... last
+      return [0, '...left', currentPage - 1, currentPage, currentPage + 1, '...right', pageCount - 1];
+    }
+
+    function render() {
+      paginationContainer.empty();
+
+      // ← Prev Button
+      var prevBtn = $('<button class="pg-nav pg-prev"></button>')
+        .prop('disabled', currentPage === 0)
+        .click(function () {
+          if (currentPage > 0) goTo(currentPage - 1);
+        });
+      paginationContainer.append(prevBtn);
+
+      // Build page list based on current page position
+      var pageList = getPageList();
+
+      pageList.forEach(function (page) {
+        if (page === '...left') {
+          // Left dots — jump back toward start
+          var leftDots = $('<button class="pg-dots">...</button>')
+            .click(function () {
+              goTo(Math.max(0, currentPage - 3));
+            });
+          paginationContainer.append(leftDots);
+
+        } else if (page === '...right') {
+          // Right dots — jump forward toward end
+          var rightDots = $('<button class="pg-dots">...</button>')
+            .click(function () {
+              goTo(Math.min(pageCount - 1, currentPage + 3));
+            });
+          paginationContainer.append(rightDots);
+
+        } else {
+          // Regular page number button
+          var label = String(page + 1).padStart(2, '0');
+          var pageButton = $('<button class="pg-num">')
+            .text(label)
+            .toggleClass('active', page === currentPage)
+            .click((function (pageIndex) {
+              return function () {
+                goTo(pageIndex);
+              };
+            })(page));
+          paginationContainer.append(pageButton);
+        }
+      });
+
+      // → Next Button
+      var nextBtn = $('<button class="pg-nav pg-next"></button>')
+        .prop('disabled', currentPage === pageCount - 1)
+        .click(function () {
+          if (currentPage < pageCount - 1) goTo(currentPage + 1);
+        });
+      paginationContainer.append(nextBtn);
+    }
+
+    function goTo(pageIndex) {
+      currentPage = pageIndex;
+      displayPage(currentPage);
+      render();
+    }
+
+    // Initial render
+    render();
+  }
+
+});
+</script>
+{% end_require_js %}

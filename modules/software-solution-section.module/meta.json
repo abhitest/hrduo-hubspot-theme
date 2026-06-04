@@ -1,0 +1,8 @@
+{
+  "global" : false,
+  "content_types" : [ "MEMBERSHIP", "LANDING_PAGE", "SUBSCRIPTION", "SITE_PAGE", "CUSTOMER_PORTAL", "BLOG_LISTING", "WEB_INTERACTIVE", "BLOG_POST" ],
+  "host_template_types" : [ "PAGE" ],
+  "module_id" : 392508083418,
+  "label" : "Software Solution Section",
+  "is_available_for_new_content" : true
+}

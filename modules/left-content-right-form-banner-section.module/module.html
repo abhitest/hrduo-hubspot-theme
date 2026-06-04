@@ -1,0 +1,107 @@
+<div class="{{ name }} baseModuleStyle LContentRFormBannerSection {{ module.custom_style.custom_class }} " id="{{ module.custom_style.section_id }}">
+  <span class="baseModuleOverlay"></span>
+  <div class="baseModuleParent"> 
+    <div class="content-wrapper">
+      {# Custum Width Option #}
+      <div class="customWidthOption LContentRFormBannerInSec d_flex {{ module.content_group.align_choice }}">
+        <div class="LContentRFormBannerLTCol">
+          {% if  module.content_group.tag  %}
+          <div class="LContentRFormBannerTag p3">
+            <p> {{ module.content_group.tag }}</p>
+          </div>
+          {% endif %}
+           {% if  module.content_group.title  %}
+        <div class="moduleTitle LContentRFormBannerTitle white_color">
+          {{ module.content_group.title }}
+        </div>
+          {% endif %}
+          {% if module.content_group.content %}
+          <div class="moduleContent pt20 LContentRFormBannerContent white_75_color">
+            {{ module.content_group.content }}
+          </div>
+          {% endif %}
+          {% if module.content_group.list_content %}
+          <div class="LContentRFormBannerlist pt32 white_color p2">
+{{ module.content_group.list_content }}
+          </div>
+          {% endif %}
+        </div>
+        <div class="LContentRFormBannerRTCol">
+          {% if module.content_group.form_title %}
+          <div class="LContentRFormBannerFmtitle white_color">
+            <h4>{{ module.content_group.form_title }}</h4>
+          </div>
+          {% endif %}
+          <div class="LContentRFormBannerForm pt20">
+                  {% form
+	form_to_use="{{ module.content_group.form.form_id }}"
+	response_response_type="{{ module.content_group.form.response_type }}"
+	response_message="{{ module.content_group.form.message }}"
+	response_redirect_id="{{ module.content_group.form.redirect_id }}"
+	response_redirect_url="{{module.content_group.form.redirect_url}}"
+	gotowebinar_webinar_key="{{ module.content_group.form.gotowebinar_webinar_key }}"
+%}
+          </div>
+        </div>
+       
+      
+      </div>
+          {# End Custum Width Option #}
+
+
+
+    </div>
+  </div>
+
+</div>
+
+    {% require_css %}
+
+    <style>
+
+{#       {% scope_css %} #}
+        
+      {# Desktop Styling #}
+      .{{name}}.baseModuleStyle{
+        position:relative;
+      
+        {{ module.style.spacing.desktop_spacing.css }}
+       
+        {% if module.style.background_property.background_choice == 'bgImage'  %}
+         background-image:url('{{ module.style.background_property.background_image.src|escape_url }}');  background-position: center center;  background-repeat: no-repeat; background-size : cover;
+        {% elif module.style.background_property.background_choice == 'bgColor'  %}
+        background-color:rgba({{ module.style.background_property.background_color.color|convert_rgb }},{{ module.style.background_property.background_color.opacity }}%);
+        {% elif module.style.background_property.background_choice == 'gredient'  %}
+        background:{{ module.style.background_property.background_gredient.css }};
+        {% endif %};
+        margin: 20px 20px 0 20px; border-radius : 30px;
+      } 
+      /****  Overlay Start  *****/
+      {% if module.style.background_property.background_choice == 'bgImage'  %}
+      .{{name}} .baseModuleOverlay{ position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-color:rgba({{ module.style.background_property.overlay_color.color|convert_rgb }},{{ module.style.background_property.overlay_color.opacity }}%); }
+      {% endif %}
+      /****  Overlay Start  *****/
+      .{{name}} .baseModuleParent{position:relative; z-index:5}
+
+
+
+      {# End Desktop Styling #}
+
+      {# Tablet Styling #}
+      @media(max-width:1300px){
+        .{{name}}.baseModuleStyle{
+           {{  module.style.spacing.tab_spacing.css }}
+        } 
+      }
+      {# End Tablet Styling #}
+      {# Mobile Styling #}
+      @media(max-width:767px){
+        .{{name}}.baseModuleStyle{
+          {{ module.style.spacing.mobile_spacing.css  }}
+          margin: 20px 10px 0 10px; 
+        } 
+      }
+      
+{#       {% end_scope_css %} #}
+    </style>
+  {% end_require_css %}
