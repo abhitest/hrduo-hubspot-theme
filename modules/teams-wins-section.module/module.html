@@ -5,15 +5,15 @@
       {# Custum Width Option #}
       <div class="customWidthOption TeamswinInSec">
         {% if  module.content_group.title  %}
-        <div class="moduleTitle TeamswinTitle white_color text-center">
+        <div class="moduleTitle TeamswinTitle white_color text-center" data-aos="fade-up">
           {{ module.content_group.title }}
         </div>
           {% endif %}
 
         <div class="TeamswinBoxSection d_flex gap20 pt50">
           {% for item in module.content_group.team_box_group %}
-          <div class="TeamswinBox">
-            <div class="TeamswinBoxQuoteIcon">
+          <div class="TeamswinBox" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+            <div class="TeamswinBoxQuoteIcon" >
               <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
 <path d="M27.4999 9.375C31.2969 9.375 34.3749 12.453 34.3749 16.25C34.3749 19.0545 32.915 21.768 30.736 22.2916C29.8955 22.4936 29.2261 23.5722 29.37 24.8035C29.5625 26.4516 31.0529 28.1167 34.0038 29.4289C34.6609 29.7211 34.3858 30.7095 33.6723 30.6202C25.9816 29.6573 20.6506 24.6435 20.625 17.5498C20.6249 12.6713 23.5071 9.375 27.4999 9.375Z" fill="#6347FF"/>
 <path d="M12.4999 9.375C16.2969 9.375 19.3749 12.453 19.3749 16.25C19.3749 19.0545 17.915 21.768 15.736 22.2916C14.8955 22.4936 14.2261 23.5722 14.37 24.8035C14.5625 26.4516 16.0529 28.1167 19.0038 29.4289C19.6609 29.7211 19.3858 30.7095 18.6723 30.6202C10.9816 29.6573 5.65058 24.6435 5.625 17.5498C5.62491 12.6713 8.50715 9.375 12.4999 9.375Z" fill="#6347FF"/>
@@ -27,7 +27,7 @@
               
             </div>
             {% endif %}
-
+            {% if item.cta_group|length %}
           <div class="moduleCTA d_flex align_center TeamswinBoxCTA gap20 pt50">
             {% for item2 in item.cta_group %}
             {% set CTA = item2 %}
@@ -73,6 +73,7 @@
             </div>
             {% endfor %}
           </div>
+          {% endif %}
           </div>
           {% endfor %}
 

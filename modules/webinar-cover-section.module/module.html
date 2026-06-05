@@ -6,19 +6,19 @@
       <div class="customWidthOption WebinarCoverInSec d_flex align_center">
         <div class="WebinarCoverLTCol">
              {% if  module.content_group.title  %}
-        <div class="moduleTitle WebinarCoverTitle">
+        <div class="moduleTitle WebinarCoverTitle" data-aos="fade-up" >
           {{ module.content_group.title }}
         </div>
           {% endif %}
           {% if module.content_group.content %}
-          <div class="moduleContent pt20 WebinarCoverContent secondary_60_color">
+          <div class="moduleContent pt20 WebinarCoverContent secondary_60_color" data-aos="fade-up" data-aos-delay="50">
             {{ module.content_group.content }}
           </div>
           {% endif %}
         </div>
         <div class="WebinarCoverRTCol">
           {% if module.content_group.rt_title  %}
-          <div class="WebinarCoverBoxTitle">
+          <div class="WebinarCoverBoxTitle" data-aos="fade-up" data-aos-delay="100">
             <h5>{{ module.content_group.rt_title }}</h5>
           </div> 
           {% endif %}
@@ -26,7 +26,7 @@
           <div class="WebinarCoverBoxList">
             <ul>
               {% for item in module.content_group.list_group  %}
-              <li>
+              <li  data-aos="fade-up" data-aos-delay="{{ 50 + (loop.index * 50) }}">
                 <span class="WebinarCoverBoxnumber">{% if loop.index <= "9" %}0{{ loop.index }}{% else %}{{ loop.index }}{% endif %}</span>
                 <span class="WebinarCoverBoxtext secondary_60_color">{{ item.content }}</span>
               </li>

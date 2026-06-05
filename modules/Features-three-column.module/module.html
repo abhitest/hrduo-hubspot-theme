@@ -8,7 +8,7 @@
         {% else %}
         <div class="FourColumnTitleSec pb75 text-center">
           {% if module.content_group.sub_title %}
-          <div class="FourColumnSubTitle purple_color p3 medium">
+          <div class="FourColumnSubTitle purple_color p3 medium" data-aos="fade-up">
             <span>
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
 <path d="M9 3C9 6.86599 12.134 10 16 10C12.134 10 9 13.134 9 17C9 13.134 5.86599 10 2 10C5.86599 10 9 6.86599 9 3Z" fill="#6347FF"/>
@@ -18,12 +18,12 @@
           </div>
           {% endif %}
           {% if  module.content_group.title  %}
-          <div class="moduleTitle FourColumnTitle  {% if module.content_group.sub_title %} pt30 {% endif %}">
+          <div class="moduleTitle FourColumnTitle  {% if module.content_group.sub_title %} pt30 {% endif %}" data-aos="fade-up" data-aos-delay="50">
             {{ module.content_group.title }}
           </div>
             {% endif %}
             {% if module.content_group.content %}
-            <div class="moduleContent pt20 FourColumnContent secondary_60_color">
+            <div class="moduleContent pt20 FourColumnContent secondary_60_color" data-aos="fade-up" data-aos-delay="100">
               {{ module.content_group.content }}
             </div>
             {% endif %}
@@ -32,7 +32,7 @@
 
           <div class="FourColumnBoxSection d_flex gap20 {% if module.content_group.want_three_column %} FourTrColumnBoxSection {% endif %}">
             {% for item in module.content_group.column_group %}
-            <div class="FourColumnBox"> 
+            <div class="FourColumnBox" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}"> 
               
               {% if item.box_title %}
               <div class="FourColumnBoxTitle lh12">

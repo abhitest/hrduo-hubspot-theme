@@ -4,21 +4,21 @@
     <div class="content-wrapper">
       {# Custum Width Option #}
       <div class="customWidthOption CounterInSec">
-        <div class="Countertitlesection text-center white_color">
+        <div class="Countertitlesection text-center ">
  {% if  module.content_group.title  %}
-        <div class="moduleTitle CounterTitle semibold">
+        <div class="moduleTitle CounterTitle semibold white_color" data-aos="fade-up">
           {{ module.content_group.title }}
         </div>
           {% endif %}
           {% if module.content_group.content %}
-          <div class="moduleContent pt20 CounterContent">
+          <div class="moduleContent pt20 CounterContent white_75_color" data-aos="fade-up" data-aos-delay="100">
             {{ module.content_group.content }}
           </div>
           {% endif %}
         </div>
        
 
-        <div class="CounterBoxSection pt50 d_flex align_start white_color {{ module.content_group.column_choice }}">
+        <div class="CounterBoxSection pt50 d_flex align_start white_color {{ module.content_group.column_choice }}"  data-aos="fade-up" data-aos-delay="200">
           {% for item in module.content_group.counter_group %}
           <div class="CounterBox">
             <div class="CounterBoxNumber">
@@ -40,7 +40,7 @@
           {# Button and Cta Option #}
 
           {% if module.content_group.want_cta %}
-          <div class="moduleCTA d_flex align_center Countercta gap20 pt50 flex_center">
+          <div class="moduleCTA d_flex align_center Countercta gap20 pt50 flex_center"  data-aos="fade-up" data-aos-delay="300">
             {% for item in module.content_group.cta_group %}
             {% set CTA = item %}
             <div class="cta-section">

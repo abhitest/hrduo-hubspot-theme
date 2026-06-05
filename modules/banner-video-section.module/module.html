@@ -6,24 +6,24 @@
       <div class="customWidthOption BannerVideoInSec">
         <div class="BannerVideoTitleSection text-center {% if module.content_group.video_file %} pb75 {% endif %}">
           {% if module.content_group.tag %}
-          <div class="BannerVideoTag TagStyle p3">
+          <div class="BannerVideoTag TagStyle p3"  data-aos="fade-up">
             <p>{{ module.content_group.tag }}</p>
           </div>
           {% endif %}
 
         {% if  module.content_group.title  %}
-            <div class="moduleTitle BannerVideoTitle pt20 white_color">
+            <div class="moduleTitle BannerVideoTitle pt20 white_color" data-aos="fade-up" data-aos-delay="50">
               {{ module.content_group.title }}
             </div>
           {% endif %}
           {% if module.content_group.content %}
-          <div class="moduleContent BannerVideoContent pt20 white_color">
+          <div class="moduleContent BannerVideoContent pt20 white_color" data-aos="fade-up" data-aos-delay="100">
             {{ module.content_group.content }}
           </div>
           {% endif %}
 
            {% if module.content_group.want_cta %}
-          <div class="BannerVideoCTA d_flex align_center gap10 pt40 flex_center">
+          <div class="BannerVideoCTA d_flex align_center gap10 pt40 flex_center" data-aos="fade-up" data-aos-delay="150">
                 {% for item in module.content_group.cta_group %}
             {% set CTA = item %}
             <div class="cta-section">
@@ -72,7 +72,7 @@
 
         </div>
            {% if module.content_group.video_file %}
-          <div class="BannerVideoBox ">
+          <div class="BannerVideoBox " data-aos="fade-up" data-aos-delay="200">
               <video id="bannervideo" controls loop="" width="640" height="480" poster="{{ module.content_group.video_thumbnail_image.src }}" playsinline="true" 
   webkit-playsinline="true" preload="auto">
                     <source type="video/mp4" src="{{ module.content_group.video_file }}">

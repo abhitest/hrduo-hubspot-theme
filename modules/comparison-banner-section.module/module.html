@@ -6,16 +6,16 @@
       <div class="customWidthOption ComparisonBannerInSec d_flex align_center">
         <div class="ComparisonBannerLTCol">
              {% if  module.content_group.title  %}
-        <div class="moduleTitle ComparisonBannerTitle white_color">
+        <div class="moduleTitle ComparisonBannerTitle white_color" data-aos="fade-up">
           {{ module.content_group.title }}
         </div>
           {% endif %}
           {% if module.content_group.content %}
-          <div class="moduleContent pt20 ComparisonBannerContent white_75_color">
+          <div class="moduleContent pt20 ComparisonBannerContent white_75_color" data-aos="fade-up" data-aos-delay="50">
             {{ module.content_group.content }}
           </div>
           {% endif %}
-          <div class="ComparisonBannerFormsec pt40">
+          <div class="ComparisonBannerFormsec pt40" data-aos="fade-up" data-aos-delay="100">
             <div class="ComparisonBannerForm">
               {% form
 	form_to_use="{{ module.content_group.form.form_id }}"
@@ -26,14 +26,14 @@
 	gotowebinar_webinar_key="{{ module.content_group.form.gotowebinar_webinar_key }}"
 %}
             </div>
-            <div class="ComparisonBannerFormCnt white_75_color p3"> 
+            <div class="ComparisonBannerFormCnt white_75_color p3" > 
               {{ module.content_group.form_content }}
             </div>
           </div>
 
         </div>
         {% if module.content_group.image.src %}
-       <div class="ComparisonBannerRTCol">
+       <div class="ComparisonBannerRTCol" data-aos="fade-left" data-aos-delay="150">
          <img src="{{ module.content_group.image.src|escape_url }}" alt="{{ module.content_group.image.alt|escape_url }}" class="ComparisonBannerImg">
 
         </div>

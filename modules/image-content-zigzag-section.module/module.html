@@ -8,7 +8,7 @@
         {% set mainloop = loop.index %}
         <div class="TwoColumnImgCntBox d_flex align_center">
             {% if item.image %}
-          <div class="TwoColumnImgCntImgcol">
+          <div class="TwoColumnImgCntImgcol" data-aos="fade-in">
               <img src="{{ item.image.src }}" alt="{{ item.image.alt }}" width="610" height="620">
           </div>
           {% endif %}
@@ -17,7 +17,7 @@
 
             
             {% if item.tag_text %}
-            <div class="TwoColumnImgCntTag p3 bold purple_color">
+            <div class="TwoColumnImgCntTag p3 bold purple_color" data-aos="fade-up">
               <p><span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
 <path d="M7 0C7 3.86599 10.134 7 14 7C10.134 7 7 10.134 7 14C7 10.134 3.86599 7 0 7C3.86599 7 7 3.86599 7 0Z" fill="#6347FF"/>
 </svg></span>{{ item.tag_text }}</p>
@@ -25,19 +25,19 @@
             {% endif %}
          
         {% if item.title  %}
-        <div class="moduleTitle TwoColumnImgCntTitle  {% if item.tag_text %} pt10 {% endif %}">
+        <div class="moduleTitle TwoColumnImgCntTitle  {% if item.tag_text %} pt10 {% endif %}" data-aos="fade-up" data-aos-delay="100">
           {{ item.title }}
         </div>
           {% endif %}
           {% if item.content %}
-          <div class="moduleContent pt10 TwoColumnImgCntContent secondary_60_color">
+          <div class="moduleContent pt10 TwoColumnImgCntContent secondary_60_color" data-aos="fade-up" data-aos-delay="150">
             {{ item.content }}
           </div>
           {% endif %}
           {# Button and Cta Option #}
 
           {% if item.want_cta %}
-          <div class="moduleCTA d_flex align_center TwoColumnImgCntCTA gap20 pt40">
+          <div class="moduleCTA d_flex align_center TwoColumnImgCntCTA gap20 pt40" data-aos="fade-up" data-aos-delay="200">
             {% for item2 in item.cta_group %}
             {% set CTA = item2 %}
             <div class="cta-section">

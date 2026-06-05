@@ -6,7 +6,7 @@
 </svg>
   </div>
   {% if module.content_group.bg_image.src %}
-  <div class="Counterv1Image">
+  <div class="Counterv1Image" data-aos="fade-right">
           <img src="{{ module.content_group.bg_image.src }}" alt="{{ module.content_group.bg_image.alt }}">
         </div>
         {% endif %}
@@ -16,19 +16,19 @@
       <div class="customWidthOption Counterv1InSection">
         <div class="Counterv1InBoxSec">
         {% if  module.content_group.title  %}
-        <div class="moduleTitle Counterv1Title white_color">
+        <div class="moduleTitle Counterv1Title white_color" data-aos="fade-up" data-aos-delay="50">
           {{ module.content_group.title }}
         </div>
           {% endif %}
           {% if module.content_group.content %}
-          <div class="moduleContent pt10 Counterv1Content white_75_color">
+          <div class="moduleContent pt10 Counterv1Content white_75_color" data-aos="fade-up" data-aos-delay="100">
             {{ module.content_group.content }}
           </div>
           {% endif %}
 
           <div class="Counterv1BoxSection d_flex pt30 {% if module.content_group.want_four_columns %} Counterv1fourBoxSection {% endif %}">
             {% for item in module.content_group.counter_group %}
-            <div class="Counterv1Box white_color">
+            <div class="Counterv1Box white_color" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
               <div class="Counterv1Boxin">
 
               
@@ -49,7 +49,7 @@
           {# Button and Cta Option #}
 
           {% if module.content_group.want_cta %}
-          <div class="moduleCTA d_flex align_center Counterv1Btns gap20 pt30">
+          <div class="moduleCTA d_flex align_center Counterv1Btns gap20 pt30"  data-aos="fade-up" data-aos-delay="300">
             {% for item in module.content_group.cta_group %}
             {% set CTA = item %}
             <div class="cta-section">

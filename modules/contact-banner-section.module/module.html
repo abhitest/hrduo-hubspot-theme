@@ -6,26 +6,26 @@
       <div class="customWidthOption ContactBannerInSec">
           <div class="ContactBannerLTCol"> 
             {% if module.content_group.tag %}
-              <div class="ContactBannertag p3">
+              <div class="ContactBannertag p3" data-aos="fade-up">
                 <p>
                     {{ module.content_group.tag }}
                 </p>
               </div>
               {% endif %}
         {% if  module.content_group.title  %}
-        <div class="moduleTitle ContactBannerTitle pt24 white_color">
+        <div class="moduleTitle ContactBannerTitle pt24 white_color" data-aos="fade-up" data-aos-delay="50">
           {{ module.content_group.title }}
         </div>
           {% endif %}
           {% if module.content_group.content %}
-          <div class="moduleContent pt20 ContactBannerContent white_75_color">
+          <div class="moduleContent pt20 ContactBannerContent white_75_color" data-aos="fade-up" data-aos-delay="100">
             {{ module.content_group.content }}
           </div>
           {% endif %}
 
           <div class="ContactBcontactBoxSec pt55">
             {% for item in module.content_group.contact_group %}
-            <div class="ContactBcontactBox">
+            <div class="ContactBcontactBox" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
              
               <div class="ContactBcontactBoxLTCol">
                 {{ item.box_logo }}
@@ -59,7 +59,7 @@
 
 
           </div>
-          <div class="ContactBannerRTCol">
+          <div class="ContactBannerRTCol" data-aos="fade-in"data-aos-delay="150" >
             {% if module.content_group.form_subtitle %}
             <div class="ContactBannerFormSubtitle white_75_color ">
               <p>

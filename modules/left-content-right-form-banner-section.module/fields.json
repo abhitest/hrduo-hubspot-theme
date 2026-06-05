@@ -121,6 +121,7 @@
     "required" : false,
     "locked" : false,
     "type" : "form",
+    "embed_versions": ["v2", "v4"],
     "display_width" : null,
     "default" : {
       "form_id" : "88dd5d04-6cc8-4123-bbdb-8eee7d95e7e1",

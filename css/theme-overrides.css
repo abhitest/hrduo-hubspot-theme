@@ -813,8 +813,8 @@ ul.hs-menu-children-wrapper.menuhasesignlechild .headermegamenusection .headerme
 .headermegamenuBoxMenusec.headermegamenuBoxMenusec-single-item .headermegamenuBoxList ul li a {   padding-left: 0 !important;}
 
 /* temp css */
-header.header .headerInnersec .headerRTCol .headerNav >span > div > ul > li.hs-menu-depth-1:nth-child(1),header.header .headerInnersec .headerRTCol .headerNav >span > div > ul > li.hs-menu-depth-1:nth-child(2), header.header .headerInnersec .headerRTCol .headerNav >span > div > ul > li.hs-menu-depth-1:nth-child(3) {  position: relative;}
-header.header .headerInnersec .headerRTCol .headerNav >span > div > ul > li.hs-menu-depth-1:nth-child(1) ul.hs-menu-children-wrapper,header.header .headerInnersec .headerRTCol .headerNav >span > div > ul > li.hs-menu-depth-1:nth-child(2) ul.hs-menu-children-wrapper, header.header .headerInnersec .headerRTCol .headerNav >span > div > ul > li.hs-menu-depth-1:nth-child(3) ul.hs-menu-children-wrapper {  left: 50%;     width: fit-content;}
+header.header .headerInnersec .headerRTCol .headerNav >span > div > ul > li.hs-menu-depth-1,header.header .headerInnersec .headerRTCol .headerNav >span > div > ul > li.hs-menu-depth-1:nth-child(2), header.header .headerInnersec .headerRTCol .headerNav >span > div > ul > li.hs-menu-depth-1:nth-child(3) {  position: relative;}
+header.header .headerInnersec .headerRTCol .headerNav >span > div > ul > li.hs-menu-depth-1 ul.hs-menu-children-wrapper,header.header .headerInnersec .headerRTCol .headerNav >span > div > ul > li.hs-menu-depth-1:nth-child(2) ul.hs-menu-children-wrapper, header.header .headerInnersec .headerRTCol .headerNav >span > div > ul > li.hs-menu-depth-1:nth-child(3) ul.hs-menu-children-wrapper {  left: 50%;     width: fit-content;}
 .headermegamenus2Section .headermegamenus2InSec .headermegamenus2InSectp .headermegamenus2BoxMain.card_menu {  display: none;}
 .headermegamenus2InSecbt {   display: none;}
 /* temp css */
@@ -896,6 +896,8 @@ ul.hs-menu-children-wrapper.menuhasesignlechild .headermegamenusection .headerme
 header.header .headerInnersec .headerRTCol .headerNav >span > div > ul > li.hs-menu-depth-1:nth-child(2) ul.hs-menu-children-wrapper, header.header .headerInnersec .headerRTCol .headerNav >span > div > ul > li.hs-menu-depth-1:nth-child(3) ul.hs-menu-children-wrapper {
     width: max-content;
 }
+header.header .headerInnersec {   gap: 20px;}
+header.header .headerInnersec .headerRTCol .headerNav >span > div > ul {  gap: 40px;}
 
 /* temp css start */
 .headermegamenus2Section .headermegamenus2InSec .headermegamenus2InSectp .headermegamenus2BoxMain.content_menu {  max-width: 100%;    width: 416px;}
@@ -905,9 +907,9 @@ header.header .headerInnersec .headerRTCol .headerNav >span > div > ul > li.hs-m
 }
 
 @media (max-width : 1080px){
-header.header .headerInnersec {  gap: 50px;}
-header.header .headerInnersec .headerRTCol {  max-width: calc(100% - 165px);}
-header.header .headerInnersec .headerRTCol .headerNav >span > div > ul { gap: 30px; }
+
+header.header .headerInnersec .headerRTCol {  max-width: calc(100% - 145px);}
+header.header .headerInnersec .headerRTCol .headerNav >span > div > ul { gap: 25px; }
 
 {#.headermegamenus2Section .headermegamenus2InSec .headermegamenus2InSectp .headermegamenus2BoxMain.content_menu {  max-width: calc(50% - 20px);    order: 1;}#}
 .headermegamenus2Section .headermegamenus2InSec .headermegamenus2InSectp .headermegamenus2BoxMain.simple_menu {    max-width: 100%;    order: 3;    padding: 0;}
@@ -1265,7 +1267,7 @@ color: {{ primary_color }};
 .TrustedbyteamLogoBox {  padding: 0 10px;    text-align: center;    text-align: -webkit-center;}
 .TrustedbyteamLogoBox {  width: 220px !important;}
 
-.PlatformThreeColumnInSec .PlatformThreeColumnTitlesec .PlatformThreeColumncnt {  opacity: 60%;}
+
 .PlatformThreeColumnBoxSec .PlatformThreeColumnBox {    max-width: calc(33.33% - 13.33px);    width: 100%;    background: #fff;    border: 1px solid #F1F3FB;    padding: 49px;    border-radius: 20px;}
 .PlatformThreeColumnBoxSec .PlatformThreeColumnBox .PlatformThreeColumnBoxLogo {    background: #E6F2FE;    width: 54px;    height: 54px;    display: flex;    align-items: center;  justify-content: center;    border-radius: 10px;   box-shadow: 0px 0px 20px 0px #FFFFFF, 0px 0px 10px 0px #FFFFFF80;}
 .PlatformThreeColumnBoxSec .PlatformThreeColumnBox .PlatformThreeColumnBoxLogo img {   width: 30px;    height: 30px;}
@@ -1299,7 +1301,7 @@ color: {{ primary_color }};
 
 
 .CounterInSec .Countertitlesection {  max-width: 500px;    width: 100%;    margin: 0 auto;}
-.CounterInSec .Countertitlesection .CounterContent {  opacity: 75%;}
+
 .CounterBoxSection {  max-width: 1200px;    width: 100%;    margin: 0 auto;    justify-content: center;    gap: 20px;    align-items: stretch;}
 .CounterBoxSection .CounterBox {    max-width: calc(20% - 16px);    width: 100%;    text-align: center;    padding: 30px 50px 40px 30px;    position: relative;}
 .CounterBoxSection .CounterBox:not(:last-child):before {    position: absolute;    content: "";    width: 1px;    height: 100%;    background: #FFFFFF;    right: -10px;    top: 50%;    transform: translateY(-50%);    opacity: 25%;}
@@ -1377,7 +1379,7 @@ color: {{ primary_color }};
 .FAQBoxSection .FAQBox .FAQBoxTitleBox .FAQBoxTitle {  width: calc(100% - 34px);}
 .FAQBoxSection .FAQBox .FAQBoxTitleBox .FAQBoxTitleIcon {    position: relative;    width: 24px;    height: 24px;    display: flex;    flex-direction: column;    justify-content: center;    align-items: center;    cursor: pointer;}
 .FAQBoxSection .FAQBox .FAQBoxTitleBox .FAQBoxTitleIcon i {    width: 10px;    height: 2px;    background: #6347FF;    display: block;    position: relative;    top: 2px;    transition: all ease-in-out 0.3s;}
-.FAQBoxSection .FAQBox .FAQBoxTitleBox .FAQBoxTitleIcon i:last-child {    transform: rotate(90deg);    top: 0;}
+.FAQBoxSection .FAQBox .FAQBoxTitleBox .FAQBoxTitleIcon i:last-child {    transform: rotate(90deg);    top: 0px;}
 .FAQBoxSection .FAQBox .FAQBoxContent {    padding-top: 10px;     max-width: 716px; width: 100%; }
 .FAQBoxSection .FAQBox.active .FAQBoxTitleBox .FAQBoxTitleIcon i:last-child {transform: rotate(0);}
 .FAQBoxSection .FAQBox+* {  margin-top: 10px;}
@@ -1404,12 +1406,7 @@ color: {{ primary_color }};
 
 
 .softwaresolutionBoxSec .softwaresolutionBox {    max-width: calc(33.33% - 13.33px);    width: 100%;    padding: 50px;  border-radius: 20px;}
-.softwaresolutionBoxSec .softwaresolutionBox .softwaresolutionBoxListgrp ul {  margin: 0;    padding: 0;    list-style: none;     -webkit-mask-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 40%, #FFFFFF 60%, rgba(255, 255, 255, 0) 100%); mask-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 40%, #FFFFFF 60%, rgba(255, 255, 255, 0) 100%);}
-.softwaresolutionBoxSec .softwaresolutionBox .softwaresolutionBoxListgrp ul li { display: none; }
-.softwaresolutionBox.active .softwaresolutionBoxListgrp ul {
-    -webkit-mask-image: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, #FFFFFF 40%, #FFFFFF 60%, rgba(255, 255, 255, 1) 100%);
-    mask-image: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, #FFFFFF 40%, rgb(255 255 255) 60%, rgba(255, 255, 255, 1) 100%);
-}
+.softwaresolutionBoxSec .softwaresolutionBox .softwaresolutionBoxListgrp ul {  margin: 0;    padding: 0;    list-style: none;    }
 .softwaresolutionBoxSec .softwaresolutionBox .softwaresolutionBoxListgrp ul li .softwaresolutionBoxListitems {  gap: 10px;}
 .softwaresolutionBoxSec .softwaresolutionBox .softwaresolutionBoxListgrp ul li span.listarrow {    width: 28px;    height: 28px;    border-radius: 50%;    display: flex;  align-items: center;    justify-content: center;}
 .softwaresolutionBoxSec .softwaresolutionBox .softwaresolutionBoxListgrp ul li h5.listcontent {    width: calc(100% - 38px);}
@@ -1613,7 +1610,8 @@ color: {{ primary_color }};
 
 
 .ResourcesCntListingBoxsec .ResourcesCntListingBox {  max-width: calc(33.33% - 13.33px);    width: 100%;}
-.ResourcesCntListingBoxsec .ResourcesCntListingBox .ResourcesCntListingBoxImg {   background-repeat: no-repeat;    background-size: cover;    background-position: center center;    padding-bottom: 65.01%;    border-radius: 20px;}
+.ResourcesCntListingBoxsec .ResourcesCntListingBox .ResourcesCntListingBoxImg {   background-repeat: no-repeat;    background-size: cover;    background-position: center center;    padding-bottom: 65.01%;    border-radius: 20px; position: relative;}
+.ResourcesCntListingBoxsec .ResourcesCntListingBox .ResourcesCntListingBoxImg a {   display: block;    width: 100%;    height: 100%;    position: absolute;    top: 0;    left: 0;    z-index: 1;}
 .ResourcesCntListingBoxsec .ResourcesCntListingBox .ResourcesCntListingCntBox {    padding-top: 32px;}
 .ResourcesCntListingBoxsec {  row-gap: 60px;}
 .ResourcesCntListingBoxsec .ResourcesCntListingBox .ResourcesCntListingCntBox .ResourcesCntListingBoxCTA a {   display: flex;    align-items: center;    gap: 5px;    color: #6347FF;    font-weight: 500;    position: relative;   width: max-content;}
@@ -2046,7 +2044,7 @@ div#hs_cos_wrapper_blog_post_audio .hs-audio-player span.hs-audio-player__playba
 .threecolumnimgcntBoxSection .threecolumnimgcntBox .threecolumnimgcntImg img {   width: calc(100% - 100px);    height: calc(100% - 100px);  object-fit: contain;    border-radius: 20px;}
 .threecolumnimgcntBoxSection .threecolumnimgcntBox .threecolumnimgcntBoxContent {    padding: 20px 20px 40px;}
 
-.ComparisonTableBox table {  max-width: 800px;    width: 100%;    margin: 0 auto;    border: unset;    border-collapse: collapse;}
+.ComparisonTableBox table {  max-width:900px;    width: 100%;    margin: 0 auto;    border: unset;    border-collapse: collapse;}
 .ComparisonTableBox table thead tr {  border: unset;}
 .ComparisonTableBox table thead tr th:first-child {  width: 50%;    max-width: 100%;    text-align: left;    border: unset;    padding: 20px 10px 20px 40px;}
 .ComparisonTableBox table thead tr th:nth-child(2) {    width: 25%;    max-width: 100%;    text-align: center;    border: unset;    padding: 20px 10px;}
@@ -2147,7 +2145,9 @@ div#hs_cos_wrapper_blog_post_audio .hs-audio-player span.hs-audio-player__playba
 .industrylistInSec .industrylistTitleSection .industrylistTag p {  text-transform: uppercase;    font-weight: 500;    letter-spacing: 0.8px;}
 
 
-
+.LContentRFormBannerRTCol .LContentRFormBannerForm form fieldset .hs-form-field .hs-fieldtype-intl-phone {  display: flex;    align-items: center;    flex-wrap: wrap;}
+.LContentRFormBannerRTCol .LContentRFormBannerForm form fieldset .hs-form-field .hs-fieldtype-intl-phone select {    width: 56px !important; padding: 10px;  outline: unset;  appearance: none;    font-size: 12px;}
+.LContentRFormBannerRTCol .LContentRFormBannerForm form fieldset .hs-form-field .hs-fieldtype-intl-phone input {  width: calc(100% - (56px + 8px)) !important;  margin-left: 8px;}
 
 
 

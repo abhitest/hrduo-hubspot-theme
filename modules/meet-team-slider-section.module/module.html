@@ -5,7 +5,7 @@
       {# Custum Width Option #}
       <div class="customWidthOption MeetteamSliderInSec">
         {% if  module.content_group.title  %}
-        <div class="moduleTitle MeetteamSliderTitle text-center white_color">
+        <div class="moduleTitle MeetteamSliderTitle text-center white_color" data-aos="fade-in">
           {{ module.content_group.title }}
         </div>
           {% endif %}
@@ -20,7 +20,7 @@
 
     </div>
     
-          <div class="MeetteamSliderBoxSec pt56">
+          <div class="MeetteamSliderBoxSec pt56" data-aos="fade-in" data-aos-delay="100">
             {% for team_member in module.content_group.team_group %}
               <div class="MeetteamSliderBox"> 
                 <div class="MeetteamSliderBoxIn"> 

@@ -6,12 +6,12 @@
       <div class="customWidthOption workforceThreeColinSec">
         <div class="workforceThreeColtitlesec text-center">       
         {% if  module.content_group.title  %}
-        <div class="moduleTitle workforceThreeColTitle">
+        <div class="moduleTitle workforceThreeColTitle" data-aos="fade-up" >
           {{ module.content_group.title }}
         </div>
           {% endif %}
           {% if module.content_group.content %}
-          <div class="moduleContent pt20 workforceThreeColContent">
+          <div class="moduleContent pt20 workforceThreeColContent" data-aos="fade-up" data-aos-delay="50">
             {{ module.content_group.content }}
           </div>
           {% endif %}
@@ -19,7 +19,7 @@
 
         <div class="workforceThreeColBoxSec pt50 d_flex align_start gap20">
           {% for item in module.content_group.section_group  %}
-          <div class="workforceThreeColBox workforceThreeColBox-{{ loop.index }}">
+          <div class="workforceThreeColBox workforceThreeColBox-{{ loop.index }}"   data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
               <div class="workforceThreeColBoxTitlesec">
                 <div class="workforceThreeColBoxTitlesecIn">
 

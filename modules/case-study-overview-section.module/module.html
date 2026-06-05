@@ -12,7 +12,7 @@
           <div class="CaseStudyOverBoxSec d_flex align_center gap50">
             <div class="CaseStudyOverLTCol">
               
-              <div class="CaseStudyOverviewBox">
+              <div class="CaseStudyOverviewBox" data-aos="fade-up">
                 {% if overview.title %}
                 <div class="CaseStudyOverviewBoxTitle">
                   <h3>{{ overview.title }}</h3>
@@ -28,10 +28,10 @@
               </div>
 
               <div class="CaseStudyOverExploreBox">
-                  <div class="CaseStudyOverExploreBoxTitle">
+                  <div class="CaseStudyOverExploreBoxTitle" data-aos="fade-up" data-aos-delay="100">
                     <h3>{{ casestudy.title }}</h3>
                   </div>
-                  <div class="CaseStudyOverExploreBoxList pt20 secondary_60_color">
+                  <div class="CaseStudyOverExploreBoxList pt20 secondary_60_color" data-aos="fade-up" data-aos-delay="200">
                     <ul>
                       {% for item in casestudy.list_group %}
                       <li>{{ item.text }}</li>
@@ -43,11 +43,11 @@
             </div>
             <div class="CaseStudyOverRTCol">
               {% if rtgroup.title %}
-              <div class="CaseStudyOverRTColTitle">
+              <div class="CaseStudyOverRTColTitle" data-aos="fade-up">
                 <h3>{{ rtgroup.title }}</h3>
               </div>
               {% endif %}
-              <div class="CaseStudyOverRTColContent pt20 secondary_60_color">
+              <div class="CaseStudyOverRTColContent pt20 secondary_60_color" data-aos="fade-up" data-aos-delay="100">
                   {{ rtgroup.content }}
               </div>
             </div>

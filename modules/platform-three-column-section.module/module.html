@@ -8,12 +8,12 @@
 
         
           {% if  module.content_group.title  %}
-          <div class="moduleTitle PlatformThreeColumnTitle">
+          <div class="moduleTitle PlatformThreeColumnTitle" data-aos="fade-up">
             {{ module.content_group.title }}
           </div>
             {% endif %}
             {% if module.content_group.content %}
-            <div class="moduleContent pt20 PlatformThreeColumncnt secondary_color">
+            <div class="moduleContent pt20 PlatformThreeColumncnt secondary_60_color" data-aos="fade-up" data-aos-delay="100">
               {{ module.content_group.content }}
             </div>
             {% endif %}
@@ -23,7 +23,7 @@
         <div class="PlatformThreeColumnBoxSec pt75 d_flex gap20 align_start">
           {% for item in module.content_group.column_group %}
           {% set mainloop = loop.index %}
-          <div class="PlatformThreeColumnBox PlatformThreeColumnBox-{{ loop.index }}">
+          <div class="PlatformThreeColumnBox PlatformThreeColumnBox-{{ loop.index }}" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
             {% if item.box_image.src %}
             <div class="PlatformThreeColumnBoxLogo" style="background-color: {{ item.image_background_color.css }};">
               <img src="{{ item.box_image.src }}" alt="{{ item.box_image.alt }}">

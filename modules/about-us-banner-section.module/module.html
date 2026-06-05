@@ -6,17 +6,17 @@
       <div class="customWidthOption AboutusBannerInSec">
         <div class="AboutusBannerTitleSec text-center pb56">
           {%  if module.content_group.tag %}
-          <div class="AboutusBannerTag TagStyle p3">
+          <div class="AboutusBannerTag TagStyle p3" data-aos="fade-up">
             <p>{{ module.content_group.tag }}</p>
           </div>
           {% endif %}
           {% if  module.content_group.title  %}
-        <div class="moduleTitle AboutusBannerTitle white_color {%  if module.content_group.tag %} pt20 {% endif %} ">
+        <div class="moduleTitle AboutusBannerTitle white_color {%  if module.content_group.tag %} pt20 {% endif %} " data-aos="fade-up" data-aos-delay="50">
           {{ module.content_group.title }}
         </div>
           {% endif %}
           {% if module.content_group.content %}
-          <div class="moduleContent pt20 AboutusBannerContent white_color">
+          <div class="moduleContent pt20 AboutusBannerContent white_color" data-aos="fade-up" data-aos-delay="100">
             {{ module.content_group.content }}
           </div>
           {% endif %}
@@ -24,11 +24,11 @@
         </div>
         
         <div class="AUBannerTimelineSection">
-          <span class="AUBannerTimelineShape"> </span>
+          <span class="AUBannerTimelineShape" data-aos="fade-in" data-aos-delay="650"> </span>
           <div class="AUBannerTimelineTpCol AUBannerTimelineInBox d_flex align_start pb40">
              {% for item in module.content_group.timeline_group %}
              {% if loop.index <= 3 %}
-          <div class="AUBannerTimelineBox white_color">
+          <div class="AUBannerTimelineBox white_color" data-aos="fade-in" data-aos-delay="{{ loop.index * 100 }}">
               <span class="AUBannerTimelineBoxshape"></span>
             <p>{{ item.text }}</p>  
           </div>  
@@ -39,7 +39,7 @@
           <div class="AUBannerTimelineBtCol AUBannerTimelineInBox d_flex align_start pt40">
              {% for item in module.content_group.timeline_group %}
              {% if loop.index > 3 %}
-          <div class="AUBannerTimelineBox white_color">
+          <div class="AUBannerTimelineBox white_color" data-aos="fade-in" data-aos-delay="{{ loop.index * 100 }}">
             <span class="AUBannerTimelineBoxshape"></span>
             <p>{{ item.text }}</p>  
           </div>  

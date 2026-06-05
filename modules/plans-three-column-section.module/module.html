@@ -8,7 +8,7 @@
       <div class="PlanThreeColBoxSection d_flex align_start gap20">
         {% for item in module.content_group.plan_group %}
         {% set mainloop = loop.index %}
-        <div class="PlanThreeColBox PlanThreeColBox-{{ mainloop }}">
+        <div class="PlanThreeColBox PlanThreeColBox-{{ mainloop }}" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
           <div class="PlanThreeColBoxTitleSec">
             <div class="PlanThreeColBoxTitleSecIn">
             {% if item.icon_settings.icon.src %}
@@ -105,7 +105,7 @@
       </div>
 
       {% if  module.content_group.content %}
-      <div class="PlanThreeColbtcnt secondary_60_color pt50">
+      <div class="PlanThreeColbtcnt secondary_60_color pt50" data-aos="fade-up" data-aos-delay="100">
         {{ module.content_group.content }}
       </div>
       {% endif %}

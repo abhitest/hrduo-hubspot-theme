@@ -6,12 +6,12 @@
       <div class="customWidthOption LCntRListInSec d_flex align_center gap50">
         <div class="LCntRListLeftCol">
             {% if  module.content_group.title  %}
-        <div class="moduleTitle LCntRListLeftTitle">
+        <div class="moduleTitle LCntRListLeftTitle" data-aos="fade-up">
           {{ module.content_group.title }}
         </div>
           {% endif %}
           {% if module.content_group.content %}
-          <div class="moduleContent pt20 LCntRListLeftCnt secondary_60_color">
+          <div class="moduleContent pt20 LCntRListLeftCnt secondary_60_color" data-aos="fade-up" data-aos-delay="100">
             {{ module.content_group.content }}
           </div>
           {% endif %}
@@ -19,14 +19,14 @@
         
         <div class="LCntRListRightCol">
           {% if module.content_group.list_title %}
-          <div class="LCntRListRightTitle">
+          <div class="LCntRListRightTitle" data-aos="fade-up" >
             <h3>{{ module.content_group.list_title }}</h3>
           </div>
           {% endif %}
           <div class="LCntRListRightList secondary_60_color pt20"> 
             <ul>
               {% for item in module.content_group.list_content %}
-              <li>
+              <li data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
                 {{ item.text }}
               </li>
               {% endfor %}

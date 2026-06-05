@@ -5,7 +5,7 @@
       {# Custum Width Option #}
       <div class="customWidthOption TwoColumnBannerInSec d_flex align_center gap50">
           <div class="TwoColumnBannerLTCol">    
-              <div class="TwoColumnBannerbreadcrumb">
+              <div class="TwoColumnBannerbreadcrumb" data-aos="fade-up"> 
                 <ul>
                   {% for item in module.content_group.breadcrumb %}
                     <li>
@@ -29,19 +29,19 @@
                 </ul>
               </div>
         {% if  module.content_group.title  %}
-        <div class="moduleTitle TwoColumnBannerTitle white_color pt20">
+        <div class="moduleTitle TwoColumnBannerTitle white_color pt20" data-aos="fade-up" data-aos-delay="100">
           {{ module.content_group.title }}
         </div>
           {% endif %}
           {% if module.content_group.content %}
-          <div class="moduleContent pt20 TwoColumnBannerContent white_color">
+          <div class="moduleContent pt20 TwoColumnBannerContent white_color" data-aos="fade-up" data-aos-delay="150">
             {{ module.content_group.content }}
           </div>
           {% endif %}
           {# Button and Cta Option #}
 
           {% if module.content_group.want_cta %}
-          <div class="moduleCTA d_flex align_center TwoColumnBannerCTA gap20 pt32">
+          <div class="moduleCTA d_flex align_center TwoColumnBannerCTA gap20 pt32" data-aos="fade-up" data-aos-delay="200">
             {% for item in module.content_group.cta_group %}
             {% set CTA = item %}
             <div class="cta-section">
@@ -91,7 +91,7 @@
           {# End Button and Cta Option #}
           </div>
           {% if module.content_group.image.src %}
-          <div class="TwoColumnBannerRTCol">
+          <div class="TwoColumnBannerRTCol" data-aos="fade-in"  data-aos-delay="200">
             <img src="{{ module.content_group.image.src }}" alt="{{ module.content_group.image.alt }}">
           </div>
           {% endif %}

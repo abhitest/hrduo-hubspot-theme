@@ -10,7 +10,7 @@
       <div class="customWidthOption ResourcesLisFilInSec">
        
           <div class="ResourcesLisFilterBoxSec d_flex align_center">
-              <div class="ResourcesLisFilterBox searchFilterBox">
+              <div class="ResourcesLisFilterBox searchFilterBox" data-aos="fade-up">
                 <div class="ResourcesLisFilterBoxTitle white_color medium pb8"> 
                   <h5>{{ module.content_group.search_heading }}</h5>
                 </div>
@@ -19,7 +19,7 @@
                 </div>
               </div>  
 
-              <div class="ResourcesLisFilterBox countryFilterBox">
+              <div class="ResourcesLisFilterBox countryFilterBox" data-aos="fade-up" data-aos-delay="100">
                 <div class="ResourcesLisFilterBoxTitle white_color medium pb8"> 
                   <h5>{{ module.content_group.country_heading }}</h5>
                 </div>
@@ -39,7 +39,7 @@
                 </div>
               </div>  
 
-              <div class="ResourcesLisFilterBox industryFilterBox">
+              <div class="ResourcesLisFilterBox industryFilterBox" data-aos="fade-up" data-aos-delay="150">
                 <div class="ResourcesLisFilterBoxTitle white_color medium pb8"> 
                   <h5>{{ module.content_group.industry_heading }}</h5>
                 </div>
@@ -58,24 +58,30 @@
               </div>  
           </div>
 
-          <div class="ResourcesLisFilterCatebox ">
-             <div class="ResourcesLisFilterCateboxTitle white_color medium"> 
+          <div class="ResourcesLisFilterCatebox " >
+             <div class="ResourcesLisFilterCateboxTitle white_color medium" data-aos="fade-up"  > 
                   <h5>{{ module.content_group.categories_heading }}</h5>
                 </div>
 
                 <div class="ResourcesLisFilterCateboxFil pt26 d_flex align_center gap40">
                         {% set unique_categories = [] %}
+                         
+
             {% for item in table %}
+             
             {% set categories = item.topic.name|split(',') %}
             {% for category in categories %}
             {% if category not in unique_categories %}
-            <label class="p2 medium white_color">
+            <label class="p2 medium white_color {{ delay }}" data-aos="fade-up">
               <input type="checkbox" class="resources-library category-checkbox_{{name}}" value="{{ category|escape_attr }}">
               <span>{{ category|escape }}</span>
             </label>
             {% do unique_categories.append(category) %}
+             
             {% endif %}
+            
             {% endfor %}
+             
             {% endfor %}
                 </div>
           </div>
@@ -94,10 +100,10 @@
         <div class="ResourcesCntListingInSec" id="resources_cntpost_{{name}}">
           <div class="ResourcesCntListingBoxsec d_flex align_start gap20">
             {% for item in table %}
-            <div class="ResourcesCntListingBox ResourcesCntListingBox-{{ name }}"  data-category="{{ item.topic.name|escape_attr }}" data-country="{{ item.jurisdiction.name }}" data-industry="{{ item.industries.name|escape_attr }}">
+            <div class="ResourcesCntListingBox ResourcesCntListingBox-{{ name }}"  data-category="{{ item.topic.name|escape_attr }}" data-country="{{ item.jurisdiction.name }}" data-industry="{{ item.industries.name|escape_attr }}" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
               {% if  item.featured_image.url  %}
               <div class="ResourcesCntListingBoxImg" style="background-image: url({{ item.featured_image.url }});">
-                
+                <a href="{{ item.cta_link }}"></a>
               </div>
               {% endif %}
               <div class="ResourcesCntListingCntBox">
@@ -107,7 +113,7 @@
                 {% if item.name %}
                 <div class="ResourcesCntListingBoxTitle pt12 black_color">
                     <div class="ResourcesCntListingBoxTitleIn">
-                      <h4>{{ item.name }}</h4>
+                      <h4><a href="{{ item.cta_link }}">{{ item.name }}</a></h4>
                     </div>
                 </div>
                 {% endif %}

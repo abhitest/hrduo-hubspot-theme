@@ -6,12 +6,12 @@
       <div class="customWidthOption softwaresolutionInSec">
         <div class="softwaresolutionTitleSec">
               {% if  module.content_group.title  %}
-        <div class="moduleTitle softwaresolutionTitle">
+        <div class="moduleTitle softwaresolutionTitle"  data-aos="fade-up">
           {{ module.content_group.title }}
         </div>
           {% endif %}
           {% if module.content_group.content %}
-          <div class="moduleContent pt20 softwaresolutionContent secondary_60_color">
+          <div class="moduleContent pt20 softwaresolutionContent secondary_60_color" data-aos="fade-up" data-aos-delay="100">
             {{ module.content_group.content }}
           </div>
           {% endif %}
@@ -19,15 +19,12 @@
     
         <div class="softwaresolutionBoxSec pt50 d_flex align_start gap20">
           {% for item in module.content_group.section_group %}
-          <div class="softwaresolutionBox softwaresolutionBox-{{ loop.index }}">
-            <div class="softwaresolutionBoxtitlesec d_flex align_center gap10 space_between">
+          <div class="softwaresolutionBox softwaresolutionBox-{{ loop.index }}" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+            <div class="softwaresolutionBoxtitlesec">
               <div class="softwaresolutionBoxTitle">
                 <h4>{{ item.title }}</h4>
               </div>
-              <div class="softwaresolutionBoxArrow">
-                <i></i>
-                <i></i>
-              </div>
+              
             </div>
             <div class="softwaresolutionBoxListgrp p20-0">
               <ul>

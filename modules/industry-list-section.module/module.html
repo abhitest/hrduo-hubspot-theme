@@ -6,12 +6,12 @@
       <div class="customWidthOption industrylistInSec">
         <div class="industrylistTitleSection text-center">
           {% if module.content_group.tag %}
-          <div class="industrylistTag  p3 text-center purple_color">
+          <div class="industrylistTag  p3 text-center purple_color" data-aos="fade-up">
             <p>{{ module.content_group.tag }}</p>
           </div>
           {% endif %}
             {% if  module.content_group.title  %}
-        <div class="moduleTitle industrylistTitle pt20">
+        <div class="moduleTitle industrylistTitle pt20" data-aos="fade-up" data-aos-delay="50">
           {{ module.content_group.title }}
         </div>
           {% endif %}
@@ -21,7 +21,7 @@
         <div class="industrylistBoxSection pt36">
           <ul>
             {% for item in module.content_group.list_group %}
-            <li class="p3">
+            <li class="p3" data-aos="fade-up" data-aos-delay="{{ loop.index * 50 }}">
               <div class="industrylistDot" style="background-color: {{ item.dot_color.color }};"></div>
               <p>{{ item.text }}</p>
             </li>

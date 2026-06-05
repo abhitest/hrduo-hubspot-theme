@@ -7,18 +7,18 @@
           <div class="CaseStudyBannerTwoColsec d_flex align_center gap50 {% if module.content_group.image.src %} pb56 {% endif %}">
             <div class="CaseStudyBannerLTCol">
               {% if module.content_group.tag %}
-              <div class="CaseStudyBannerTag TagStyle p3 medium">
+              <div class="CaseStudyBannerTag TagStyle p3 medium" data-aos="fade-up">
                 <p>{{ module.content_group.tag }}</p>
               </div>
               {% endif %}
               {% if module.content_group.title %}
-              <div class="CaseStudyBannerTitle  {% if module.content_group.tag %}pt20{% endif %} white_color">
+              <div class="CaseStudyBannerTitle  {% if module.content_group.tag %}pt20{% endif %} white_color" data-aos="fade-up" data-aos-delay="50">
                 {{ module.content_group.title }}
               </div>
               {% endif %}
                <div class="CaseStudyBannerCounterBoxSec pt40 d_flex align_start">
                 {% for item in module.content_group.counter_group %}
-              <div class="CaseStudyBannerCounterBox white_color">
+              <div class="CaseStudyBannerCounterBox white_color" data-aos="fade-in" data-aos-delay="{{ loop.index * 100 }}">
                 <div class="CaseStudyBannerCounterBoxNumber">
                   <h3>
                     <span class="CaseStudycounter" data-max="{{ item.number }}"></span>
@@ -37,13 +37,13 @@
             </div>
             </div>
             {% if  module.content_group.content  %}
-            <div class="CaseStudyBannerRTCol white_color">
+            <div class="CaseStudyBannerRTCol white_color" data-aos="fade-up" data-aos-delay="150">
                  {{ module.content_group.content }}
             </div>
             {% endif %}
           </div>
           {% if module.content_group.image.src %}
-          <div class="CaseStudyBannerImage">
+          <div class="CaseStudyBannerImage" data-aos="fade-up" data-aos-delay="200">
               <img src="{{ module.content_group.image.src }}" alt="{{ module.content_group.image.alt }}">
           </div>
           {% endif %}

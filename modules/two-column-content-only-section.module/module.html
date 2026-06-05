@@ -5,12 +5,12 @@
       {# Custum Width Option #}
       <div class="customWidthOption TwoColCntinSection d_flex align_start">
         {% if  module.content_group.title  %}
-        <div class="moduleTitle TwoColCntTitle">
+        <div class="moduleTitle TwoColCntTitle" data-aos="fade-up">
           {{ module.content_group.title }}
         </div>
           {% endif %}
           {% if module.content_group.content %}
-          <div class="moduleContent TwoColCntContent secondary_60_color">
+          <div class="moduleContent TwoColCntContent secondary_60_color" data-aos="fade-up" data-aos-delay="100">
             {{ module.content_group.content }}
           </div>
           {% endif %}

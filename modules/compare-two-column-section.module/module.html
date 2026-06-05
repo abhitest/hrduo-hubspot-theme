@@ -7,7 +7,7 @@
         
         <div class="compareTwoColBoxSec d_flex align_start gap20">
           {% for item in module.content_group.compare_group %}
-          <div class="compareTwoColBox {% if item.select_group == 'with_hr_duo' %}with-hr-duo{% else %}without-hr-duo{% endif %}">
+          <div class="compareTwoColBox {% if item.select_group == 'with_hr_duo' %}with-hr-duo{% else %}without-hr-duo{% endif %}" {% if loop.first %} data-aos="fade-right" {% else %} data-aos="fade-left" {% endif %} data-aos-delay="100" >
             <div class="compareTwoColBoxTitle">
               <h4>{{ item.box_title }}</h4>
             </div>

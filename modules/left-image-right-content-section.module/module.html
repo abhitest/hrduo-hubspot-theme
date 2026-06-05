@@ -5,7 +5,7 @@
       {# Custum Width Option #}
       <div class="customWidthOption LImageRContentInSec d_flex align_center flex_center">
          {% if module.content_group.image.src %}
-        <div class="LImageRContentLeftCol">
+        <div class="LImageRContentLeftCol" data-aos="fade-right">
          
           <img src="{{ module.content_group.image.src }}" alt="{{ module.content_group.image.alt_text }}" class="LImageRContentImg"/>
          
@@ -15,19 +15,19 @@
 
         
         {% if  module.content_group.title  %}
-        <div class="moduleTitle LImageRContentTitle">
+        <div class="moduleTitle LImageRContentTitle" data-aos="fade-up" data-aos-delay="100">
           {{ module.content_group.title }}
         </div>
           {% endif %}
           {% if module.content_group.content %}
-          <div class="moduleContent pt10 LImageRContentCnt secondary_60_color">
+          <div class="moduleContent pt10 LImageRContentCnt secondary_60_color" data-aos="fade-up" data-aos-delay="150">
             {{ module.content_group.content }}
           </div>
           {% endif %}
           {# Button and Cta Option #}
 
           {% if module.content_group.want_cta %}
-          <div class="moduleCTA d_flex align_center gap20 pt20 LImageRContentCTA">
+          <div class="moduleCTA d_flex align_center gap20 pt20 LImageRContentCTA" data-aos="fade-up" data-aos-delay="200">
             {% for item in module.content_group.cta_group %}
             {% set CTA = item %}
             <div class="cta-section">

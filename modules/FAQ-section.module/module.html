@@ -5,14 +5,14 @@
       {# Custum Width Option #}
       <div class="customWidthOption FAQInSec">
         {% if  module.content_group.title  %}
-        <div class="moduleTitle FAQTitle text-center">
+        <div class="moduleTitle FAQTitle text-center" data-aos="fade-up">
           {{ module.content_group.title }}
         </div>
           {% endif %}
 
-          <div class="FAQBoxSection pt50">
+          <div class="FAQBoxSection pt50" >
             {% for item in module.content_group.faq_group %}
-            <div class="FAQBox {% if loop.first %} active {% endif %}">
+            <div class="FAQBox {% if loop.first %} active {% endif %}" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
               <div class="FAQBoxTitleBox">
                 <div class="FAQBoxTitle">
                 <h5>{{ item.box_title }}</h5>     

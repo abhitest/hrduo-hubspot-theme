@@ -6,17 +6,17 @@
       <div class="customWidthOption soundfamiliartcInSec">
         <div class="soundfamiliartctitlesec text-center">
           {% if module.content_group.tag %}
-          <div class="soundfamiliartctitleTag  purple_color p3 medium">
+          <div class="soundfamiliartctitleTag  purple_color p3 medium" data-aos="fade-up">
             <p>{{ module.content_group.tag }}</p>
           </div>
           {% endif %}
            {% if  module.content_group.title  %}
-        <div class="moduleTitle soundfamiliartcTitle pt30">
+        <div class="moduleTitle soundfamiliartcTitle pt30" data-aos="fade-up" data-aos-delay="50">
           {{ module.content_group.title }}
         </div>
           {% endif %}
           {% if module.content_group.content %}
-          <div class="moduleContent pt20 soundfamiliartcContent secondary_60_color">
+          <div class="moduleContent pt20 soundfamiliartcContent secondary_60_color" data-aos="fade-up" data-aos-delay="100">
             {{ module.content_group.content }}
           </div>
           {% endif %}
@@ -24,7 +24,7 @@
 
         <div class="soundfamiliartcBoxSection pt40">
           {% for item in module.content_group.section_group %}
-          <div class="soundfamiliartcBox"> 
+          <div class="soundfamiliartcBox" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
             <div class="soundfamiliartcBoxLogo">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"></line><line x1="18" y1="6" x2="6" y2="18"></line></svg>
             </div>

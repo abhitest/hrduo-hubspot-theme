@@ -6,12 +6,12 @@
       <div class="customWidthOption FeaturetabInSection">
         <div class="Featuretabtitlesec text-center">
           {% if  module.content_group.title  %}
-        <div class="moduleTitle FeaturetabTitle">
+        <div class="moduleTitle FeaturetabTitle"  data-aos="fade-up">
           {{ module.content_group.title }}
         </div>
           {% endif %}
           {% if module.content_group.content %}
-          <div class="moduleContent pt20 FeaturetabContent secondary_60_color">
+          <div class="moduleContent pt20 FeaturetabContent secondary_60_color" data-aos="fade-up" data-aos-delay="100">
             {{ module.content_group.content }}
           </div>
           {% endif %}
@@ -22,7 +22,7 @@
           <div class="FeaturetabBoxmain">
             {% for item in module.content_group.faq_group %}
             {% set tab = item %}
-            <div class="FeaturetabBox {% if loop.first %}active{% endif %}">
+            <div class="FeaturetabBox {% if loop.first %}active{% endif %}" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
               <div class="FeaturetabBoxTitleCol">
                 <div class="FeaturetabBoxTitle">
                   <h5 class="black_color" style="{% if loop.first %} display: none {% endif %}">{{ tab.box_title }}</h5>
@@ -69,7 +69,7 @@
             </div>
             {% endfor %}
           </div>
-          <div class="FeaturetabBoxImageBox">
+          <div class="FeaturetabBoxImageBox"  data-aos="fade-left" data-aos-delay="200">
             <div class="FeaturetabBoxImage">
               <img src="{{ module.content_group.image.src }}" alt="{{ module.content_group.image.alt }}">
             </div>

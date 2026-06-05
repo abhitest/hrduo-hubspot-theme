@@ -7,12 +7,12 @@
         {% if  module.content_group.title || module.content_group.content %}
         <div class="Countertitlesection text-center white_color">
  {% if  module.content_group.title  %}
-        <div class="moduleTitle CounterTitle semibold">
+        <div class="moduleTitle CounterTitle semibold" data-aos="fade-up">
           {{ module.content_group.title }}
         </div>
           {% endif %}
           {% if module.content_group.content %}
-          <div class="moduleContent pt20 CounterContent">
+          <div class="moduleContent pt20 CounterContent" data-aos="fade-up" data-aos-delay="50">
             {{ module.content_group.content }}
           </div>
           {% endif %}
@@ -21,7 +21,7 @@
 
         <div class="CounterBoxSection   {% if  module.content_group.title || module.content_group.content %} pt50 {% endif %} d_flex align_start white_color {{ module.content_group.column_choice }}" {% if  module.content_group.title || module.content_group.content %} {% else %} style="padding-top: 0px;" {% endif %}>
           {% for item in module.content_group.counter_group %}
-          <div class="CounterBox">
+          <div class="CounterBox" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
             <div class="CounterBoxNumber">
               {% if item.want_title_only %}
               <h3>{{ item.title }}</h3>
@@ -45,7 +45,7 @@
           {# Button and Cta Option #}
 
           {% if module.content_group.want_cta %}
-          <div class="moduleCTA d_flex align_center Countercta gap20 pt50 flex_center">
+          <div class="moduleCTA d_flex align_center Countercta gap20 pt50 flex_center" data-aos="fade-up" data-aos-delay="100">
             {% for item in module.content_group.cta_group %}
             {% set CTA = item %}
             <div class="cta-section">

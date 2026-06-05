@@ -7,18 +7,19 @@
 
         <div class="BadformBannerTitleSec text-center">
         {% if  module.content_group.title  %}
-        <div class="moduleTitle BadformBannerTitle white_color">
+        <div class="moduleTitle BadformBannerTitle white_color" data-aos="fade-up">
+             
           {{ module.content_group.title }}
         </div>
           {% endif %}
           {% if module.content_group.content %}
-          <div class="moduleContent pt20 BadformBannerContent white_color">
+          <div class="moduleContent pt20 BadformBannerContent white_color" data-aos="fade-up" data-aos-delay="50">
             {{ module.content_group.content }}
           </div>
           {% endif %}
 
           <div class="BadformBannerFormSec pt32">
-            <div class="BadformBannerForm">
+            <div class="BadformBannerForm" data-aos="fade-up" data-aos-delay="100">
                  {% form
 	form_to_use="{{ module.content_group.form.form_id }}"
 	response_response_type="{{ module.content_group.form.response_type }}"
@@ -29,7 +30,7 @@
 %}
             </div>
             {% if module.content_group.form_text %}
-            <div class="BadformBannerformtext pt20 p3 white_color text-center">
+            <div class="BadformBannerformtext pt20 p3 white_color text-center" data-aos="fade-up" data-aos-delay="150">
                 <p>{{ module.content_group.form_text }}</p>
             </div>
             {% endif %}

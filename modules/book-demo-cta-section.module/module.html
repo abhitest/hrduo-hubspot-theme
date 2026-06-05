@@ -4,7 +4,7 @@
 <path d="M-130 493.401C-130 604.287 -41.5131 692.774 70.6261 692.774C182.765 692.774 270 604.287 270 493.401C270 382.514 181.513 292.774 70.6261 292.774C-40.2609 292.774 -130 381.261 -130 493.401ZM70.6261 229.053C181.513 229.053 270 140.566 270 29.6788C270 -81.2081 181.513 -170.947 70.6261 -170.947C-40.2609 -170.947 -130 -82.4603 -130 29.6788C-130 141.818 -41.5131 229.053 70.6261 229.053Z" fill="#312480"/>
 </svg>
   </div>
-  <div class="BookDemoCTAImge">
+  <div class="BookDemoCTAImge" data-aos="fade-right">
           <img src="{{ module.content_group.image.src }}" alt="{{ module.content_group.image.alt }}">
         </div>
   <div class="baseModuleParent"> 
@@ -13,19 +13,19 @@
       <div class="customWidthOption BookDemoCTAInSec">
         
         {% if  module.content_group.title  %}
-        <div class="moduleTitle BookDemoCTATitle white_color">
+        <div class="moduleTitle BookDemoCTATitle white_color" data-aos="fade-up">
           {{ module.content_group.title }}
         </div>
           {% endif %}
           {% if module.content_group.content %}
-          <div class="moduleContent pt10 BookDemoCTAContent white_75_color">
+          <div class="moduleContent pt10 BookDemoCTAContent white_75_color" data-aos="fade-up" >
             {{ module.content_group.content }}
           </div>
           {% endif %}
           {# Button and Cta Option #}
 
           {% if module.content_group.want_cta %}
-          <div class="moduleCTA d_flex align_center gap20 pt30 BookDemoCTAButton">
+          <div class="moduleCTA d_flex align_center gap20 pt30 BookDemoCTAButton" data-aos="fade-up">
             {% for item in module.content_group.cta_group %}
             {% set CTA = item %}
             <div class="cta-section">
@@ -75,7 +75,7 @@
           {# End Button and Cta Option #}
 
           {% if module.content_group.list_group|length %}
-          <div class="BookDemoCTAListBoxSec pt50">
+          <div class="BookDemoCTAListBoxSec pt50" data-aos="fade-up">
             <ul class="d_flex align_center gap5">
               {% for item in module.content_group.list_group %}
               <li class="p2 medium white_color"><span class="listarrow">

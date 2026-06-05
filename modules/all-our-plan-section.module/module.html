@@ -6,12 +6,12 @@
       <div class="customWidthOption AllourplanInSec">
         <div class="AllourplanTitleSec text-center">
             {% if  module.content_group.title  %}
-            <div class="moduleTitle AllourplanTitle">
+            <div class="moduleTitle AllourplanTitle" data-aos="fade-up">
               {{ module.content_group.title }}
             </div>
               {% endif %}
               {% if module.content_group.content %}
-              <div class="moduleContent pt20 AllourplanContent secondary_60_color">
+              <div class="moduleContent pt20 AllourplanContent secondary_60_color" data-aos="fade-up" data-aos-delay="50">
                 {{ module.content_group.content }}
               </div>
               {% endif %}
@@ -20,7 +20,7 @@
 
         <div class="AllourplanBoxSection pt56 d_flex align_start gap20">
           {% for item in module.content_group.plan_list_group %}
-          <div class="AllourplanBox AllourplanBox-{{ loop.index }}  d_flex align_center gap10">
+          <div class="AllourplanBox AllourplanBox-{{ loop.index }}  d_flex align_center gap10" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
             {% if item.icon.src %}
             <div class="AllourplanBoxImage"> 
               <img src="{{ item.icon.src }}" alt="{{ item.icon.alt }}">
@@ -38,7 +38,7 @@
           {# Button and Cta Option #}
 
           {% if module.content_group.want_cta %}
-          <div class="moduleCTA text-center AllourplanCTA gap20 pt56">
+          <div class="moduleCTA text-center AllourplanCTA gap20 pt56" data-aos="fade-up">
             {% for item in module.content_group.cta_group %}
             {% set CTA = item %}
             <div class="cta-section">

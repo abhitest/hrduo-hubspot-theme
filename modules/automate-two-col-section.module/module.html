@@ -5,7 +5,7 @@
       {# Custum Width Option #}
       <div class="customWidthOption automatetwoColInSec">
         <div class="automatetwoColBoxSec d_flex align_center">
-          <div class="automatetwoColBoxLTCol">
+          <div class="automatetwoColBoxLTCol"data-aos="fade-right">
         {% if  module.content_group.title  %}
         <div class="moduleTitle automatetwoColTitle white_color">
           {{ module.content_group.title }}
@@ -68,7 +68,7 @@
 
           {# End Button and Cta Option #}
           </div>
-          <div class="automatetwoColBoxRTCol">
+          <div class="automatetwoColBoxRTCol" data-aos="fade-left">
             <img src="{{ module.content_group.image.src|escape_url }}" alt="{{ module.content_group.image.alt }}">
           </div>
           </div>

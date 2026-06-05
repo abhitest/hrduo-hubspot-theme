@@ -6,18 +6,18 @@
       <div class="customWidthOption HomeBannerInSec">
         <div class="HomeBannerTitleSection  {% if module.content_group.image.src %} pb75 {% endif %}">
           {% if module.content_group.tag %}
-          <div class="HomeBannerTag p3">
+          <div class="HomeBannerTag p3" data-aos="fade-up">
             <p>{{ module.content_group.tag }}</p>
           </div>
           {% endif %}
 
         {% if  module.content_group.title  %}
-            <div class="moduleTitle HomeBannerTitle pt20 white_color">
+            <div class="moduleTitle HomeBannerTitle pt20 white_color" data-aos="fade-up" data-aos-delay="100">
               {{ module.content_group.title }}
             </div>
           {% endif %}
           {% if module.content_group.content %}
-          <div class="moduleContent HomeBannerContent pt20 white_color">
+          <div class="moduleContent HomeBannerContent pt20 white_color" data-aos="fade-up" data-aos-delay="150">
             {{ module.content_group.content }}
           </div>
           {% endif %}
@@ -26,7 +26,7 @@
           <div class="HeroBannerCTA d_flex align_center gap10 pt40 flex_center">
                 {% for item in module.content_group.cta_group %}
             {% set CTA = item %}
-            <div class="cta-section">
+            <div class="cta-section" data-aos="fade-up" data-aos-delay="{{ loop.index *150 }}">
               {% if CTA.cta_choice == "normalcta" %}
               {% if CTA.button_text %}
               <div class="{{ CTA.choice_cta_style }}  {% if CTA.button_alignment %} {{ CTA.button_alignment }} {% else %} text-left {% endif %} basebutton-{{ loop.index }}">
@@ -72,7 +72,7 @@
 
         </div>
            {% if module.content_group.image.src %}
-          <div class="HomeBannerImagesec ">
+          <div class="HomeBannerImagesec " data-aos="fade-in"  data-aos-delay="200">
             <img src="{{ module.content_group.image.src }}" alt="{{ module.content_group.image.alt_text }}">
           </div>
           {% endif %}

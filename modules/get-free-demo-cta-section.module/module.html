@@ -1,7 +1,7 @@
 <div class="{{ name }} baseModuleStyle GetFreeDemoSection {{ module.custom_style.custom_class }} " id="{{ module.custom_style.section_id }}">
   <span class="baseModuleOverlay"></span>
   {% if module.content_group.image.src %}
-  <div class="GetFreeDemoImg">
+  <div class="GetFreeDemoImg" data-aos="fade-in" data-aos-delay="100">
     <img src="{{ module.content_group.image.src }}" alt="{{ module.content_group.image.alt }}">
   </div>
   {% endif %}
@@ -11,18 +11,18 @@
       <div class="customWidthOption GetFreeDemoInSec d_flex align_start">
         <div class="GetFreeDemoLTCol white_color">
         {% if  module.content_group.title  %}
-        <div class="moduleTitle GetFreeDemoTitle">
+        <div class="moduleTitle GetFreeDemoTitle" data-aos="fade-up">
           {{ module.content_group.title }}
         </div>
           {% endif %}
           {% if module.content_group.content %}
-          <div class="moduleContent pt20 GetFreeDemoContent">
+          <div class="moduleContent pt20 GetFreeDemoContent" data-aos="fade-up" data-aos-delay="50">
             {{ module.content_group.content }}
           </div>
           {% endif %}
           </div>
 
-          <div class="GetFreeDemoFormSec">
+          <div class="GetFreeDemoFormSec" data-aos="fade-in" data-aos-delay="100">
             {% if module.content_group.form_title %}
             <div class="GetFreeDemoFormtitle white_color">
               <h4>{{ module.content_group.form_title }}</h4>

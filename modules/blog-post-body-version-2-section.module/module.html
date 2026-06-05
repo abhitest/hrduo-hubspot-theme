@@ -1,10 +1,11 @@
+{% if module.content_group.content %}
 <div class="{{ name }} baseModuleStyle blogpostbodyv1section {{ module.custom_style.custom_class }} " id="{{ module.custom_style.section_id }}">
   <span class="baseModuleOverlay"></span>
   <div class="baseModuleParent"> 
     <div class="content-wrapper">
       {# Custum Width Option #}
       <div class="customWidthOption blogpostbodyv1InSec">
-        <div class="blogpostbodyv1Cnt">
+        <div class="blogpostbodyv1Cnt"data-aos="fade-up">
           {{ module.content_group.content | safe }}
       </div>
           {# End Custum Width Option #}
@@ -89,3 +90,6 @@
 {#       {% end_scope_css %} #}
     </style>
   {% end_require_css %}
+    {% else %}
+    <br>
+  {% endif %}

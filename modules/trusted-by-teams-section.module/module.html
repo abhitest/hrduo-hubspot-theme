@@ -5,12 +5,12 @@
       {# Custum Width Option #}
       <div class="customWidthOption TrustedbyteamInSec">
         {% if  module.content_group.title  %}
-        <div class="moduleTitle TrustedbyteamTitle p3 text-center purple_color " >
+        <div class="moduleTitle TrustedbyteamTitle p3 text-center purple_color " data-aos="fade-in">
           {{ module.content_group.title }}
         </div>
           {% endif %}
 
-        <div class="TrustedbyteamLogoBoxSec {% if  module.content_group.title  %} pt50 {% endif %}">
+        <div class="TrustedbyteamLogoBoxSec {% if  module.content_group.title  %} pt50 {% endif %}" data-aos="fade-in" data-aos-delay="100">
           {% for logo in module.content_group.logo_group %}
           <div class="TrustedbyteamLogoBox"> 
               <div class="TrustedbyteamLogoBoxIn">
