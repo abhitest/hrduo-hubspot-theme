@@ -42,10 +42,17 @@
             </div>
             {% endif %}
           </div>
-          {% if module.content_group.image.src %}
+                {% if module.content_group.image_video_choice == "image" %}
+               
           <div class="CaseStudyBannerImage" data-aos="fade-up" data-aos-delay="200">
               <img src="{{ module.content_group.image.src }}" alt="{{ module.content_group.image.alt }}">
           </div>
+          {% else %}
+          <div class="CaseStudyBannerImage CaseStudyBannervideo" data-aos="fade-up" data-aos-delay="200">
+              <video width="100%" height="auto" controls>
+                <source src="{{ module.content_group.video_field }}" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
           {% endif %}
 
       </div>
@@ -65,7 +72,7 @@
       {# Desktop Styling #}
       .{{name}}.baseModuleStyle{
         position:relative;
-      
+        margin-top : 20px; margin-left:20px; margin-right:20px; border-radius: 30px;
         {{ module.style.spacing.desktop_spacing.css }}
        
         {% if module.style.background_property.background_choice == 'bgImage'  %}
@@ -97,6 +104,7 @@
       {# Mobile Styling #}
       @media(max-width:767px){
         .{{name}}.baseModuleStyle{
+          margin-top : 10px; margin-left:10px; margin-right:10px; 
           {{ module.style.spacing.mobile_spacing.css  }}
         } 
       }

@@ -1,0 +1,170 @@
+<div class="{{ name }} baseModuleStyle RelationRepeaterSection {{ module.custom_style.custom_class }} " id="{{ module.custom_style.section_id }}">
+  <span class="baseModuleOverlay"></span>
+  <div class="baseModuleParent"> 
+    <div class="content-wrapper">
+      {# Custum Width Option #}
+      <div class="customWidthOption RelationRepeaterInSec">
+        {% if module.content_group.content %}
+        <div class="RelationRepeaterContent secondary_60_color" data-aos="fade-up">
+          {{ module.content_group.content }}
+        </div>
+        {% endif %}
+        <div class="RelationRepeaterBoxSec">
+          {% for item in module.content_group.section_group %}
+          <div class="RelationRepeaterBox" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+            <div class="RelationRepeaterBoxtitlesec">
+              {% if item.box_svg %}
+              <div class="RelationRepeaterBoxTitleSVG" style="background-color : {{ item.icon_background_color.css }}; color : {{ item.icon_color.css }};">
+                {{ item.box_svg }}
+              </div>
+              {% else %}
+              <div class="RelationRepeaterBoxTitleSVG" style="background-color : {{ item.icon_background_color.css }}; color : {{ item.icon_color.css }};">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+              </div>
+              {% endif %}
+              {% if item.box_title %}
+              <div class="RelationRepeaterBoxTitle">
+                <h3>{{ item.box_title }}</h3>
+              </div>
+              {% endif %}
+            </div>
+            <div class="RelationRepeaterBoxCntCol  pt22"> 
+              {% if  item.box_tp_content  %}
+            <div class="RelationRepeaterBoxTpCnt secondary_60_color">
+              {{ item.box_tp_content }}
+            </div>
+            {% endif %}
+            <div class="RelationRepeaterBoxList pt22">
+              <ul>
+                {% for list_item in item.list_group %}
+                <li>
+                  <span class="RelationRepeaterBoxListIcon" style="background-color : {{ list_item.icon_background_color.css }}; color : {{ list_item.icon_color.css }};">
+                    {% if list_item.icon_choice == "check_icon" %}
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    {% else %}
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    {% endif %}
+                  </span>
+                  <span>{{ list_item.list_text }}</span>
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+            {% if item.box_bt_content %}
+            <div class="RelationRepeaterBoxbtcnt secondary_60_color pt22">
+               {{ item.box_bt_content }}
+            </div>
+            {% endif %}
+          </div>
+          </div>
+          {% endfor %} 
+        </div>
+        <div class="RelationRBtBoxSection" data-aos="fade-up">
+          {% set bt_group = module.content_group.bottom_group %}
+          {% if bt_group.svg_icon %}
+          <div class="RelationRBtBoxIcon">
+            {{ bt_group.svg_icon }}
+          </div>
+          {% endif %}
+          <div class="RelationRBtBoxCntCol">
+            {% if bt_group.title %}
+            <div class="RelationRBtBoxTitle white_color">
+              <h2>{{ bt_group.title }}</h2>
+            </div>
+            {% endif %}
+            {% if bt_group.sub_title %}
+            <div class="RelationRBtBoxSubtitle pt15 white_color">
+              <h5>{{ bt_group.sub_title }}</h5>
+            </div>
+            {% endif %} 
+            {% if bt_group.content %}
+            <div class="RelationRBtBoxContent pt15 white_75_color">
+              {{ bt_group.content }}
+            </div>
+            {% endif %}
+          </div>
+        </div>
+        </div>
+      </div>
+          {# End Custum Width Option #}
+
+
+
+    </div>
+  </div>
+
+</div>
+
+    {% require_css %}
+    <style>
+     {% scope_css %}
+      /****  Button Style  *****/
+      {% for item in module.content_group.cta_group %}
+            {% set CTA = item %}
+      {% if CTA.override_button_style %}
+
+      .baseModuleStyle .basebutton-{{ loop.index }} a{
+        background:{{ CTA.button_style_group.btn_bg_color.css}};
+        color:{{ CTA.button_style_group.btn_text_color.css }};
+        border-color:{{ CTA.button_style_group.btn_border_color.css }};
+      }
+
+      .baseModuleStyle .basebutton-{{ loop.index }} a:hover {
+        background-color:{{ CTA.button_style_group.btn_bg_color_hover.css}};
+        color:{{ CTA.button_style_group.btn_text_color_hover.css }};
+        border-color : {{ CTA.button_style_group.btn_border_color_hover.css }};
+      }
+
+      {% endif %}
+      {% endfor %}
+      /****  End Button Style  ****/
+     {% end_scope_css %}
+    </style>
+    
+   
+    <style>
+
+{#       {% scope_css %} #}
+        
+      {# Desktop Styling #}
+      .{{name}}.baseModuleStyle{
+        position:relative;
+      
+        {{ module.style.spacing.desktop_spacing.css }}
+       
+        {% if module.style.background_property.background_choice == 'bgImage'  %}
+         background-image:url('{{ module.style.background_property.background_image.src|escape_url }}');  background-position: center center;  background-repeat: no-repeat; background-size : cover;
+        {% elif module.style.background_property.background_choice == 'bgColor'  %}
+        background-color:rgba({{ module.style.background_property.background_color.color|convert_rgb }},{{ module.style.background_property.background_color.opacity }}%);
+        {% elif module.style.background_property.background_choice == 'gredient'  %}
+        background:{{ module.style.background_property.background_gredient.css }};
+        {% endif %}
+      } 
+      /****  Overlay Start  *****/
+      {% if module.style.background_property.background_choice == 'bgImage'  %}
+      .{{name}} .baseModuleOverlay{ position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-color:rgba({{ module.style.background_property.overlay_color.color|convert_rgb }},{{ module.style.background_property.overlay_color.opacity }}%); }
+      {% endif %}
+      /****  Overlay Start  *****/
+      .{{name}} .baseModuleParent{position:relative; z-index:5}
+
+
+
+      {# End Desktop Styling #}
+
+      {# Tablet Styling #}
+      @media(max-width:1300px){
+        .{{name}}.baseModuleStyle{
+           {{  module.style.spacing.tab_spacing.css }}
+        } 
+      }
+      {# End Tablet Styling #}
+      {# Mobile Styling #}
+      @media(max-width:767px){
+        .{{name}}.baseModuleStyle{
+          {{ module.style.spacing.mobile_spacing.css  }}
+        } 
+      }
+      
+{#       {% end_scope_css %} #}
+    </style>
+  {% end_require_css %}

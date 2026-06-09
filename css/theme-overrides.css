@@ -1064,15 +1064,22 @@ ul.hs-menu-children-wrapper .headermegamenusection.no-img .headermegamenuBoxSec 
 .FooterMenuSec .FooterMenuBox .FooterMenu ul {    flex-direction: column;    margin: 10px 0 0;    padding: 0;    gap: 10px; list-style: none; display: flex;}
 .FooterMenuSec .FooterMenuBox .FooterMenu ul li a {    line-height: 1.286;}
 .footer .footerinSec {   padding-bottom: 300px; }
-.footer .footerinSec .FooterLogo {    position: absolute;    bottom: 0;    width: 100%;    max-width: 1044px;    left: calc((100% - 1240px) / 2);}
+.footer .footerinSec .FooterLogo {    position: absolute;    bottom: 0;    width: 100%;    max-width: 50%;    left: calc((100% - 1240px) / 2);}
 .footer .footerinSec .FooterLogo img {  width: 100%;    height: 100%;    object-fit: contain;}
 
 footer.footer {    position: relative;}
 footer.footer .footershape {    position: absolute;    width: 100%;    height: 100%;    top: 0;    left: 0;   pointer-events: none;}
 footer.footer .footershape svg {   width: 100%;    height: 100%;}
 
+.footer .footerinSec .FooterCopyRight {  position: absolute;    bottom: 20px;    right: 30px;}
+
+@media (max-width: 1600px){
+ .footer .footerinSec .FooterLogo {
+    max-width: 60%;
+}
+}
 @media (max-width: 1300px){
-  .footer .footerinSec .FooterLogo {    left: 5%;    max-width: 900px;}
+  .footer .footerinSec .FooterLogo {    left: 5%; }
   .footer .footerinSec {  padding-bottom: 250px;}
   .FooterMenuSec { justify-content: center; }
 }
@@ -1080,6 +1087,7 @@ footer.footer .footershape svg {   width: 100%;    height: 100%;}
 @media (max-width : 1080px){
   .footer .footerinSec .FooterLogo {  max-width: 100%;   width: 80%;}
 .footer .footerinSec {    padding-bottom: 200px;}
+.footer .footerinSec .FooterCopyRight {  bottom: 100px;}
 }
 
 @media (max-width : 991px){
@@ -1094,8 +1102,9 @@ footer.footer .footershape svg {   width: 100%;    height: 100%;}
 
 @media (max-width : 640px){
   .FooterMenuSec .FooterMenuBox {  max-width: calc(50% - 10px);}
-.footer .footerinSec {  padding: 30px 0 100px;}
+.footer .footerinSec {  padding: 30px 0 150px;}
 .footer { margin: 0 10px 10px; }
+.footer .footerinSec .FooterCopyRight {  bottom: 80px;}
 
 }
 
@@ -1258,6 +1267,12 @@ color: {{ primary_color }};
 .HomeBannerImagesec img {  width: 100%;   height: 100%;    object-fit: cover;    border-radius: 20px;}
 .HomeBannerFormSec .HomeBannerForm form ul.no-list { display: none; }
 
+.HomeBannerImagesec video {   width: 100%;    height: 100%;    object-fit: cover;    border-radius: 20px;}
+
+.HomeBannerFormSec .HomeBannerForm form .hs-submit {  transition: all ease-in-out 0.3s;    border: 1px solid transparent;}
+.HomeBannerFormSec .HomeBannerForm form .hs-submit:hover {  filter: invert(1);    border-color: #fff;}
+.HomeBannerFormSec .HomeBannerForm form .hs-submit input[type="submit"] {    padding-left: 20px;}
+
 .TrustedbyteamInSec .TrustedbyteamTitle * {  text-transform: uppercase;    font-weight: 500;    letter-spacing: 0.8px;}
 .TrustedbyteamInSec .TrustedbyteamTitle { margin: 0 auto;  max-width: 1270px;    padding: 0 15px;    width: 100%; }
 .TrustedbyteamSection {  background: #F1F3FB80;}
@@ -1407,6 +1422,8 @@ color: {{ primary_color }};
 
 .softwaresolutionBoxSec .softwaresolutionBox {    max-width: calc(33.33% - 13.33px);    width: 100%;    padding: 50px;  border-radius: 20px;}
 .softwaresolutionBoxSec .softwaresolutionBox .softwaresolutionBoxListgrp ul {  margin: 0;    padding: 0;    list-style: none;    }
+.softwaresolutionBoxListgrpInsec {  overflow: hidden;    height: 250px ;}
+.softwaresolutionBoxListgrpInsec {overflow: hidden;mask-image: linear-gradient(to bottom, transparent 0%, black 18%, black 82%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 18%, black 82%, transparent 100%);}
 .softwaresolutionBoxSec .softwaresolutionBox .softwaresolutionBoxListgrp ul li .softwaresolutionBoxListitems {  gap: 10px;}
 .softwaresolutionBoxSec .softwaresolutionBox .softwaresolutionBoxListgrp ul li span.listarrow {    width: 28px;    height: 28px;    border-radius: 50%;    display: flex;  align-items: center;    justify-content: center;}
 .softwaresolutionBoxSec .softwaresolutionBox .softwaresolutionBoxListgrp ul li h5.listcontent {    width: calc(100% - 38px);}
@@ -1439,7 +1456,7 @@ color: {{ primary_color }};
 .TwoColumnBannerInSec  .TwoColumnBannerLTCol {  max-width: 504px;    width: 100%;}
 .TwoColumnBannerInSec .TwoColumnBannerRTCol {  max-width: calc(100% - (504px + 126px));    width: 100%; height: 470px;}
 .TwoColumnBannerContent {  max-width: 389px;    width: 100%;}
-.TwoColumnBannerInSec .TwoColumnBannerRTCol img {    width: 100%;    height: 100%;    object-fit: cover;    min-height: 470px;    border-radius: 16px;    box-shadow: 0px 37.91px 23.69px 0px #0000001A;}
+.TwoColumnBannerInSec .TwoColumnBannerRTCol img {    width: 100%;    height: 100%;    object-fit: cover;    min-height: 470px;    border-radius: 16px; }
 .TwoColumnBannerInSec {    justify-content: space-between;}
 .TwoColumnBannerCTA .secondary_button a:hover {  border-color: #fff;}
 
@@ -2149,6 +2166,94 @@ div#hs_cos_wrapper_blog_post_audio .hs-audio-player span.hs-audio-player__playba
 .LContentRFormBannerRTCol .LContentRFormBannerForm form fieldset .hs-form-field .hs-fieldtype-intl-phone select {    width: 56px !important; padding: 10px;  outline: unset;  appearance: none;    font-size: 12px;}
 .LContentRFormBannerRTCol .LContentRFormBannerForm form fieldset .hs-form-field .hs-fieldtype-intl-phone input {  width: calc(100% - (56px + 8px)) !important;  margin-left: 8px;}
 
+.ComparisongridBoxSec .ComparisongridBox {   max-width: calc(33.33% - 13.33px);    width: 100%;}
+.ComparisongridBoxSec .ComparisongridBox .ComparisongridBoxImg {  background-repeat: no-repeat;    background-size: cover;    background-position: center center;    padding-bottom: 56.25%;    border-radius: 20px;    position: relative;    overflow: hidden;}
+.ComparisongridBoxSec .ComparisongridBox .ComparisongridBoxImg a {    position: absolute;    width: 100%;    height: 100%;  top: 0;    left: 0;}
+.ComparisongridBoxSec .ComparisongridBox .ComparisongridBoxImg:before {   position: absolute;    content: "";    background: rgb(0 0 0 / 10%);    width: 100%;    height: 100%;    top: 0;    left: 0;    z-index: -1;}
+.ComparisongridBoxSec .ComparisongridBox .ComparisongridBoxTitle {    margin-top: 20px;}
+.ComparisongridBoxSec .ComparisongridBox .ComparisongridBoxTitle a {    color: inherit;}
+.ComparisongridInSec .ComparisongridBoxSec {    row-gap: 60px;}
+
+.RelationRepeaterInSec {  max-width: 800px;    width: 100%;    margin: 0 auto;}
+.RelationRepeaterInSec .RelationRepeaterContent {   margin-bottom: clamp(52px, 6.5vw, 80px);}
+
+.RelationRepeaterBoxSec .RelationRepeaterBox+* {    margin-top: clamp(52px, 6.5vw, 80px);}
+.RelationRepeaterBoxSec .RelationRepeaterBox .RelationRepeaterBoxtitlesec {   display: flex;    align-items: center;    gap: 16px;}
+.RelationRepeaterBoxSec .RelationRepeaterBox .RelationRepeaterBoxtitlesec .RelationRepeaterBoxTitleSVG {    width: 52px;    height: 52px;    border-radius: 15px;  display: flex;    align-items: center;   justify-content: center;}
+.RelationRepeaterBoxSec .RelationRepeaterBox .RelationRepeaterBoxtitlesec .RelationRepeaterBoxTitleSVG svg {  width: 25px;    height: 25px;}
+.RelationRepeaterBoxSec .RelationRepeaterBox .RelationRepeaterBoxtitlesec .RelationRepeaterBoxTitle {  width: calc(100% - (52px + 16px));}
+.RelationRepeaterBoxSec .RelationRepeaterBox .RelationRepeaterBoxList ul {    margin: 0;    padding: 0;    list-style: none;}
+.RelationRepeaterBoxSec .RelationRepeaterBox .RelationRepeaterBoxList ul li {    display: flex;    align-items: center;    gap: 16px;}
+.RelationRepeaterBoxSec .RelationRepeaterBox .RelationRepeaterBoxList ul li span.RelationRepeaterBoxListIcon {   width: 24px;    height: 24px;    border-radius: 50%;    display: flex;    align-items: center;    justify-content: center;}
+.RelationRepeaterBoxSec .RelationRepeaterBox .RelationRepeaterBoxList ul li span.RelationRepeaterBoxListIcon svg {    width: 12px;    height: 12px;}
+.RelationRepeaterBoxSec .RelationRepeaterBox .RelationRepeaterBoxList ul li+* {    margin-top: 12px;}
+
+.TwoColumnBannerInSec  .TwoColumnBannerLTCol.TwoColumnBannerLTColnoimg {  max-width: 600px;    text-align: center;  margin: 0 auto;}
+.TwoColumnBannerInSec .TwoColumnBannerLTCol.TwoColumnBannerLTColnoimg .TwoColumnBannerContent {   max-width: 100%;}
+.TwoColumnBannerInSec .TwoColumnBannerLTCol.TwoColumnBannerLTColnoimg .TwoColumnBannerbreadcrumb ul {   justify-content: center;}
+
+
+.CaseStudyBannerImage.CaseStudyBannervideo {  border-radius: 30px;}
+.CaseStudyBannerImage.CaseStudyBannervideo video {  width: 100%;    height: 100%;    object-fit: cover;}
+
+
+.TwoColumnBannerFormSec form {  position: relative;}
+.TwoColumnBannerFormSec form .hs-form-field {  margin: 0;}
+.TwoColumnBannerFormSec form .hs-form-field input {  padding: 22px 245px 22px 25px;    outline: none;}
+.TwoColumnBannerFormSec form .hs_submit {  transition: all ease-in-out 0.3s;  border: 1px solid transparent;  max-width: 225px;    width: 100%;    position: absolute;    top: 50%;    transform: translateY(-50%);    right: 7px;    border-radius: 46px;    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Crect x='13.2886' y='14.5454' width='7' height='1' rx='0.25' transform='rotate(-45 13.2886 14.5454)' fill='white' stroke='white' stroke-width='0.5'/%3E%3Crect x='13.9958' y='5.35303' width='7' height='1' rx='0.25' transform='rotate(45 13.9958 5.35303)' fill='white' stroke='white' stroke-width='0.5'/%3E%3Crect x='0.5' y='9.80273' width='16.9958' height='1' rx='0.25' fill='white' stroke='white' stroke-width='0.5'/%3E%3C/svg%3E"), #000;    background-repeat: no-repeat;    background-position: center right 15px;    background-size: 20px;}
+.TwoColumnBannerFormSec form .hs_submit input[type="submit"] {  width: 100%;    background: linear-gradient(90deg, #D4CCFF 0%, #FFFFFF 100%);    -webkit-background-clip: text;    -webkit-text-fill-color: transparent;    font-weight: 500;    padding-right: 35px;    padding-left: 15px;}
+.TwoColumnBannerFormSec form .hs_submit:hover {  filter: invert(1);    border-color: #fff;}
+
+.TwoColumnBannerFormSec form ul.no-list.hs-error-msgs.inputs-list {  display: none;}
+.TwoColumnBannerFormSec form .hs_error_rollup {  display: none;}
+.TwoColumnBannerFormSec form .hs-form-field input.hs-input.invalid.error {  border-color: #fff;}
+
+
+
+.RelationRBtBoxSection {   margin-top: clamp(56px, 7vw, 84px);    border-radius: 24px;    padding: clamp(30px, 5vw, 52px);    background: #202640;}
+.RelationRBtBoxSection .RelationRBtBoxIcon { width: 54px; height: 54px; color: #fff; margin-bottom: 24px;    border-radius: 15px;    background: rgba(99, 71, 255, 0.3);    border: 1px solid rgba(255, 255, 255, 0.16);    display: flex;    align-items: center;    justify-content: center;}
+.RelationRBtBoxSection .RelationRBtBoxIcon svg {  width: 26px;    height: 26px;}
+.GDPRTwoColInSec .GDPRTwoColTitleSec {   max-width: 600px;    width: 100%;    margin: 0 auto;}
+.GDPRTwoColInSec .GDPRTwoColBoxSection {  max-width: 1000px;    width: 100%;    margin: 0 auto;    display: grid;    grid-template-columns: repeat(2, 1fr);    gap: 20px;}
+.GDPRTwoColInSec .GDPRTwoColBoxSection .GDPRTwoColBox {  border-radius: 20px;    padding: 30px;    display: grid;    grid-template-columns: 52px 1fr;    gap: 20px;    align-items: start;    border: 1px solid #e8e8ee;  background: #fafafc;}
+.GDPRTwoColInSec .GDPRTwoColBoxSection .GDPRTwoColBox .GDPRTwoColBoxLogo {  width: 52px;    height: 52px;    border-radius: 14px;    background: #fff;    border: 1px solid #e8e8ee;    color: #6347FF;    display: grid;    place-items: center;}
+.GDPRTwoColInSec .GDPRTwoColBoxSection .GDPRTwoColBox .GDPRTwoColBoxLogo svg {  width: 24px;    height: 24px;}
+
+.GDPRTwoColInSec .GDPRTwoColTitleSec .GDPRTwoColTag {  display: flex;    align-items: center;    justify-content: center;    background: rgb(99 71 255 / 8%);    width: max-content;    margin: 0 auto;  border-radius: 46px;    padding: 7px 15px;    gap: 5px;}
+
+
+.NomisusepledgeInSec .NomisusepledgeLogo {   width: 64px;    height: 64px;    border-radius: 18px;    background: rgba(99, 71, 255, 0.25);    border: 1px solid rgba(255, 255, 255, 0.16);    color: #fff;    display: grid;    place-items: center;    margin: 0 auto 28px;}
+.NomisusepledgeInSec .NomisusepledgeLogo svg {    width: 30px;    height: 30px;}
+.NomisusepledgeInSec {  max-width: 720px;    width: 100%;    margin: 0 auto;}
+.NomisusepledgeInSec .Nomisusepledgelist ul {   margin: 0;    padding: 0;    list-style: none;}
+.NomisusepledgeInSec .Nomisusepledgelist ul li {   display: inline;    position: relative; padding-left : 30px}
+.NomisusepledgeInSec .Nomisusepledgelist ul li:before { content: "";
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Crect x='4.25903' y='10.0759' width='6.25' height='1.25' rx='0.3125' transform='rotate(45 4.25903 10.0759)' fill='%236347FF' stroke='%236347FF' stroke-width='0.625'/%3E%3Crect x='16.6333' y='6.54031' width='12.5' height='1.25' rx='0.3125' transform='rotate(135 16.6333 6.54031)' fill='%236347FF' stroke='%236347FF' stroke-width='0.625'/%3E%3C/svg%3E");
+    width: 20px;  height: 20px;    background-repeat: no-repeat;    background-size: contain;    background-position: center center;    position: absolute;    left: 0;    filter: brightness(0) invert(1);    top: 0;}
+
+
+.TwoColumnImgCntBoxSec .TwoColumnImgCntCol .TwoColumnImgCntContent ol {  margin: 20px 0 0 0;    padding: 0;    list-style: none;    display: flex;    align-items: center;    gap: 22px;    flex-wrap: wrap;}
+.TwoColumnImgCntBoxSec .TwoColumnImgCntCol .TwoColumnImgCntContent ol li {  display: flex;    align-items: center;    gap: 9px;}
+.TwoColumnImgCntBoxSec .TwoColumnImgCntCol .TwoColumnImgCntContent ol li span:first-child {    width: 16px;    height: 16px;    opacity: 0.9;}
+.TwoColumnImgCntBoxSec .TwoColumnImgCntCol .TwoColumnImgCntContent ol li span:first-child svg {   stroke: #6347FF;}
+.TwoColumnImgCntBoxSec .TwoColumnImgCntCol .TwoColumnImgCntContent ol li {    font-size: 16px;}
+.TwoColumnImgCntBoxSec .TwoColumnImgCntCol .TwoColumnImgCntContent ol li span:last-child {   line-height: 1;}
+.switchingTCInSec .switchingTCCTA .secondary_button a:hover {
+    border-color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2522,7 +2627,12 @@ h2, .h2 {    font-size: 37px;}
 .ContactBannerInSec {grid-template-columns: 1fr;grid-template-rows: auto;}
 
 .TwoColumnImgCntSection.v2 .TwoColumnImgCntBoxSec.Changedirection .TwoColumnImgCntCol .TwoColumnImgCntColIn {  max-width: 100%;}
-.TwoColumnImgCntSection.v2 .TwoColumnImgCntBoxSec.Changedirection {   flex-direction: column;}
+.TwoColumnImgCntSection.v2 .TwoColumnImgCntBoxSec {   flex-direction: column !important;}
+
+
+.ComparisongridBoxSec .ComparisongridBox {  max-width: calc(50% - 10px);}
+.ComparisongridInSec .ComparisongridBoxSec {  row-gap: 40px;}
+.TwoColumnBannerFormSec form {  max-width: 500px;}
 
 
 }
@@ -2579,6 +2689,8 @@ h2, .h2 {    font-size: 37px;}
 .ComparisonTableBox table tbody td.ComparisonTableBoxlttitle {  font-size: 18px;}
 
 .soundfamiliartcInSec .soundfamiliartcBoxSection .soundfamiliartcBox {   padding: 15px;}
+
+.GDPRTwoColInSec .GDPRTwoColBoxSection {  grid-template-columns: repeat(1, 1fr);}
 
 }
 
@@ -2641,7 +2753,7 @@ h2, .h2 {    font-size: 28px;}
 .FourColumnBoxSection.FourTrColumnBoxSection .FourColumnBox {
     max-width: 100%;
 } 
-.FourColumnBoxTitle { height: 100% !important; }
+.FourColumnBoxTitle { height: auto !important; }
 .BookDemoCTASection .BookDemoCTAshape svg {  height: 100%;}
 
 .PlanThreeColBoxSection .PlanThreeColBox {  max-width: 100%;}
@@ -2692,6 +2804,7 @@ h2, .h2 {    font-size: 28px;}
 
 .soundfamiliartcInSec .soundfamiliartcBoxSection {  grid-template-columns: 1fr;}
 
+.ComparisongridBoxSec .ComparisongridBox {  max-width: 100%;}
 
 }
 
@@ -2762,6 +2875,10 @@ h5, .h5 {   font-size: 18px;}
 .ContactBannerRTCol {    padding: 30px 15px;}
 
 .TwoColumnBannerbreadcrumb ul li a { font-size: 12px;}
+
+.TwoColumnBannerFormSec form .hs_submit {  position: unset;    transform: unset;    margin-top: 20px;}
+.TwoColumnBannerFormSec form .hs-form-field input {   padding: 15px;}
+.TwoColumnBannerFormSec form .hs_submit input[type="submit"] {  padding: 14px 35px 15px 15px;}
 
 }
 

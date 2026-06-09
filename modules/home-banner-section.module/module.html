@@ -42,11 +42,23 @@
           </div>
 
         </div>
+        {% if module.content_group.image_video_choice == "image" %}
            {% if module.content_group.image.src %}
           <div class="HomeBannerImagesec " data-aos="fade-up" data-aos-delay="400">
             <img src="{{ module.content_group.image.src }}" alt="{{ module.content_group.image.alt_text }}">
           </div>
           {% endif %}
+          {% elif module.content_group.image_video_choice == "video" %}
+            {% if module.content_group.video_field %}
+            <div class="HomeBannerImagesec " data-aos="fade-up" data-aos-delay="400">
+              <video width="100%" height="auto" controls>
+                <source src="{{ module.content_group.video_field }}" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            {% endif %}
+          {% endif %}
+        {% endif %}
       </div>
           {# End Custum Width Option #}
 

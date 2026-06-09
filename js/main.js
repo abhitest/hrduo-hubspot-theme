@@ -204,13 +204,17 @@ $(document).on("click", ".FeaturetabBoxTitleCol", function () {
 
     let $currentBox = $(this).closest(".FeaturetabBox");
     let $content = $(this).next();
-
+    let $currentindex = $currentBox.index();
+    console.log($currentindex);
     if ($currentBox.hasClass("active")) return;
 
     $content.stop(true, true).slideDown(300);
 
     $currentBox.addClass("active").siblings(".FeaturetabBox").removeClass("active").find(".FeaturetabBoxContent").stop(true, true).slideUp(300);
 
+    let $images = $(".FeaturetabBoxImageBox").find(".FeaturetabBoxImage");
+$images.stop(true, true).hide();
+$images.eq($currentindex).stop(true, true).fadeIn();
     
     let $currentH5 = $(this).find("h5");
     let $currentH4 = $(this).find("h4");
@@ -389,12 +393,73 @@ function animate(element) {
     });
 
 
+$(function () {
+
+  var SPEED = 0.45; // px per 16ms (60fps baseline)
+
+  $('.softwaresolutionBoxListgrp').each(function () {
+
+    var $wrap      = $(this);
+    var $ul        = $wrap.find('ul');
+    var $origItems = $ul.children('li').clone();
+    var offset     = 0;
+    var paused     = false;
+    var lastTime   = null;
+    var rafId;
+
+    // Force GPU layer — eliminates sub-pixel jitter
+    $ul.css({
+      'will-change'       : 'transform',
+      'backface-visibility': 'hidden',
+      'transform'         : 'translateZ(0)'   // promote immediately
+    });
+
+    // 1. Clone for seamless loop
+    $ul.append($origItems.clone());
+
+    // 2. Measure original height once (after clone so DOM is stable)
+    var origHeight = 0;
+    $ul.children('li').slice(0, $origItems.length).each(function () {
+      origHeight += $(this).outerHeight(true);
+    });
+
+    // 3. Delta-time tick — speed is consistent at any refresh rate
+    function tick(now) {
+      rafId = requestAnimationFrame(tick);
+
+      if (paused) { lastTime = null; return; }
+
+      if (lastTime === null) { lastTime = now; return; } // skip first frame after resume
+      var delta = Math.min(now - lastTime, 64); // cap at ~4 missed frames max
+      lastTime = now;
+
+      offset += SPEED * (delta / 16.667); // normalise to 60fps
+      if (offset >= origHeight) offset -= origHeight;
+
+      // Use 3D translate — stays on compositor thread, no layout/paint
+      $ul[0].style.transform = 'translate3d(0, -' + offset + 'px, 0)';
+    }
+
+    rafId = requestAnimationFrame(tick);
+
+    // 4. Pause on hover — reset lastTime so no jump on resume
+    $wrap
+      .on('mouseenter', function () { paused = true; })
+      .on('mouseleave', function () { paused = false; });
+
+    // 5. Cleanup
+    $(window).on('beforeunload', function () { cancelAnimationFrame(rafId); });
+
+  });
+
+});
+
 $(window).on('load resize',function() {
   equalheight('.PlatformThreeColumnBoxCntIn');
   equalheight('.TeamswinBoxCntIn');
   equalheight('.PlanThreeColBoxTitleSecIn');
   equalheight('.PlanThreeColBoxList');
-  equalheight('.softwaresolutionBoxListgrp ul');
+  
   equalheight('.FourColumnSection.version1 .FourColumnBoxSection .FourColumnBox .FourColumnBoxCnt');
   equalheight('.workforceThreeColBoxTitlesecIn');
   minequalheight('.workforceThreeColBoxListgrp');

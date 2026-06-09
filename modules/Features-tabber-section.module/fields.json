@@ -146,14 +146,8 @@
       "type" : "group",
       "display_width" : null,
       "default" : { }
-    } ],
-    "tab" : "CONTENT",
-    "expanded" : false,
-    "group_occurrence_meta" : null,
-    "type" : "group",
-    "display_width" : null
-  }, {
-    "id" : "content_group.image",
+    },
+    {
     "name" : "image",
     "label" : "Image",
     "help_text" : "",
@@ -171,7 +165,15 @@
       "alt" : "Features-image",
       "loading" : "disabled"
     }
-  } ],
+  }
+  ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null
+  }
+ ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,

@@ -107,7 +107,300 @@
     "type" : "text",
     "display_width" : null,
     "default" : "Head of Operations at Supermac's"
-  } ],
+  },
+  {
+    "id" : "content_group.want_cta",
+    "name" : "want_cta",
+    "label" : "Want CTA",
+    "help_text" : "",
+    "inline_help_text" : "",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, 
+  {
+    "id" : "content_group.cta_group",
+    "name" : "cta_group",
+    "label" : "CTA group",
+    "help_text" : "",
+    "inline_help_text" : "",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : 1,
+      "sorting_label_field" : null,
+      "default" : 1
+    },
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "content_group.want_cta",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "content_group.cta_group.cta_choice",
+      "name" : "cta_choice",
+      "label" : "CTA Choice",
+      "help_text" : "",
+      "inline_help_text" : "",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "placeholder" : "",
+      "choices" : [ [ "normalcta", "Normal CTA" ], [ "hubspotCTA", "Hubspot CTA" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "normalcta"
+    }, {
+      "id" : "content_group.cta_group.choice_cta_style",
+      "name" : "choice_cta_style",
+      "label" : "Choice CTA Style",
+      "help_text" : "",
+      "inline_help_text" : "",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "placeholder" : "",
+      "choices" : [ [ "button", "Primary CTA" ], [ "secondary_button", "Secondary CTA" ], [ "tertiary_button", "Tertiary CTA" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "button"
+    }, {
+      "id" : "content_group.cta_group.button_alignment",
+      "name" : "button_alignment",
+      "label" : "Button Alignment",
+      "help_text" : "",
+      "inline_help_text" : "",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "placeholder" : "",
+      "choices" : [ [ "text-left", "Left" ], [ "text-center", "Center" ], [ "text-right", "Right" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null
+    }, {
+      "id" : "content_group.cta_group.want_arrow",
+      "name" : "want_arrow",
+      "label" : "Want Arrow",
+      "help_text" : "",
+      "inline_help_text" : "",
+      "required" : false,
+      "locked" : false,
+      "display" : "toggle",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : false
+    }, {
+      "id" : "content_group.cta_group.button_text",
+      "name" : "button_text",
+      "label" : "Button Text",
+      "help_text" : "",
+      "inline_help_text" : "",
+      "required" : false,
+      "locked" : false,
+      "validation_error_message" : "",
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "content_group.cta_group.cta_choice",
+        "controlling_value_regex" : "normalcta",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "placeholder" : "",
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Click Here"
+    }, {
+      "id" : "content_group.cta_group.button_link",
+      "name" : "button_link",
+      "label" : "Button Link",
+      "help_text" : "",
+      "inline_help_text" : "",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "content_group.cta_group.cta_choice",
+        "controlling_value_regex" : "normalcta",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "display_width" : null,
+      "default" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "id" : "content_group.cta_group.hubspot_cta",
+      "name" : "hubspot_cta",
+      "label" : "HubSpot CTA",
+      "help_text" : "",
+      "inline_help_text" : "",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "content_group.cta_group.cta_choice",
+        "controlling_value_regex" : "hubspotCTA",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "type" : "cta",
+      "display_width" : null
+    }, {
+      "id" : "content_group.cta_group.override_button_style",
+      "name" : "override_button_style",
+      "label" : "Override Button Style",
+      "help_text" : "",
+      "inline_help_text" : "",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : false
+    }, {
+      "id" : "content_group.cta_group.button_style_group",
+      "name" : "button_style_group",
+      "label" : "Button Style Group",
+      "help_text" : "",
+      "inline_help_text" : "",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "content_group.cta_group.override_button_style",
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "children" : [ {
+        "id" : "content_group.cta_group.button_style_group.btn_bg_color",
+        "name" : "btn_bg_color",
+        "label" : "Button Background Color",
+        "help_text" : "",
+        "inline_help_text" : "",
+        "required" : false,
+        "locked" : false,
+        "type" : "color",
+        "display_width" : null,
+        "default" : {
+          "color" : "#000",
+          "opacity" : 100
+        }
+      }, {
+        "id" : "content_group.cta_group.button_style_group.btn_text_color",
+        "name" : "btn_text_color",
+        "label" : "Text Color",
+        "help_text" : "",
+        "inline_help_text" : "",
+        "required" : false,
+        "locked" : false,
+        "type" : "color",
+        "display_width" : null,
+        "default" : {
+          "color" : "#ffffff",
+          "opacity" : 100
+        }
+      }, {
+        "id" : "content_group.cta_group.button_style_group.btn_border_color",
+        "name" : "btn_border_color",
+        "label" : "Border Color",
+        "help_text" : "",
+        "inline_help_text" : "",
+        "required" : false,
+        "locked" : false,
+        "type" : "color",
+        "display_width" : null,
+        "default" : {
+          "color" : "#000",
+          "opacity" : 100
+        }
+      }, {
+        "id" : "content_group.cta_group.button_style_group.btn_bg_color_hover",
+        "name" : "btn_bg_color_hover",
+        "label" : "Background color on hover",
+        "help_text" : "",
+        "inline_help_text" : "",
+        "required" : false,
+        "locked" : false,
+        "type" : "color",
+        "display_width" : null,
+        "default" : {
+          "color" : "#ffffff",
+          "opacity" : 100
+        }
+      }, {
+        "id" : "content_group.cta_group.button_style_group.btn_text_color_hover",
+        "name" : "btn_text_color_hover",
+        "label" : "Text Hover Color",
+        "help_text" : "",
+        "inline_help_text" : "",
+        "required" : false,
+        "locked" : false,
+        "type" : "color",
+        "display_width" : null,
+        "default" : {
+          "color" : "#ffffff",
+          "opacity" : 100
+        }
+      }, {
+        "id" : "content_group.cta_group.button_style_group.btn_border_color_hover",
+        "name" : "btn_border_color_hover",
+        "label" : "Button border Hover Color",
+        "help_text" : "",
+        "inline_help_text" : "",
+        "required" : false,
+        "locked" : false,
+        "type" : "color",
+        "display_width" : null,
+        "default" : {
+          "color" : "#ffffff",
+          "opacity" : 100
+        }
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null
+  } 
+
+],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,

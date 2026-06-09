@@ -56,7 +56,8 @@
     "type" : "richtext",
     "display_width" : null,
     "default" : "<p>This is a simple module to get you started with building your own HubSpot themes. You can edit this content from the page editor.</p>"
-  }, {
+  }, 
+  {
     "id" : "content_group.want_cta",
     "name" : "want_cta",
     "label" : "Want CTA",
@@ -68,7 +69,8 @@
     "type" : "boolean",
     "display_width" : null,
     "default" : false
-  }, {
+  }, 
+  {
     "id" : "content_group.cta_group",
     "name" : "cta_group",
     "label" : "CTA group",
@@ -345,7 +347,8 @@
     "group_occurrence_meta" : null,
     "type" : "group",
     "display_width" : null
-  } ],
+  } 
+],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,

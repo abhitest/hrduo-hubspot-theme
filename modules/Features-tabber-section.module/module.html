@@ -70,10 +70,11 @@
             {% endfor %}
           </div>
           <div class="FeaturetabBoxImageBox"  data-aos="fade-left" data-aos-delay="200">
-            <div class="FeaturetabBoxImage">
-              <img src="{{ module.content_group.image.src }}" alt="{{ module.content_group.image.alt }}">
+               {% for item in module.content_group.faq_group %}
+            <div class="FeaturetabBoxImage" style="{% if loop.first %} display: block {% else %} display : none {% endif %}">
+              <img src="{{ item.image.src }}" alt="{{ item.image.alt }}">
             </div>
-            
+            {% endfor %}
           </div>
         </div>
 

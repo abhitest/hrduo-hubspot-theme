@@ -37,21 +37,23 @@
   "label" : "Content",
   "required" : false,
   "locked" : false,
-  "children" : [ {
-    "id" : "content_group.tag",
-    "name" : "tag",
-    "label" : "Tag",
-    "help_text" : "",
-    "inline_help_text" : "",
-    "required" : false,
-    "locked" : false,
-    "validation_error_message" : "",
-    "placeholder" : "",
-    "allow_new_line" : false,
-    "type" : "text",
-    "display_width" : null,
-    "default" : "HR, Payroll & Workforce Management"
-  }, {
+  "children" : [ 
+    {
+    "name": "tag",
+    "label": "Tag",
+    "required": false,
+    "locked": false,
+    "validation_regex": "",
+    "validation_error_message": "",
+    "allow_new_line": false,
+    "show_emoji_picker": false,
+    "type": "text",
+    "placeholder": "",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": "GDPR with HR Duo" 
+  },
+    {
     "id" : "title",
     "name" : "title",
     "label" : "Title",
@@ -61,8 +63,9 @@
     "locked" : false,
     "type" : "richtext",
     "display_width" : null,
-    "default" : "<h1>Accurately track working time, simplify staff rotas, and complete payroll without errors</h1>"
-  }, {
+    "default" : "<h3>Your data, handled lawfully.</h3>"
+  }, 
+  {
     "id" : "content",
     "name" : "content",
     "label" : "Content",
@@ -70,104 +73,80 @@
     "locked" : false,
     "type" : "richtext",
     "display_width" : null,
-    "default" : "<p>Ditch the spreadsheets and siloed apps. Designed for HR Managers, Operations and Line Managers, HR Duo automates rotas and payroll while keeping you 100% legally compliant as you grow across multiple sites.</p>"
-  }, {
-    "id" : "content_group.form",
-    "name" : "form",
-    "label" : "Form",
-    "help_text" : "",
-    "inline_help_text" : "",
-    "required" : false,
-    "locked" : false,
-    "type" : "form",
-    "display_width" : null,
-    "default" : {
-      "form_id" : "54a0fce3-99ad-4113-a3da-1f0dc3d65244",
-      "response_type" : "inline",
-      "message" : "Thanks for submitting the form."
-    }
-  }, {
-    "id" : "content_group.form_bt_text",
-    "name" : "form_bt_text",
-    "label" : "Form Bototm Text",
-    "help_text" : "",
-    "inline_help_text" : "",
-    "required" : false,
-    "locked" : false,
-    "type" : "richtext",
-    "display_width" : null,
-    "default" : "<p><span>Not sure if we’re for you? </span><a>Watch our platform tour</a></p>"
-  }, 
+    "default" : "<p>HR Duo is designed to support full compliance with UK and EU data protection laws, including the UK GDPR and Data Protection Act 2018. HR Duo processes personal data under clearly defined legal bases:</p>"
+  },
   {
-  "name": "image_video_choice",
-  "label": "Image Video Choice",
+  "name": "section_group",
+  "label": "Section Group",
   "required": false,
   "locked": false,
-  "display": "select",
-  "multiple": false,
-  "reordering_enabled": false,
-  "choices": [
-    [
-      "image",
-      "Image"
-    ],
-    [
-      "video",
-      "Video"
-    ]
-  ],
-  "type": "choice",
+  "occurrence": {
+    "min": null,
+    "max": null,
+    "sorting_label_field": null,
+    "default": 4
+  },
+  "children": [
+    {
+    "name": "svg_icon",
+    "label": "SVG Icon",
+    "required": false,
+    "locked": false,
+    "type": "richtext",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": null 
+    },
+    {
+    "name": "tag",
+    "label": "Tag",
+    "required": false,
+    "locked": false,
+    "validation_regex": "",
+    "validation_error_message": "",
+    "allow_new_line": false,
+    "show_emoji_picker": false,
+    "type": "text",
+    "placeholder": "",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": "Contractual necessity" 
+    },
+    {
+    "name": "title",
+    "label": "Title",
+    "required": false,
+    "locked": false,
+    "validation_regex": "",
+    "validation_error_message": "",
+    "allow_new_line": false,
+    "show_emoji_picker": false,
+    "type": "text",
+    "placeholder": "",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": "Delivering your services" 
+  },
+  {
+  "name": "content",
+  "label": "Content",
+  "required": false,
+  "locked": false,
+  "validation_regex": "",
+  "validation_error_message": "",
+  "allow_new_line": false,
+  "show_emoji_picker": false,
+  "type": "text",
   "placeholder": "",
   "inline_help_text": "",
   "help_text": "",
-  "default": "image" 
-},
-  {
-    "id" : "content_group.image",
-    "name" : "image",
-    "label" : "Image",
-    "help_text" : "",
-    "inline_help_text" : "",
-    "required" : false,
-    "locked" : false,
-    "responsive" : true,
-    "resizable" : true,
-    "show_loading" : false,
-    "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "content_group.image_video_choice",
-        "controlling_value_regex" : "image",
-        "property" : null,
-        "operator" : "EQUAL",
-        "access" : null
-      },
-    "type" : "image",
-    "display_width" : null,
-    "default" : {
-      "size_type" : "auto",
-      "src" : "https://hrduo.com/hubfs/hrduo-theme-2026/Home-Banner-img.avif",
-      "alt" : "Home-Banner-img",
-      "loading" : "disabled"
-    }
-  },
-  {
-  "name": "video_field",
-  "label": "Video field",
-  "required": false,
-  "locked": false,
-  "picker": "video",
-  "type": "file",
-  "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "content_group.image_video_choice",
-        "controlling_value_regex" : "video",
-        "property" : null,
-        "operator" : "EQUAL",
-        "access" : null
-      },
+  "default": "To deliver HR software, payroll, and workforce management services." 
+}
+  ],
+  "type": "group",
   "inline_help_text": "",
   "help_text": "",
-  "default": null 
+  "default": [] 
 }
 ],
   "tab" : "CONTENT",
@@ -204,8 +183,7 @@
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
-      "display_width" : null,
-      "default" : "bgColor"
+      "display_width" : null
     }, {
       "id" : "style.background_property.background_image",
       "name" : "background_image",
@@ -252,11 +230,11 @@
       "type" : "color",
       "display_width" : null,
       "default" : {
-        "color" : "#6347FF",
-        "opacity" : 100,
+        "color" : null,
+        "opacity" : null,
+        "hex" : null,
         "rgba" : null,
-        "rgb" : null,
-        "hex" : null
+        "rgb" : null
       }
     }, {
       "id" : "style.background_property.background_gredient",
@@ -304,11 +282,11 @@
       "default" : {
         "padding" : {
           "top" : {
-            "value" : 180,
+            "value" : 150,
             "units" : "px"
           },
           "bottom" : {
-            "value" : 50,
+            "value" : 150,
             "units" : "px"
           },
           "left" : {
@@ -334,11 +312,11 @@
       "default" : {
         "padding" : {
           "top" : {
-            "value" : 150,
+            "value" : 70,
             "units" : "px"
           },
           "bottom" : {
-            "value" : 50,
+            "value" : 70,
             "units" : "px"
           },
           "left" : {
@@ -364,7 +342,7 @@
       "default" : {
         "padding" : {
           "top" : {
-            "value" : 150,
+            "value" : 50,
             "units" : "px"
           },
           "bottom" : {

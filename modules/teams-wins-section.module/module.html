@@ -22,9 +22,18 @@
             {% if item.box_content %}
             <div class="TeamswinBoxCnt pt20 white_color">
               <div class="TeamswinBoxCntIn">
-{{ item.box_content }}
+                {{ item.box_content }}
               </div>
-              
+              {% if item.person_name %}
+              <div class="TeamswinBoxPersonName pt20 p3">
+                {{ item.person_name }}
+              </div>
+              {% endif %}
+              {% if item.company_name %}
+              <div class="TeamswinBoxCompanyName pt5 p3">
+                {{ item.company_name }}
+              </div>
+              {% endif %}
             </div>
             {% endif %}
             {% if item.cta_group|length %}

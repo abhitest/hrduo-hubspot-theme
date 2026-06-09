@@ -134,7 +134,32 @@
     "type" : "group",
     "display_width" : null,
     "default" : [ ]
-  }, {
+  }, 
+  {
+  "name": "image_video_choice",
+  "label": "Image/Video Choice",
+  "required": false,
+  "locked": false,
+  "display": "select",
+  "multiple": false,
+  "reordering_enabled": false,
+  "choices": [
+    [
+      "image",
+      "Image"
+    ],
+    [
+      "video",
+      "Video"
+    ]
+  ],
+  "type": "choice",
+  "placeholder": "",
+  "inline_help_text": "",
+  "help_text": "",
+  "default": "image" 
+  },
+  {
     "id" : "content_group.image",
     "name" : "image",
     "label" : "Image",
@@ -146,6 +171,14 @@
     "resizable" : true,
     "show_loading" : false,
     "type" : "image",
+    "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "content_group.image_video_choice",
+        "controlling_value_regex" : "image",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
     "display_width" : null,
     "default" : {
       "size_type" : "auto",
@@ -153,7 +186,27 @@
       "alt" : "case-study-img",
       "loading" : "disabled"
     }
-  } ],
+  },
+    {
+  "name": "video_field",
+  "label": "Video field",
+  "required": false,
+  "locked": false,
+  "picker": "video",
+  "type": "file",
+  "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "content_group.image_video_choice",
+        "controlling_value_regex" : "video",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+  "inline_help_text": "",
+  "help_text": "",
+  "default": null 
+}
+],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,

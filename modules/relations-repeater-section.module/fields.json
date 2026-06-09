@@ -37,138 +37,247 @@
   "label" : "Content",
   "required" : false,
   "locked" : false,
-  "children" : [ {
-    "id" : "content_group.tag",
-    "name" : "tag",
-    "label" : "Tag",
-    "help_text" : "",
-    "inline_help_text" : "",
-    "required" : false,
-    "locked" : false,
-    "validation_error_message" : "",
-    "placeholder" : "",
-    "allow_new_line" : false,
-    "type" : "text",
-    "display_width" : null,
-    "default" : "HR, Payroll & Workforce Management"
-  }, {
-    "id" : "title",
-    "name" : "title",
-    "label" : "Title",
-    "help_text" : "",
-    "inline_help_text" : "",
-    "required" : false,
-    "locked" : false,
-    "type" : "richtext",
-    "display_width" : null,
-    "default" : "<h1>Accurately track working time, simplify staff rotas, and complete payroll without errors</h1>"
-  }, {
-    "id" : "content",
-    "name" : "content",
-    "label" : "Content",
-    "required" : false,
-    "locked" : false,
-    "type" : "richtext",
-    "display_width" : null,
-    "default" : "<p>Ditch the spreadsheets and siloed apps. Designed for HR Managers, Operations and Line Managers, HR Duo automates rotas and payroll while keeping you 100% legally compliant as you grow across multiple sites.</p>"
-  }, {
-    "id" : "content_group.form",
-    "name" : "form",
-    "label" : "Form",
-    "help_text" : "",
-    "inline_help_text" : "",
-    "required" : false,
-    "locked" : false,
-    "type" : "form",
-    "display_width" : null,
-    "default" : {
-      "form_id" : "54a0fce3-99ad-4113-a3da-1f0dc3d65244",
-      "response_type" : "inline",
-      "message" : "Thanks for submitting the form."
-    }
-  }, {
-    "id" : "content_group.form_bt_text",
-    "name" : "form_bt_text",
-    "label" : "Form Bototm Text",
-    "help_text" : "",
-    "inline_help_text" : "",
-    "required" : false,
-    "locked" : false,
-    "type" : "richtext",
-    "display_width" : null,
-    "default" : "<p><span>Not sure if we’re for you? </span><a>Watch our platform tour</a></p>"
-  }, 
-  {
-  "name": "image_video_choice",
-  "label": "Image Video Choice",
-  "required": false,
-  "locked": false,
-  "display": "select",
-  "multiple": false,
-  "reordering_enabled": false,
-  "choices": [
-    [
-      "image",
-      "Image"
-    ],
-    [
-      "video",
-      "Video"
-    ]
-  ],
-  "type": "choice",
-  "placeholder": "",
-  "inline_help_text": "",
-  "help_text": "",
-  "default": "image" 
-},
-  {
-    "id" : "content_group.image",
-    "name" : "image",
-    "label" : "Image",
-    "help_text" : "",
-    "inline_help_text" : "",
-    "required" : false,
-    "locked" : false,
-    "responsive" : true,
-    "resizable" : true,
-    "show_loading" : false,
-    "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "content_group.image_video_choice",
-        "controlling_value_regex" : "image",
-        "property" : null,
-        "operator" : "EQUAL",
-        "access" : null
-      },
-    "type" : "image",
-    "display_width" : null,
-    "default" : {
-      "size_type" : "auto",
-      "src" : "https://hrduo.com/hubfs/hrduo-theme-2026/Home-Banner-img.avif",
-      "alt" : "Home-Banner-img",
-      "loading" : "disabled"
-    }
+  "children" : [ 
+    {
+    "name": "content",
+    "label": "Content",
+    "required": false,
+    "locked": false,
+    "type": "richtext",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": "<p>Positive employee relations are shaped by what happens daily, not just what sits in a policy document. HR Duo connects your workforce management, HR software, and HR compliance tools into one unified HR platform, so managers apply the right approach, every time.</p>" 
   },
   {
-  "name": "video_field",
-  "label": "Video field",
+  "name": "section_group",
+  "label": "Section Group",
   "required": false,
   "locked": false,
-  "picker": "video",
-  "type": "file",
-  "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "content_group.image_video_choice",
-        "controlling_value_regex" : "video",
-        "property" : null,
-        "operator" : "EQUAL",
-        "access" : null
+  "occurrence": {
+    "min": null,
+    "max": null,
+    "sorting_label_field": null,
+    "default": 3
+  },
+  "children": [
+    {
+    "name": "box_svg",
+    "label": "Box Title SVG",
+    "required": false,
+    "locked": false,
+    "type": "richtext",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": null 
+    },
+    {
+    "name": "icon_background_color",
+    "label": "Icon Background Color",
+    "required": false,
+    "locked": false,
+    "show_opacity": true,
+    "type": "color",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": {
+      "color": "#FDF4E2",
+      "opacity": 100 } 
       },
+      {
+    "name": "icon_color",
+    "label": "Icon Color",
+    "required": false,
+    "locked": false,
+    "show_opacity": true,
+    "type": "color",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": {
+      "color": "#97650F",
+      "opacity": 100 } 
+      },
+     {
+      "name": "box_title",
+      "label": "Box Title",
+      "required": false,
+      "locked": false,
+      "type": "richtext",
+      "inline_help_text": "",
+      "help_text": "",
+      "default": "Why Employee Relations Break Down"
+    },
+    {
+    "name": "box_tp_content",
+    "label": "Box Top Content",
+    "required": false,
+    "locked": false,
+    "type": "richtext",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": "<p>Most issues don't start as formal HR cases. They build gradually through small, repeated gaps in day-to-day management such as:</p>" 
+  },
+  {
+  "name": "list_group",
+  "label": "List Group",
+  "required": false,
+  "locked": false,
+  "occurrence": {
+    "min": null,
+    "max": null,
+    "sorting_label_field": null,
+    "default": 4
+  },
+  "children": [
+    {
+    "name": "icon_choice",
+    "label": "Icon Choice",
+    "required": false,
+    "locked": false,
+    "display": "select",
+    "multiple": false,
+    "reordering_enabled": false,
+    "choices": [
+      [
+        "check_icon",
+        "Check Icon"
+      ],
+      [
+        "close_icon",
+        "Close Icon"
+      ]
+    ],
+    "type": "choice",
+    "placeholder": "",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": "check_icon" 
+    },
+    {
+    "name": "icon_background_color",
+    "label": "Icon Background Color",
+    "required": false,
+    "locked": false,
+    "show_opacity": true,
+    "type": "color",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": {
+      "color": "#FDF4E2",
+      "opacity": 100 } 
+    },
+     {
+    "name": "icon_color",
+    "label": "Icon Color",
+    "required": false,
+    "locked": false,
+    "show_opacity": true,
+    "type": "color",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": {
+      "color": "#97650F",
+      "opacity": 100 } 
+    },
+    {
+    "name": "list_text",
+    "label": "List Text",
+    "required": false,
+    "locked": false,
+    "validation_regex": "",
+    "validation_error_message": "",
+    "allow_new_line": false,
+    "show_emoji_picker": false,
+    "type": "text",
+    "placeholder": "",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": "Inconsistent shift scheduling" 
+    }
+  ],
+  "type": "group",
+  "inline_help_text": "",
+  "help_text": "",
+  "default": [] 
+},
+{
+    "name": "box_bt_content",
+    "label": "Box Bottom Content",
+    "required": false,
+    "locked": false,
+    "type": "richtext",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": "<p>Most issues don't start as formal HR cases. They build gradually through small, repeated gaps in day-to-day management such as:</p>" 
+  }
+  ],
+  "type": "group",
+  "inline_help_text": "",
+  "help_text": "",
+  "default": [] 
+},
+{
+"name": "bottom_group",
+"label": "Bottom Group",
+"required": false,
+"locked": false,
+"children": [
+  {
+  "name": "svg_icon",
+  "label": "SVG Icon",
+  "required": false,
+  "locked": false,
+  "type": "richtext",
   "inline_help_text": "",
   "help_text": "",
   "default": null 
+  },
+  {
+  "name": "title",
+  "label": "Title",
+  "required": false,
+  "locked": false,
+  "validation_regex": "",
+  "validation_error_message": "",
+  "allow_new_line": false,
+  "show_emoji_picker": false,
+  "type": "text",
+  "placeholder": "",
+  "inline_help_text": "",
+  "help_text": "",
+  "default": "Confidence for HR, clarity for managers, fairness for employees" 
+  },
+  {
+  "name": "sub_title",
+  "label": "Sub Title",
+  "required": false,
+  "locked": false,
+  "validation_regex": "",
+  "validation_error_message": "",
+  "allow_new_line": false,
+  "show_emoji_picker": false,
+  "type": "text",
+  "placeholder": "",
+  "inline_help_text": "",
+  "help_text": "",
+  "default": "HR sets the standard, managers apply it, and employees experience it." 
+},
+{
+"name": "content",
+"label": "Content",
+"required": false,
+"locked": false,
+"type": "richtext",
+"inline_help_text": "",
+"help_text": "",
+"default": "<p>HR Duo keeps all three aligned through one unified HR platform, combining HR software, workforce management, and HR compliance tools. HR teams gain control and visibility across the organisation, managers work with clear structure and guidance, and employees experience consistent and fair treatment in day-to-day interactions. This alignment is what drives strong, scalable employee relations.</p>" 
 }
+],
+"type": "group",
+"inline_help_text": "",
+"help_text": "",
+"default": {} 
+}  
+
 ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -204,8 +313,7 @@
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
-      "display_width" : null,
-      "default" : "bgColor"
+      "display_width" : null
     }, {
       "id" : "style.background_property.background_image",
       "name" : "background_image",
@@ -252,11 +360,11 @@
       "type" : "color",
       "display_width" : null,
       "default" : {
-        "color" : "#6347FF",
-        "opacity" : 100,
+        "color" : null,
+        "opacity" : null,
+        "hex" : null,
         "rgba" : null,
-        "rgb" : null,
-        "hex" : null
+        "rgb" : null
       }
     }, {
       "id" : "style.background_property.background_gredient",
@@ -304,11 +412,11 @@
       "default" : {
         "padding" : {
           "top" : {
-            "value" : 180,
+            "value" : 100,
             "units" : "px"
           },
           "bottom" : {
-            "value" : 50,
+            "value" : 100,
             "units" : "px"
           },
           "left" : {
@@ -334,11 +442,11 @@
       "default" : {
         "padding" : {
           "top" : {
-            "value" : 150,
+            "value" : 70,
             "units" : "px"
           },
           "bottom" : {
-            "value" : 50,
+            "value" : 70,
             "units" : "px"
           },
           "left" : {
@@ -364,7 +472,7 @@
       "default" : {
         "padding" : {
           "top" : {
-            "value" : 150,
+            "value" : 50,
             "units" : "px"
           },
           "bottom" : {

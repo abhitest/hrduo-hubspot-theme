@@ -27,6 +27,9 @@
               
             </div>
             <div class="softwaresolutionBoxListgrp p20-0">
+              <div class="softwaresolutionBoxListgrpInsec">
+
+             
               <ul>
                 {% for list in item.list_group %}
                   <li >
@@ -44,8 +47,24 @@
                     </div>
                   </li>
                 {% endfor %}
+ {% for list in item.list_group %}
+                  <li >
+                    <div class="d_flex align_center softwaresolutionBoxListitems">
 
+                    
+                    <span class="listarrow">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
+<rect x="1.49365" y="7.42395" width="5.25007" height="1.75" rx="0.4375" transform="rotate(45 1.49365 7.42395)" fill="white" stroke="white" stroke-width="0.875"/>
+<rect x="12.6301" y="3.7124" width="12.2491" height="1.75" rx="0.4375" transform="rotate(135 12.6301 3.7124)" fill="white" stroke="white" stroke-width="0.875"/>
+</svg>
+                    </span>
+                    
+                      <h5 class="listcontent">{{ list.list_text }}</h5>
+                    </div>
+                  </li>
+                {% endfor %}
               </ul>
+               </div>
             </div>
             {% if  item.bottom_content  %}
             <div class="softwaresolutionBoxText p2 lh13">

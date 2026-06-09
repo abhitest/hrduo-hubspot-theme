@@ -73,7 +73,39 @@
       "type" : "richtext",
       "display_width" : null,
       "default" : "<h4>HR Duo has given us the structure, visibility, and control we needed across a busy, multi-site construction environment.</h4>"
-    }, {
+    }, 
+    {
+    "name": "person_name",
+    "label": "Person Name",
+    "required": false,
+    "locked": false,
+    "validation_regex": "",
+    "validation_error_message": "",
+    "allow_new_line": false,
+    "show_emoji_picker": false,
+    "type": "text",
+    "placeholder": "",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": null 
+    },
+    {
+    "name": "company_name",
+    "label": "Company Name",
+    "required": false,
+    "locked": false,
+    "validation_regex": "",
+    "validation_error_message": "",
+    "allow_new_line": false,
+    "show_emoji_picker": false,
+    "type": "text",
+    "placeholder": "",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": null 
+    },
+    
+    {
       "id" : "content_group.team_box_group.cta_group",
       "name" : "cta_group",
       "label" : "CTA group",

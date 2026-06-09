@@ -17,7 +17,7 @@
           {% endif %}
           {# Button and Cta Option #}
 
-          {% if module.content_group.want_cta %}
+          {% if module.content_group.btn_form_choice == "cta" %}
           <div class="moduleCTA d_flex align_center TwoColumnBannerCTA gap20 pt32" data-aos="fade-up" data-aos-delay="150">
             {% for item in module.content_group.cta_group %}
             {% set CTA = item %}
@@ -63,7 +63,20 @@
             </div>
             {% endfor %}
           </div>
-          {% endif %}
+        {% elif module.content_group.btn_form_choice == "form" %}
+          <div class="TwoColumnBannerFormSec pt32" data-aos="fade-up" data-aos-delay="150">
+
+          
+           {% form
+	form_to_use="{{ module.content_group.form.form_id }}"
+	response_response_type="{{ module.content_group.form.response_type }}"
+	response_message="{{ module.content_group.form.message }}"
+	response_redirect_id="{{ module.content_group.form.redirect_id }}"
+	response_redirect_url="{{module.content_group.form.redirect_url}}"
+	gotowebinar_webinar_key="{{ module.content_group.form.gotowebinar_webinar_key }}"
+%}
+</div>
+        {% endif %}
 
           {# End Button and Cta Option #}
           </div>

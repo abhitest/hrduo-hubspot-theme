@@ -57,19 +57,25 @@
     "type" : "richtext",
     "display_width" : null,
     "default" : "<p>Track time, manage attendance, process payroll, and onboard contractors with connected tools that simplify operations.</p>"
-  }, {
-    "id" : "content_group.want_cta",
-    "name" : "want_cta",
-    "label" : "Want CTA",
-    "help_text" : "",
-    "inline_help_text" : "",
-    "required" : false,
-    "locked" : false,
-    "display" : "checkbox",
-    "type" : "boolean",
-    "display_width" : null,
-    "default" : true
-  }, {
+  }, 
+  {
+      "name" : "btn_form_choice",
+      "label" : "Button Form Choice",
+      "help_text" : "",
+      "inline_help_text" : "",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "placeholder" : "",
+      "choices" : [ [ "form", "Form" ], [ "cta", "CTA" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "cta"
+    },
+  {
     "id" : "content_group.cta_group",
     "name" : "cta_group",
     "label" : "CTA group",
@@ -85,13 +91,14 @@
     },
     "visibility" : {
       "controlling_field" : null,
-      "controlling_field_path" : "content_group.want_cta",
-      "controlling_value_regex" : "true",
+      "controlling_field_path" : "content_group.btn_form_choice",
+      "controlling_value_regex" : "cta",
       "property" : null,
       "operator" : "EQUAL",
       "access" : null
     },
-    "children" : [ {
+    "children" : [ 
+      {
       "id" : "content_group.cta_group.cta_choice",
       "name" : "cta_choice",
       "label" : "CTA Choice",
@@ -108,7 +115,8 @@
       "type" : "choice",
       "display_width" : null,
       "default" : "normalcta"
-    }, {
+    }, 
+    {
       "id" : "content_group.cta_group.choice_cta_style",
       "name" : "choice_cta_style",
       "label" : "Choice CTA Style",
@@ -346,7 +354,28 @@
     "group_occurrence_meta" : null,
     "type" : "group",
     "display_width" : null
-  }, {
+  },
+  {
+  "name": "form",
+  "label": "Form",
+  "required": false,
+  "locked": false,
+  "type": "form",
+  "inline_help_text": "",
+  "help_text": "",
+   "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "content_group.btn_form_choice",
+      "controlling_value_regex" : "form",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+  "default": {
+    "response_type": "inline",
+    "message": "Thanks for submitting the form." } 
+  },
+  {
     "id" : "content_group.image",
     "name" : "image",
     "label" : "Image",
