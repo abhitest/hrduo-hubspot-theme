@@ -1,0 +1,103 @@
+<div class="{{ name }} baseModuleStyle ImplementationIntroSection {{ module.custom_style.custom_class }} " id="{{ module.custom_style.section_id }}">
+  <span class="baseModuleOverlay"></span>
+  <div class="baseModuleParent"> 
+    <div class="content-wrapper">
+      {# Custum Width Option #}
+      <div class="customWidthOption ImplementationIntroInSec">
+        {% if module.content_group.content %}
+        <div class="ImplementationIntroCnt" data-aos="fade-up">
+          {{ module.content_group.content }}
+        </div>
+        {% endif %}
+
+        <div class="ImplementationIntroBoxSec pt30">
+          {% for item in module.content_group.section_group %}
+          <div class="ImplementationIntroBox" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+            {% if item.svg_code %}
+            <div class="ImplementationIntroBoxLogo">
+              {{ item.svg_code }}
+            </div>
+            {% else %}
+              <div class="ImplementationIntroBoxLogo">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>
+            </div>
+            {% endif %}
+            <div class="ImplementationIntroBoxCntCol">
+              {% if item.title %}
+              <div class="ImplementationIntroBoxTitle">
+                <h5>{{ item.title }}</h5>
+              </div>
+              {% endif %}
+              {% if item.content %}
+              <div class="ImplementationIntroBoxContent pt10 secondary_60_color">
+                {{ item.content }}
+              </div>
+              {% endif %}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+
+        {% if  module.content_group.quote_group.quote_content %}
+        <div class="ImplementationIntroquotesec" data-aos="fade-up" >
+          {{ module.content_group.quote_group.quote_content }}
+        </div>
+        {% endif %}
+      </div>
+          {# End Custum Width Option #}
+
+
+
+    </div>
+  </div>
+
+</div>
+
+    {% require_css %}
+    
+    <style>
+
+{#       {% scope_css %} #}
+        
+      {# Desktop Styling #}
+      .{{name}}.baseModuleStyle{
+        position:relative;
+      
+        {{ module.style.spacing.desktop_spacing.css }}
+       
+        {% if module.style.background_property.background_choice == 'bgImage'  %}
+         background-image:url('{{ module.style.background_property.background_image.src|escape_url }}');  background-position: center center;  background-repeat: no-repeat; background-size : cover;
+        {% elif module.style.background_property.background_choice == 'bgColor'  %}
+        background-color:rgba({{ module.style.background_property.background_color.color|convert_rgb }},{{ module.style.background_property.background_color.opacity }}%);
+        {% elif module.style.background_property.background_choice == 'gredient'  %}
+        background:{{ module.style.background_property.background_gredient.css }};
+        {% endif %}
+      } 
+      /****  Overlay Start  *****/
+      {% if module.style.background_property.background_choice == 'bgImage'  %}
+      .{{name}} .baseModuleOverlay{ position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-color:rgba({{ module.style.background_property.overlay_color.color|convert_rgb }},{{ module.style.background_property.overlay_color.opacity }}%); }
+      {% endif %}
+      /****  Overlay Start  *****/
+      .{{name}} .baseModuleParent{position:relative; z-index:5}
+
+
+
+      {# End Desktop Styling #}
+
+      {# Tablet Styling #}
+      @media(max-width:1300px){
+        .{{name}}.baseModuleStyle{
+           {{  module.style.spacing.tab_spacing.css }}
+        } 
+      }
+      {# End Tablet Styling #}
+      {# Mobile Styling #}
+      @media(max-width:767px){
+        .{{name}}.baseModuleStyle{
+          {{ module.style.spacing.mobile_spacing.css  }}
+        } 
+      }
+      
+{#       {% end_scope_css %} #}
+    </style>
+  {% end_require_css %}

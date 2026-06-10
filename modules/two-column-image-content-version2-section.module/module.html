@@ -127,6 +127,21 @@
 
 {#       {% scope_css %} #}
         
+      {% if module.content_group.remove_box_shadow %}
+      .{{ name }}.TwoColumnImgCntSection.v2 .TwoColumnImgCntBoxSec .TwoColumnImgCntImgcol {
+        box-shadow: none !important;
+      }
+      {% endif %}
+
+      {% if module.content_group.image_width %}
+      .{{ name }}.TwoColumnImgCntSection.v2 .TwoColumnImgCntBoxSec .TwoColumnImgCntImgcol img {
+        width: {{ module.content_group.image_width }}px;
+      }
+      .{{ name }}.TwoColumnImgCntSection.v2 .TwoColumnImgCntBoxSec .TwoColumnImgCntImgcol {
+        text-align: center;
+      }
+      {% endif %}
+
       {# Desktop Styling #}
       .{{name}}.baseModuleStyle{
         position:relative;

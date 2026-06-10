@@ -37,201 +37,92 @@
   "label" : "Content",
   "required" : false,
   "locked" : false,
-  "children" : [ {
-    "id" : "title",
-    "name" : "title",
-    "label" : "Title",
-    "help_text" : "",
-    "inline_help_text" : "",
-    "required" : false,
-    "locked" : false,
-    "type" : "richtext",
-    "display_width" : null,
-    "default" : "<h2>Your Human Resource software solution shouldn’t sit in silos</h2>"
-  }, {
-    "id" : "content",
-    "name" : "content",
-    "label" : "Content",
-    "required" : false,
-    "locked" : false,
-    "type" : "richtext",
-    "display_width" : null,
-    "default" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>"
-  }, {
-    "id" : "content_group.section_group",
-    "name" : "section_group",
-    "label" : "section Group",
-    "help_text" : "",
-    "inline_help_text" : "",
-    "required" : false,
-    "locked" : false,
-    "occurrence" : {
-      "min" : null,
-      "max" : null,
-      "sorting_label_field" : null,
-      "default" : 3
-    },
-    "children" : [ 
-      {
-      "id" : "content_group.section_group.title",
-      "name" : "title",
-      "label" : "Title",
-      "help_text" : "",
-      "inline_help_text" : "",
-      "required" : false,
-      "locked" : false,
-      "validation_error_message" : "",
-      "placeholder" : "",
-      "allow_new_line" : false,
-      "type" : "text",
-      "display_width" : null,
-      "default" : "Operations"
-    }, 
+  "children" : [ 
     {
-    "name": "redirect_link",
-    "label": "Redirect Link",
+    "name": "content",
+    "label": "Content",
     "required": false,
     "locked": false,
-    "supported_types": ["EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG"],
-    "type": "link",
+    "type": "richtext",
     "inline_help_text": "",
     "help_text": "",
-    "default": {
-      "url": {
-        "content_id": null,
-        "type": "EXTERNAL",
-        "href": ""
-      },
-      "open_in_new_tab": false,
-      "no_follow": false } 
+    "default": "<h5>Here’s a quick overview of what to expect during your onboarding with us:</h5>" 
+  },
+  {
+  "name": "section_group",
+  "label": "Section Group",
+  "required": false,
+  "locked": false,
+  "occurrence": {
+    "min": null,
+    "max": null,
+    "sorting_label_field": null,
+    "default": 3
+  },
+  "children": [
+    {
+    "name": "svg_code",
+    "label": "SVG Code",
+    "required": false,
+    "locked": false,
+    "type": "richtext",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": null 
     },
     {
-      "id" : "content_group.section_group.list_group",
-      "name" : "list_group",
-      "label" : "List Group",
-      "help_text" : "",
-      "inline_help_text" : "",
-      "required" : false,
-      "locked" : false,
-      "occurrence" : {
-        "min" : null,
-        "max" : null,
-        "sorting_label_field" : null,
-        "default" : 10
-      },
-      "children" : [ {
-        "id" : "content_group.section_group.list_group.list_text",
-        "name" : "list_text",
-        "label" : "List Text",
-        "help_text" : "",
-        "inline_help_text" : "",
-        "required" : false,
-        "locked" : false,
-        "validation_error_message" : "",
-        "placeholder" : "",
-        "allow_new_line" : false,
-        "type" : "text",
-        "display_width" : null,
-        "default" : "Attendance"
-      } ],
-      "tab" : "CONTENT",
-      "expanded" : false,
-      "group_occurrence_meta" : null,
-      "type" : "group",
-      "display_width" : null
-    }, {
-      "id" : "content_group.section_group.bottom_content",
-      "name" : "bottom_content",
-      "label" : "Bottom Content",
-      "help_text" : "",
-      "inline_help_text" : "",
-      "required" : false,
-      "locked" : false,
-      "validation_error_message" : "",
-      "placeholder" : "",
-      "allow_new_line" : false,
-      "type" : "text",
-      "display_width" : null,
-      "default" : "Lorem ipsum dolor sit amet, aliqua adipiscing elit."
-    },
-     {
-      "id" : "content_group.section_group.style_group",
-      "name" : "style_group",
-      "label" : "Style Group",
-      "help_text" : "",
-      "inline_help_text" : "",
-      "required" : false,
-      "locked" : false,
-      "children" : [ {
-        "id" : "content_group.section_group.style_group.list_color",
-        "name" : "list_color",
-        "label" : "Icon Background Color",
-        "help_text" : "",
-        "inline_help_text" : "",
-        "required" : false,
-        "locked" : false,
-        "type" : "color",
-        "display_width" : null,
-        "default" : {
-          "color" : "#BF3D94",
-          "opacity" : 100
-        }
-      }, {
-        "id" : "content_group.section_group.style_group.list_icon_color",
-        "name" : "list_icon_color",
-        "label" : "Text Color",
-        "help_text" : "",
-        "inline_help_text" : "",
-        "required" : false,
-        "locked" : false,
-        "type" : "color",
-        "display_width" : null,
-        "default" : {
-          "color" : "#BF3D94",
-          "opacity" : 100
-        }
-      }, {
-        "id" : "content_group.section_group.style_group.background_color",
-        "name" : "background_color",
-        "label" : "Background Color",
-        "help_text" : "",
-        "inline_help_text" : "",
-        "required" : false,
-        "locked" : false,
-        "type" : "color",
-        "display_width" : null,
-        "default" : {
-          "color" : "#FDF2F9",
-          "opacity" : 100
-        }
-      }, {
-        "id" : "content_group.section_group.style_group.border_color",
-        "name" : "border_color",
-        "label" : "Border Color",
-        "help_text" : "",
-        "inline_help_text" : "",
-        "required" : false,
-        "locked" : false,
-        "type" : "color",
-        "display_width" : null,
-        "default" : {
-          "color" : "#61A546",
-          "opacity" : 25
-        }
-      } ],
-      "tab" : "CONTENT",
-      "expanded" : false,
-      "group_occurrence_meta" : null,
-      "type" : "group",
-      "display_width" : null,
-      "default" : { }
-    } ],
-    "tab" : "CONTENT",
-    "expanded" : false,
-    "group_occurrence_meta" : null,
-    "type" : "group",
-    "display_width" : null
-  } ],
+    "name": "title",
+    "label": "Title",
+    "required": false,
+    "locked": false,
+    "validation_regex": "",
+    "validation_error_message": "",
+    "allow_new_line": false,
+    "show_emoji_picker": false,
+    "type": "text",
+    "placeholder": "",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": "Tailored Set-up" 
+  },
+  {
+  "name": "content",
+  "label": "Content",
+  "required": false,
+  "locked": false,
+  "type": "richtext",
+  "inline_help_text": "",
+  "help_text": "",
+  "default": "<p>The HR Duo platform will be set up to align precisely with your company's unique requirements. Upon completion, it will be fine-tuned to meet your specific needs and preferences.</p>" 
+  }
+  ],
+  "type": "group",
+  "inline_help_text": "",
+  "help_text": "",
+  "default": [] 
+  },
+  {
+  "name": "quote_group",
+  "label": "Quote Group",
+  "required": false,
+  "locked": false,
+  "children": [
+    {
+    "name": "quote_content",
+    "label": "Quote Content",
+    "required": false,
+    "locked": false,
+    "type": "richtext",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": "<p>You’ll also see how HR Duo’s smart documents and reporting give you full visibility of policy distribution, acknowledgements, and signed records, helping you demonstrate HR compliance with clear, auditable data.</p>" 
+  }
+  ],
+  "type": "group",
+  "inline_help_text": "",
+  "help_text": "",
+  "default": {} }
+],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
@@ -365,11 +256,11 @@
       "default" : {
         "padding" : {
           "top" : {
-            "value" : 150,
+            "value" : 100,
             "units" : "px"
           },
           "bottom" : {
-            "value" : 150,
+            "value" : 100,
             "units" : "px"
           },
           "left" : {

@@ -24,6 +24,25 @@
               <div class="softwaresolutionBoxTitle">
                 <h4>{{ item.title }}</h4>
               </div>
+              <div class="softwaresolutionBoxArrow">
+                {% set href = item.redirect_link.url.href %}
+                {% if item.redirect_link.url.type is equalto "EMAIL_ADDRESS" %}
+                {% set href = "mailto:" + href %}
+                {% endif %}
+                {% if item.redirect_link.url.type is equalto "PHONE_NUMBER" %}
+                {% set href = "tel:" + href %}
+                {% endif %}
+
+                <a href="{{ href }}"
+                   {% if item.redirect_link.open_in_new_tab %}target="_blank"{% endif %}
+                   {% if item.redirect_link.rel %}rel="{{ item.redirect_link.rel }}"{% endif %}
+                   >
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+<rect x="13.5" y="7.5" width="1" height="13" rx="0.1" fill="white" stroke="white" stroke-width="1.5"/>
+<rect x="20.5" y="13.5" width="1" height="13" rx="0.1" transform="rotate(90 20.5 13.5)" fill="white" stroke="white" stroke-width="1.5"/>
+</svg>
+</a>
+              </div>
               
             </div>
             <div class="softwaresolutionBoxListgrp p20-0">

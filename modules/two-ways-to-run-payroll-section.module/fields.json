@@ -37,7 +37,23 @@
   "label" : "Content",
   "required" : false,
   "locked" : false,
-  "children" : [ {
+  "children" : [ 
+    {
+    "name": "tag",
+    "label": "Tag",
+    "required": false,
+    "locked": false,
+    "validation_regex": "",
+    "validation_error_message": "",
+    "allow_new_line": false,
+    "show_emoji_picker": false,
+    "type": "text",
+    "placeholder": "",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": "Two ways to run payroll" 
+    },
+    {
     "id" : "title",
     "name" : "title",
     "label" : "Title",
@@ -47,8 +63,9 @@
     "locked" : false,
     "type" : "richtext",
     "display_width" : null,
-    "default" : "<h2>Your Human Resource software solution shouldn’t sit in silos</h2>"
-  }, {
+    "default" : "<h3>Keep your provider or run it all in here.</h3>"
+  },
+   {
     "id" : "content",
     "name" : "content",
     "label" : "Content",
@@ -56,182 +73,153 @@
     "locked" : false,
     "type" : "richtext",
     "display_width" : null,
-    "default" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>"
-  }, {
-    "id" : "content_group.section_group",
-    "name" : "section_group",
-    "label" : "section Group",
-    "help_text" : "",
-    "inline_help_text" : "",
-    "required" : false,
-    "locked" : false,
-    "occurrence" : {
-      "min" : null,
-      "max" : null,
-      "sorting_label_field" : null,
-      "default" : 3
-    },
-    "children" : [ 
-      {
-      "id" : "content_group.section_group.title",
-      "name" : "title",
-      "label" : "Title",
-      "help_text" : "",
-      "inline_help_text" : "",
-      "required" : false,
-      "locked" : false,
-      "validation_error_message" : "",
-      "placeholder" : "",
-      "allow_new_line" : false,
-      "type" : "text",
-      "display_width" : null,
-      "default" : "Operations"
-    }, 
+    "default" : "<p>Both options pull from the same HR Duo data. The only thing that changes is where payroll actually runs — and you can switch between them whenever you’re ready.</p>"
+  },
+  {
+  "name": "section_group",
+  "label": "Section Group",
+  "required": false,
+  "locked": false,
+  "occurrence": {
+    "min": null,
+    "max": 3,
+    "sorting_label_field": null,
+    "default": 3
+  },
+  "children": [
     {
-    "name": "redirect_link",
-    "label": "Redirect Link",
+    "name": "highlight_col",
+    "label": "Highlight Column",
     "required": false,
     "locked": false,
-    "supported_types": ["EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG"],
-    "type": "link",
+    "display": "toggle",
+    "type": "boolean",
     "inline_help_text": "",
     "help_text": "",
-    "default": {
-      "url": {
-        "content_id": null,
-        "type": "EXTERNAL",
-        "href": ""
-      },
-      "open_in_new_tab": false,
-      "no_follow": false } 
+    "default": false 
     },
     {
-      "id" : "content_group.section_group.list_group",
-      "name" : "list_group",
-      "label" : "List Group",
-      "help_text" : "",
-      "inline_help_text" : "",
-      "required" : false,
-      "locked" : false,
-      "occurrence" : {
-        "min" : null,
-        "max" : null,
-        "sorting_label_field" : null,
-        "default" : 10
-      },
-      "children" : [ {
-        "id" : "content_group.section_group.list_group.list_text",
-        "name" : "list_text",
-        "label" : "List Text",
-        "help_text" : "",
-        "inline_help_text" : "",
-        "required" : false,
-        "locked" : false,
-        "validation_error_message" : "",
-        "placeholder" : "",
-        "allow_new_line" : false,
-        "type" : "text",
-        "display_width" : null,
-        "default" : "Attendance"
-      } ],
-      "tab" : "CONTENT",
-      "expanded" : false,
-      "group_occurrence_meta" : null,
-      "type" : "group",
-      "display_width" : null
-    }, {
-      "id" : "content_group.section_group.bottom_content",
-      "name" : "bottom_content",
-      "label" : "Bottom Content",
-      "help_text" : "",
-      "inline_help_text" : "",
-      "required" : false,
-      "locked" : false,
-      "validation_error_message" : "",
-      "placeholder" : "",
-      "allow_new_line" : false,
-      "type" : "text",
-      "display_width" : null,
-      "default" : "Lorem ipsum dolor sit amet, aliqua adipiscing elit."
+    "name": "title_group",
+    "label": "Title Group",
+    "required": false,
+    "locked": false,
+    "children": [
+      {
+      "name": "tag",
+      "label": "Tag",
+      "required": false,
+      "locked": false,
+      "validation_regex": "",
+      "validation_error_message": "",
+      "allow_new_line": false,
+      "show_emoji_picker": false,
+      "type": "text",
+      "placeholder": "",
+      "inline_help_text": "",
+      "help_text": "",
+      "default": "Compare" 
     },
-     {
-      "id" : "content_group.section_group.style_group",
-      "name" : "style_group",
-      "label" : "Style Group",
-      "help_text" : "",
-      "inline_help_text" : "",
-      "required" : false,
-      "locked" : false,
-      "children" : [ {
-        "id" : "content_group.section_group.style_group.list_color",
-        "name" : "list_color",
-        "label" : "Icon Background Color",
-        "help_text" : "",
-        "inline_help_text" : "",
-        "required" : false,
-        "locked" : false,
-        "type" : "color",
-        "display_width" : null,
-        "default" : {
-          "color" : "#BF3D94",
-          "opacity" : 100
-        }
-      }, {
-        "id" : "content_group.section_group.style_group.list_icon_color",
-        "name" : "list_icon_color",
-        "label" : "Text Color",
-        "help_text" : "",
-        "inline_help_text" : "",
-        "required" : false,
-        "locked" : false,
-        "type" : "color",
-        "display_width" : null,
-        "default" : {
-          "color" : "#BF3D94",
-          "opacity" : 100
-        }
-      }, {
-        "id" : "content_group.section_group.style_group.background_color",
-        "name" : "background_color",
-        "label" : "Background Color",
-        "help_text" : "",
-        "inline_help_text" : "",
-        "required" : false,
-        "locked" : false,
-        "type" : "color",
-        "display_width" : null,
-        "default" : {
-          "color" : "#FDF2F9",
-          "opacity" : 100
-        }
-      }, {
-        "id" : "content_group.section_group.style_group.border_color",
-        "name" : "border_color",
-        "label" : "Border Color",
-        "help_text" : "",
-        "inline_help_text" : "",
-        "required" : false,
-        "locked" : false,
-        "type" : "color",
-        "display_width" : null,
-        "default" : {
-          "color" : "#61A546",
-          "opacity" : 25
-        }
-      } ],
-      "tab" : "CONTENT",
-      "expanded" : false,
-      "group_occurrence_meta" : null,
-      "type" : "group",
-      "display_width" : null,
-      "default" : { }
-    } ],
-    "tab" : "CONTENT",
-    "expanded" : false,
-    "group_occurrence_meta" : null,
-    "type" : "group",
-    "display_width" : null
-  } ],
+    {
+    "name": "title",
+    "label": "Title",
+    "required": false,
+    "locked": false,
+    "validation_regex": "",
+    "validation_error_message": "",
+    "allow_new_line": false,
+    "show_emoji_picker": false,
+    "type": "text",
+    "placeholder": "",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": "Compare Your Options"
+   },
+   {
+   "name": "content",
+   "label": "Content",
+   "required": false,
+   "locked": false,
+   "validation_regex": "",
+   "validation_error_message": "",
+   "allow_new_line": false,
+   "show_emoji_picker": false,
+   "type": "text",
+   "placeholder": "",
+   "inline_help_text": "",
+   "help_text": "",
+   "default": "Same connected data, same accuracy, same audit trail." 
+    }
+    ],
+    "type": "group",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": {} 
+    },
+    {
+    "name": "list_group",
+    "label": "List Group",
+    "required": false,
+    "locked": false,
+    "occurrence": {
+      "min": null,
+      "max": null,
+      "sorting_label_field": null,
+      "default": 4
+    },
+    "children": [
+      {
+      "name": "icon_choice",
+      "label": "Icon Choice",
+      "required": false,
+      "locked": false,
+      "display": "select",
+      "multiple": false,
+      "reordering_enabled": false,
+      "choices": [
+        [
+          "check",
+          "Check"
+        ],
+        [
+          "uncheck",
+          "Uncheck"
+        ]
+      ],
+      "type": "choice",
+      "placeholder": "",
+      "inline_help_text": "",
+      "help_text": "",
+      "default": null 
+    },
+      {
+      "name": "title",
+      "label": "Title",
+      "required": false,
+      "locked": false,
+      "validation_regex": "",
+      "validation_error_message": "",
+      "allow_new_line": false,
+      "show_emoji_picker": false,
+      "type": "text",
+      "placeholder": "",
+      "inline_help_text": "",
+      "help_text": "",
+      "default": "Pay run" 
+      }
+      
+    ],
+    "type": "group",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": [] 
+    }
+  ],
+  "type": "group",
+  "inline_help_text": "",
+  "help_text": "",
+  "default": [] 
+}
+],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
@@ -365,11 +353,11 @@
       "default" : {
         "padding" : {
           "top" : {
-            "value" : 150,
+            "value" : 50,
             "units" : "px"
           },
           "bottom" : {
-            "value" : 150,
+            "value" : 50,
             "units" : "px"
           },
           "left" : {
@@ -395,11 +383,11 @@
       "default" : {
         "padding" : {
           "top" : {
-            "value" : 70,
+            "value" : 50,
             "units" : "px"
           },
           "bottom" : {
-            "value" : 70,
+            "value" : 50,
             "units" : "px"
           },
           "left" : {

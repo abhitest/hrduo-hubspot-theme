@@ -459,6 +459,9 @@ $(window).on('load resize',function() {
   equalheight('.TeamswinBoxCntIn');
   equalheight('.PlanThreeColBoxTitleSecIn');
   equalheight('.PlanThreeColBoxList');
+  equalheight('.twtrpayrollBoxTitle h5');
+  equalheight('.twtrpayrollBoxContentMain');
+//   equalheight('.twtrpayrollBoxContentsec');
   
   equalheight('.FourColumnSection.version1 .FourColumnBoxSection .FourColumnBox .FourColumnBoxCnt');
   equalheight('.workforceThreeColBoxTitlesecIn');
@@ -578,3 +581,20 @@ minequalheight = function(container){
         }
     });
 };
+
+
+function equalAllBoxesHeight() {
+    var maxHeight = 0;
+
+    $('.twtrpayrollBoxContentsec').css('height', 'auto');
+
+    $('.twtrpayrollBoxContentsec').each(function () {
+        maxHeight = Math.max(maxHeight, $(this).outerHeight());
+    });
+
+    $('.twtrpayrollBoxContentsec').height(maxHeight);
+}
+
+$(window).on('load resize', function () {
+    equalAllBoxesHeight();
+});

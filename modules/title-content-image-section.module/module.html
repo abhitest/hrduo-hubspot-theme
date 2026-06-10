@@ -1,51 +1,23 @@
-<div class="{{ name }} baseModuleStyle CounterSection CustomCounterSection {{ module.custom_style.custom_class }} " id="{{ module.custom_style.section_id }}">
+<div class="{{ name }} baseModuleStyle  {{ module.custom_style.custom_class }} " id="{{ module.custom_style.section_id }}">
   <span class="baseModuleOverlay"></span>
   <div class="baseModuleParent"> 
     <div class="content-wrapper">
       {# Custum Width Option #}
-      <div class="customWidthOption CounterInSec">
-        {% if  module.content_group.title || module.content_group.content %}
-        <div class="Countertitlesection text-center white_color">
- {% if  module.content_group.title  %}
-        <div class="moduleTitle CounterTitle semibold" data-aos="fade-up">
+      <div class="customWidthOption">
+        {% if  module.content_group.title  %}
+        <div class="moduleTitle">
           {{ module.content_group.title }}
         </div>
           {% endif %}
           {% if module.content_group.content %}
-          <div class="moduleContent pt20 CounterContent" data-aos="fade-up" data-aos-delay="50">
+          <div class="moduleContent pt20">
             {{ module.content_group.content }}
           </div>
           {% endif %}
-        </div>
-       {% endif %}
-
-        <div class="CounterBoxSection   {% if  module.content_group.title || module.content_group.content %} pt50 {% endif %} d_flex align_start white_color {{ module.content_group.column_choice }}" {% if  module.content_group.title || module.content_group.content %} {% else %} style="padding-top: 0px;" {% endif %}>
-          {% for item in module.content_group.counter_group %}
-          <div class="CounterBox" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
-            <div class="CounterBoxNumber">
-              {% if item.want_title_only %}
-              <h4 class="h1">{{ item.title }}</h4>
-              {% else %}
-              <h4 class="h1">
-                <span class="counternumber" data-max="{{ item.box_number }}"></span>
-                <span>{{ item.box_special_characters }}</span>
-              </h2>
-              {% endif %}
-            </div>
-            {% if item.box_content %}
-            <div class="CounterBoxText pt15">
-              <p>{{ item.box_content }}</p>
-            </div>
-            {% endif %}
-          </div>
-          {% endfor %}
-        </div>
-
-
           {# Button and Cta Option #}
 
           {% if module.content_group.want_cta %}
-          <div class="moduleCTA d_flex align_center Countercta gap20 pt50 flex_center" data-aos="fade-up" data-aos-delay="100">
+          <div class="moduleCTA d_flex align_center gap20 pt20">
             {% for item in module.content_group.cta_group %}
             {% set CTA = item %}
             <div class="cta-section">
@@ -64,7 +36,7 @@
                    {% if CTA.button_link.open_in_new_tab %}target="_blank"{% endif %}
                    {% if CTA.button_link.rel %}rel="{{ CTA.button_link.rel }}"{% endif %}
                    >
-                  <span class="btn_gradient">{{ CTA.button_text }}</span>
+                  {{ CTA.button_text }}
                   {% if CTA.want_arrow %}
                     <span class="arrow">
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -134,17 +106,9 @@
 
 {#       {% scope_css %} #}
         
-      {% if module.content_group.want_full_width_title %}
-      .CounterInSec .Countertitlesection { max-width : 100%; }
-      {% endif %}
-
-      .CounterInSec .Countertitlesection .CounterTitle { max-width : {{ module.content_group.title_width }}px; width : 100%; margin: 0 auto }
-      .CounterInSec .Countertitlesection .CounterContent { max-width : {{ module.content_group.content_width }}px; width : 100%; margin: 0 auto }
-
       {# Desktop Styling #}
       .{{name}}.baseModuleStyle{
         position:relative;
-        z-index: 1;
       
         {{ module.style.spacing.desktop_spacing.css }}
        
@@ -155,7 +119,6 @@
         {% elif module.style.background_property.background_choice == 'gredient'  %}
         background:{{ module.style.background_property.background_gredient.css }};
         {% endif %}
-        margin-left :20px;margin-right:20px; border-radius: 30px;
       } 
       /****  Overlay Start  *****/
       {% if module.style.background_property.background_choice == 'bgImage'  %}
@@ -178,9 +141,7 @@
       {# Mobile Styling #}
       @media(max-width:767px){
         .{{name}}.baseModuleStyle{
-          {{ module.style.spacing.mobile_spacing.css  }};
-          margin-left :10px;margin-right:10px;
-           
+          {{ module.style.spacing.mobile_spacing.css  }}
         } 
       }
       
